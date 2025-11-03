@@ -1,0 +1,58 @@
+[
+  {
+    "module": "ITSM",
+    "title": "Agentic AI Auto-Resolution",
+    "summary": "Self-healing incident flow using Predictive Intelligence + Agentic AI to detect, diagnose, and remediate common incidents.",
+    "ai_focus": "Predictive Intelligence, Agentic AI",
+    "integrations": "Jira, Snowflake, Slack/Teams",
+    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1"
+  },
+  {
+    "module": "ITSM",
+    "title": "Incident Root-Cause Finder",
+    "summary": "LLM-assisted triage notes and RCA summary for repeated incidents and categories.",
+    "ai_focus": "LLM Summarization",
+    "integrations": "Confluence, Jira",
+    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2"
+  },
+  {
+    "module": "ITSM",
+    "title": "AI Ticket Prioritization",
+    "summary": "NLP-based severity and business impact suggestion to prioritize queues.",
+    "ai_focus": "NLP Classification",
+    "integrations": "Snowflake, Power BI",
+    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3"
+  },
+  {
+    "module": "ITOM",
+    "title": "Federated AIOps",
+    "summary": "Multi-region anomaly detection and shared-learning orchestration for self-healing.",
+    "ai_focus": "Federated Learning, AIOps",
+    "integrations": "Jira, Snowflake, Slack/Teams",
+    "repo": ""
+  },
+  {
+    "module": "CSM",
+    "title": "Predictive Customer Experience",
+    "summary": "Sentiment-based case routing and proactive outreach.",
+    "ai_focus": "Sentiment Modeling",
+    "integrations": "Jira, Slack/Teams",
+    "repo": ""
+  },
+  {
+    "module": "HRSD",
+    "title": "AI Employee Care Bot",
+    "summary": "Virtual Agent with GenAI responses and routing for Tier-1 HR questions.",
+    "ai_focus": "Conversational AI",
+    "integrations": "Teams, Snowflake",
+    "repo": ""
+  },
+  {
+    "module": "GRC",
+    "title": "AI Risk Intelligence",
+    "summary": "Automated control tests and AI-generated audit evidence summaries.",
+    "ai_focus": "GenAI Summarization",
+    "integrations": "Confluence, Jira",
+    "repo": ""
+  }
+]
