@@ -2,64 +2,46 @@
   {
     "module": "ITSM",
     "title": "Agentic AI Auto-Resolution",
-    "summary": "Self-healing incident flow using Predictive Intelligence + Agentic AI to detect, diagnose, and remediate common incidents.",
+    "summary": "Self-healing incident flow using Predictive Intelligence + Agentic AI to detect, diagnose, and remediate incidents.",
     "ai_focus": "Predictive Intelligence, Agentic AI",
     "integrations": "Jira, Snowflake, Slack/Teams",
     "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1",
-    "image": "assets/servicenow-dashboard.jpg"
-  },
-  {
-    "module": "ITSM",
-    "title": "Incident Root-Cause Finder",
-    "summary": "LLM-assisted triage notes and RCA summary for repeated incidents and categories.",
-    "ai_focus": "LLM Summarization",
-    "integrations": "Confluence, Jira",
-    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2",
-    "image": "assets/team-leadership.jpg"
-  },
-  {
-    "module": "ITSM",
-    "title": "AI Ticket Prioritization",
-    "summary": "NLP-based severity and business impact suggestion to prioritize queues.",
-    "ai_focus": "NLP Classification",
-    "integrations": "Snowflake, Power BI",
-    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3",
-    "image": "assets/servicenow-dashboard.jpg"
+    "image": "https://images.unsplash.com/photo-1542751110-97427bbecf20"
   },
   {
     "module": "ITOM",
     "title": "Federated AIOps",
-    "summary": "Multi-region anomaly detection and shared-learning orchestration for self-healing.",
+    "summary": "Multi-region anomaly detection and shared-learning orchestration for self-healing systems.",
     "ai_focus": "Federated Learning, AIOps",
     "integrations": "Jira, Snowflake, Slack/Teams",
     "repo": "",
-    "image": "assets/itom-aiops.jpg"
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
   },
   {
     "module": "CSM",
     "title": "Predictive Customer Experience",
-    "summary": "Sentiment-based case routing and proactive outreach.",
+    "summary": "Sentiment-based case routing and proactive support.",
     "ai_focus": "Sentiment Modeling",
     "integrations": "Jira, Slack/Teams",
     "repo": "",
-    "image": "assets/servicenow-dashboard.jpg"
+    "image": "https://images.unsplash.com/photo-1544717305-996b815c338c"
   },
   {
     "module": "HRSD",
     "title": "AI Employee Care Bot",
-    "summary": "Virtual Agent with GenAI responses and routing for Tier-1 HR questions.",
+    "summary": "Virtual Agent with GenAI responses for HR queries.",
     "ai_focus": "Conversational AI",
     "integrations": "Teams, Snowflake",
     "repo": "",
-    "image": "assets/hrsd-bot.jpg"
+    "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296"
   },
   {
     "module": "GRC",
     "title": "AI Risk Intelligence",
-    "summary": "Automated control tests and AI-generated audit evidence summaries.",
+    "summary": "Automated control tests and AI-generated compliance summaries.",
     "ai_focus": "GenAI Summarization",
     "integrations": "Confluence, Jira",
     "repo": "",
-    "image": "assets/grc-risk.jpg"
+    "image": "https://images.unsplash.com/photo-1556745757-8d76bdb6984b"
   }
 ]
