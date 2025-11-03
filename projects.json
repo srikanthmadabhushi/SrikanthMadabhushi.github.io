@@ -5,7 +5,8 @@
     "summary": "Self-healing incident flow using Predictive Intelligence + Agentic AI to detect, diagnose, and remediate common incidents.",
     "ai_focus": "Predictive Intelligence, Agentic AI",
     "integrations": "Jira, Snowflake, Slack/Teams",
-    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1"
+    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1",
+    "image": "assets/servicenow-dashboard.jpg"
   },
   {
     "module": "ITSM",
@@ -13,7 +14,8 @@
     "summary": "LLM-assisted triage notes and RCA summary for repeated incidents and categories.",
     "ai_focus": "LLM Summarization",
     "integrations": "Confluence, Jira",
-    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2"
+    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2",
+    "image": "assets/team-leadership.jpg"
   },
   {
     "module": "ITSM",
@@ -21,7 +23,8 @@
     "summary": "NLP-based severity and business impact suggestion to prioritize queues.",
     "ai_focus": "NLP Classification",
     "integrations": "Snowflake, Power BI",
-    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3"
+    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3",
+    "image": "assets/servicenow-dashboard.jpg"
   },
   {
     "module": "ITOM",
@@ -29,7 +32,8 @@
     "summary": "Multi-region anomaly detection and shared-learning orchestration for self-healing.",
     "ai_focus": "Federated Learning, AIOps",
     "integrations": "Jira, Snowflake, Slack/Teams",
-    "repo": ""
+    "repo": "",
+    "image": "assets/itom-aiops.jpg"
   },
   {
     "module": "CSM",
@@ -37,7 +41,8 @@
     "summary": "Sentiment-based case routing and proactive outreach.",
     "ai_focus": "Sentiment Modeling",
     "integrations": "Jira, Slack/Teams",
-    "repo": ""
+    "repo": "",
+    "image": "assets/servicenow-dashboard.jpg"
   },
   {
     "module": "HRSD",
@@ -45,7 +50,8 @@
     "summary": "Virtual Agent with GenAI responses and routing for Tier-1 HR questions.",
     "ai_focus": "Conversational AI",
     "integrations": "Teams, Snowflake",
-    "repo": ""
+    "repo": "",
+    "image": "assets/hrsd-bot.jpg"
   },
   {
     "module": "GRC",
@@ -53,6 +59,7 @@
     "summary": "Automated control tests and AI-generated audit evidence summaries.",
     "ai_focus": "GenAI Summarization",
     "integrations": "Confluence, Jira",
-    "repo": ""
+    "repo": "",
+    "image": "assets/grc-risk.jpg"
   }
 ]

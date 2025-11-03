@@ -15,19 +15,19 @@
   </div>
 </nav>
 
-<header class="py-5 bg-gradient">
-  <div class="container">
+<header class="py-5 text-white hero-banner" style="background-image:url('assets/banner-ai.jpg');">
+  <div class="container bg-dark bg-opacity-75 p-4 rounded">
+    <h1 class="display-5 fw-bold mb-1">AI + ServiceNow Portfolio</h1>
+    <p class="lead mb-3">
+      25 advanced projects across ITSM, ITOM, CSM, HRSD, and GRC with Agentic AI, AIOps, and enterprise integrations (Snowflake, Jira, Slack/Teams).
+    </p>
     <div class="row align-items-center">
-      <div class="col-lg-8">
-        <h1 class="display-6 fw-semibold">AI + ServiceNow Portfolio</h1>
-        <p class="lead mb-3">
-          25 advanced projects across ITSM, ITOM, CSM, HRSD, and GRC with Agentic AI, AIOps, and enterprise integrations (Snowflake, Jira, Slack/Teams).
-        </p>
-        <p class="mb-1"><strong>Email:</strong> <a href="mailto:srikanthmadabhushi@gmail.com">srikanthmadabhushi@gmail.com</a></p>
-        <p class="mb-1"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/srikanthmadabhushi" target="_blank">linkedin.com/in/srikanthmadabhushi</a></p>
-        <p class="mb-0"><strong>GitHub:</strong> <a href="https://github.com/srikanthmadabhushi" target="_blank">github.com/srikanthmadabhushi</a></p>
+      <div class="col-md-8">
+        <p class="mb-1"><strong>Email:</strong> <a href="mailto:srikanthmadabhushi@gmail.com" class="link-light">srikanthmadabhushi@gmail.com</a></p>
+        <p class="mb-1"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/srikanthmadabhushi" class="link-light" target="_blank">linkedin.com/in/srikanthmadabhushi</a></p>
+        <p class="mb-0"><strong>GitHub:</strong> <a href="https://github.com/srikanthmadabhushi" class="link-light" target="_blank">github.com/srikanthmadabhushi</a></p>
       </div>
-      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+      <div class="col-md-4 text-md-end mt-3 mt-md-0">
         <a class="btn btn-primary btn-lg shadow" href="Srikanth_Madabhushi_AI_ServiceNow_Resume.docx">Download Resume</a>
       </div>
     </div>
@@ -38,13 +38,22 @@
   <section id="about" class="mb-5">
     <h2 class="h4 mb-3">About</h2>
     <p>
-      I’m an AI-driven ServiceNow leader with 12+ years in IT. I build self-healing, data-driven workflows on ServiceNow across ITSM, ITOM, CSM, HRSD, and GRC—integrating Predictive Intelligence, Agentic AI, and automation with Jira, Snowflake, and Slack/Teams. I’ve also led delivery as Scrum Master, Product Owner, and Project Manager.
+      I am an AI-driven ServiceNow leader with 12+ years in IT. I build self-healing, data-driven workflows on ServiceNow across ITSM, ITOM, CSM, HRSD, and GRC integrating Predictive Intelligence, Agentic AI, and automation with Jira, Snowflake, and Slack/Teams. I have also led delivery as Scrum Master, Product Owner, and Project Manager.
     </p>
   </section>
 
   <section id="projects" class="mb-5">
     <h2 class="h4 mb-3">Projects</h2>
     <div id="project-grid" class="row g-4"></div>
+  </section>
+
+  <section id="gallery" class="mb-5">
+    <h2 class="h4 mb-3">AI + ServiceNow Gallery</h2>
+    <div class="row g-3">
+      <div class="col-md-4"><img src="assets/itom-aiops.jpg" class="img-fluid rounded shadow-sm" alt="ITOM AIOps"></div>
+      <div class="col-md-4"><img src="assets/servicenow-dashboard.jpg" class="img-fluid rounded shadow-sm" alt="ServiceNow Dashboard"></div>
+      <div class="col-md-4"><img src="assets/team-leadership.jpg" class="img-fluid rounded shadow-sm" alt="Leadership and Agile"></div>
+    </div>
   </section>
 
   <section id="skills" class="mb-5">
@@ -88,6 +97,7 @@ fetch('projects.json')
       col.className = 'col-md-6 col-lg-4';
       col.innerHTML = `
         <div class="card h-100 shadow-sm">
+          ${p.image ? `<img src="${p.image}" class="card-img-top" alt="${p.title}">` : ''}
           <div class="card-body d-flex flex-column">
             <span class="badge bg-primary mb-2">${p.module}</span>
             <h5 class="card-title">${p.title}</h5>

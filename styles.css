@@ -1,3 +1,4 @@
 body {scroll-behavior:smooth}
-.bg-gradient {background:linear-gradient(135deg,#0f172a,#1e293b); color:#e5e7eb}
+.hero-banner {background-size:cover; background-position:center}
 a {text-decoration:none}
+img {object-fit:cover}
