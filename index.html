@@ -1,29 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Srikanth Madabhushi | Portfolio</title>
+  <title>Srikanth Madabhushi – Portfolio</title>
+  <meta name="description" content="ServiceNow portfolio across ITSM, ITOM, GRC, CSM, and HRSD with live project links." />
   <style>
-    body { font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; margin: 0; color: #0f172a; }
-    header { padding: 20px; border-bottom: 1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; }
-    nav a { margin-left: 14px; text-decoration: none; color: #1e293b; font-weight: 600; }
-    .hero { padding: 56px 20px; max-width: 980px; margin: 0 auto; }
-    .btn { display:inline-block; padding:10px 14px; border-radius:10px; background:#1e293b; color:white; text-decoration:none; }
+    :root{
+      --bg: #0b0f14; --fg:#e6edf3; --muted:#9fb2c7;
+      --glass: rgba(255,255,255,0.06); --glass-brd: rgba(255,255,255,0.18);
+      --btn: rgba(255,255,255,0.08); --btn-brd: rgba(255,255,255,0.25);
+      --ring:#60a5fa; --brand1:#22d3ee; --brand2:#4f46e5;
+    }
+    [data-theme="light"]{
+      --bg:#f7fafc; --fg:#0b1220; --muted:#475569;
+      --glass: rgba(255,255,255,0.6); --glass-brd: rgba(15,23,42,0.12);
+      --btn: rgba(15,23,42,0.06); --btn-brd: rgba(15,23,42,0.18);
+      --ring:#2563eb; --brand1:#06b6d4; --brand2:#4f46e5;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif}
+    a{color:inherit}
+    .wrap{max-width:1200px; margin:0 auto; padding:0 18px 60px}
+
+    header{position:sticky; top:0; z-index:10; backdrop-filter: blur(10px); background:linear-gradient(180deg, rgba(0,0,0,0.2), transparent);}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+    .logo{width:36px; height:36px; display:grid; place-items:center; border-radius:12px; background:var(--glass); border:1px solid var(--glass-brd); font-weight:800}
+    .name{font-weight:800; letter-spacing:.2px}
+    .buttons{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:9px 12px; border-radius:12px; background:var(--btn); border:1px solid var(--btn-brd); font-weight:600; font-size:14px; transition:transform .25s ease, box-shadow .25s ease}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 10px 25px -10px rgba(0,0,0,0.35)}
+
+    .banner{position:relative; overflow:hidden}
+    .banner img{display:block; width:100%; height:auto; aspect-ratio: 1920/720; object-fit:cover}
+    .banner .overlay{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:24px}
+    .banner .panel{backdrop-filter: blur(12px); background:var(--glass); border:1px solid var(--glass-brd); border-radius:18px; padding:18px 20px; max-width:980px}
+    .banner h1{margin:0; font-size:clamp(26px,3.2vw,40px)}
+    .banner p{margin:8px 0 0; color:var(--muted)}
+
+    .quick{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; margin-top:16px}
+    @media(min-width:860px){ .quick{grid-template-columns:repeat(4, minmax(0,1fr))} }
+    .tile{backdrop-filter: blur(8px); background:var(--glass); border:1px solid var(--glass-brd); border-radius:14px; padding:14px}
+    .tile h3{margin:0 0 6px; font-size:15px}
+    .tile p{margin:0; color:var(--muted); font-size:13px}
+
+    .section{margin-top:28px}
+    h2{font-size:20px; margin:0 0 10px}
+
+    .cards{display:grid; grid-template-columns:repeat(1, minmax(0,1fr)); gap:16px}
+    @media(min-width:980px){ .cards{grid-template-columns:repeat(2, minmax(0,1fr))} }
+    .card{backdrop-filter: blur(8px); background:var(--glass); border:1px solid var(--glass-brd); border-radius:16px; padding:16px; transition:transform .25s ease, box-shadow .25s ease}
+    .card:hover{transform: translateY(-2px) scale(1.01); box-shadow:0 18px 35px -18px rgba(0,0,0,0.45)}
+    .thumb{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; border:1px solid var(--glass-brd)}
+
+    /* NEW: Case-Study Framework grid */
+    .framework{display:grid; grid-template-columns:repeat(1, minmax(0,1fr)); gap:14px}
+    @media(min-width:980px){ .framework{grid-template-columns:repeat(4, minmax(0,1fr))} }
+    .pill{display:inline-block; padding:4px 10px; border-radius:999px; background:linear-gradient(180deg, var(--brand1), var(--brand2)); color:white; font-size:12px; font-weight:700}
+
+    footer{margin-top:36px; color:var(--muted); font-size:13px}
+    .foot{display:flex; gap:10px; flex-wrap:wrap; justify-content:space-between; border-top:1px solid var(--glass-brd); padding-top:14px}
+
+    :focus-visible{outline:3px solid var(--ring); outline-offset:2px; border-radius:8px}
+    @media (prefers-reduced-motion: reduce){
+      .btn, .card{transition:none}
+      .card:hover{transform:none; box-shadow:none}
+    }
   </style>
 </head>
 <body>
   <header>
-    <div><strong>Srikanth Madabhushi</strong></div>
-    <nav>
-      <a href="/projects.html" class="btn">Projects</a>
-    </nav>
+    <div class="wrap nav">
+      <a class="brand" href="/"><div class="logo">SM</div><div class="name">Srikanth Madabhushi</div></a>
+      <div class="buttons">
+        <a class="btn" href="/projects.html">Projects</a>
+        <a class="btn" href="https://github.com/srikanthmadabhushi" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/srikanthmadabhushi/" target="_blank" rel="noopener">LinkedIn</a>
+        <button class="btn" id="theme">Toggle Theme</button>
+      </div>
+    </div>
   </header>
-  <main class="hero">
-    <h1>Welcome to my Portfolio</h1>
-    <p>Explore my ServiceNow projects across ITSM, ITOM, GRC, CSM, and HRSD.</p>
-    <p><a href="/projects.html?cat=ITSM" class="btn">View ITSM Projects</a></p>
-    <!-- NOTE: Remove any old "AI + ServiceNow Gallery" block from your current index.html -->
+
+  <div class="banner">
+    <img src="/assets/attractive/banner.svg" alt="Portfolio banner" />
+    <div class="overlay">
+      <div class="panel">
+        <h1>Real ServiceNow projects, focused on outcomes.</h1>
+        <p>Explore ITSM, ITOM, GRC, CSM, and HRSD case studies with attractive visuals, clear problem statements, and measurable hypotheses.</p>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="quick" aria-label="Highlights">
+      <div class="tile"><h3>Glassmorphism UI</h3><p>Modern aesthetic with depth and clarity, optimized for readability.</p></div>
+      <div class="tile"><h3>Hover Micro‑interactions</h3><p>Subtle card animations that feel polished and responsive.</p></div>
+      <div class="tile"><h3>Theme Toggle</h3><p>Light and dark modes, persisted across visits.</p></div>
+      <div class="tile"><h3>Fast + Simple</h3><p>No frameworks. Pure HTML/CSS/JS with great performance.</p></div>
+    </section>
+
+    <!-- NEW: Case‑Study Framework section -->
+    <section class="section" aria-label="Case-Study Framework">
+      <h2>Case‑Study Framework</h2>
+      <div class="framework">
+        <article class="card">
+          <span class="pill">1</span>
+          <h3 style="margin:8px 0 6px;">Market & Competitive Analysis</h3>
+          <p class="muted">Current domain condition: industry trends, competitor posture, user needs, and adoption barriers.</p>
+        </article>
+        <article class="card">
+          <span class="pill">2</span>
+          <h3 style="margin:8px 0 6px;">Tech Specs & Best Practices</h3>
+          <p class="muted">ServiceNow version, data model/tables, ACLs, testing, CI/CD, configuration vs customization, documentation.</p>
+        </article>
+        <article class="card">
+          <span class="pill">3</span>
+          <h3 style="margin:8px 0 6px;">Problem Statement</h3>
+          <p class="muted">The precise operational pain or service gap to address, scoped and measurable.</p>
+        </article>
+        <article class="card">
+          <span class="pill">4</span>
+          <h3 style="margin:8px 0 6px;">Hypothesis</h3>
+          <p class="muted">Expected KPI impact (e.g., MTTR ↓, CSAT ↑, SLA compliance ↑, accuracy ↑), with validation plan.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Featured</h2>
+      <div class="cards">
+        <article class="card">
+          <img class="thumb" alt="ITOM Project 4" src="/assets/attractive/banner.svg" />
+          <h3>ServiceNow ITOM Project 4 – Federated AIOps</h3>
+          <p>Service mapping + anomaly signals to reduce MTTR and noise. Includes event rules and CMDB health best practices.</p>
+          <p><a class="btn" href="/projects.html?cat=ITOM">View ITOM Projects</a></p>
+        </article>
+        <article class="card">
+          <img class="thumb" alt="ITSM Project 1" src="/assets/attractive/banner.svg" />
+          <h3>ServiceNow ITSM Project 1 – Incident & SLA</h3>
+          <p>Incident lifecycle, SLAs, knowledge deflection, and CSAT/SLA metrics.</p>
+          <p><a class="btn" href="/projects.html?cat=ITSM">View ITSM Projects</a></p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="section">
+      <div class="foot">
+        <div>© <span id="y"></span> Srikanth Madabhushi</div>
+        <div>Contact: <a href="mailto:srikanthmadabhushi@gmail.com">srikanthmadabhushi@gmail.com</a></div>
+      </div>
+    </footer>
   </main>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Theme toggle with persistence
+    const key='theme-pref';
+    const root=document.documentElement;
+    const saved=localStorage.getItem(key);
+    if(saved){ root.setAttribute('data-theme', saved); }
+    document.getElementById('theme').addEventListener('click', ()=>{
+      const cur=root.getAttribute('data-theme')==='light'?'dark':'light';
+      root.setAttribute('data-theme', cur);
+      localStorage.setItem(key, cur);
+    });
+  </script>
 </body>
 </html>
