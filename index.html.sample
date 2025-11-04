@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Srikanth Madabhushi | Portfolio</title>
+  <style>
+    body { font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; margin: 0; color: #0f172a; }
+    header { padding: 20px; border-bottom: 1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; }
+    nav a { margin-left: 14px; text-decoration: none; color: #1e293b; font-weight: 600; }
+    .hero { padding: 56px 20px; max-width: 980px; margin: 0 auto; }
+    .btn { display:inline-block; padding:10px 14px; border-radius:10px; background:#1e293b; color:white; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>Srikanth Madabhushi</strong></div>
+    <nav>
+      <a href="/projects.html" class="btn">Projects</a>
+    </nav>
+  </header>
+  <main class="hero">
+    <h1>Welcome to my Portfolio</h1>
+    <p>Explore my ServiceNow projects across ITSM, ITOM, GRC, CSM, and HRSD.</p>
+    <p><a href="/projects.html?cat=ITSM" class="btn">View ITSM Projects</a></p>
+    <!-- NOTE: Remove any old "AI + ServiceNow Gallery" block from your current index.html -->
+  </main>
+</body>
+</html>
