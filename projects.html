@@ -1,55 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | Srikanth Madabhushi</title>
   <style>
     :root{
-      --bg:#0b0f14; --card:#121820; --muted:#98a2b3; --text:#e6edf3; --brand:#4f46e5; --brand-2:#22d3ee; --ring:#60a5fa;
+      --bg:#f7fafc; --fg:#0b1220; --muted:#475569;
+      --glass: rgba(255,255,255,0.65); --glass-brd: rgba(15,23,42,0.12);
+      --btn: rgba(15,23,42,0.06); --btn-brd: rgba(15,23,42,0.18);
+      --ring:#2563eb; --brand1:#06b6d4; --brand2:#4f46e5;
+    }
+    [data-theme="dark"]{
+      --bg: #0b0f14; --fg:#e6edf3; --muted:#9fb2c7;
+      --glass: rgba(255,255,255,0.06); --glass-brd: rgba(255,255,255,0.18);
+      --btn: rgba(255,255,255,0.08); --btn-brd: rgba(255,255,255,0.25);
+      --ring:#60a5fa; --brand1:#22d3ee; --brand2:#4f46e5;
     }
     *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;}
     a{color:inherit}
-    .container{max-width:1100px; margin:0 auto; padding:28px 20px 60px}
-    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:22px}
-    .title{font-size:clamp(22px,2.5vw,28px); font-weight:700; letter-spacing:0.2px}
-    .home-link{padding:8px 12px; border-radius:12px; background:linear-gradient(145deg, #0f1729, #0a1020); border:1px solid #1f2937; text-decoration:none}
+    .container{max-width:1200px; margin:0 auto; padding:28px 18px 60px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:10px}
+    .title{font-size:clamp(22px,2.5vw,28px); font-weight:800}
+    .home-link,.tab,.btn{display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:9px 12px; border-radius:12px; background:var(--btn); border:1px solid var(--btn-brd); font-weight:600; font-size:14px; transition:transform .25s ease, box-shadow .25s ease}
+    .home-link:hover,.tab:hover,.btn:hover{transform:translateY(-1px); box-shadow:0 10px 25px -10px rgba(0,0,0,0.2)}
     .sub{color:var(--muted); font-size:14px; margin-top:4px}
-
-    /* Tabs */
-    .tabs{display:flex; gap:10px; flex-wrap:wrap; position:sticky; top:0; background:linear-gradient(180deg, rgba(11,15,20,0.92), rgba(11,15,20,0.75)); padding:10px 0; backdrop-filter: blur(6px); z-index:5; border-bottom:1px solid #1f2937}
-    .tab{cursor:pointer; padding:10px 14px; border-radius:999px; border:1px solid #263244; background:#0f1420; color:#cbd5e1; font-weight:600; font-size:14px; transition:all .2s ease}
-    .tab:hover{border-color:#334155; transform:translateY(-1px)}
-    .tab.active{color:white; background:linear-gradient(180deg, var(--brand), var(--brand-2)); border-color:transparent; box-shadow:0 0 0 3px rgba(79,70,229,.25)}
-
-    /* Grid */
+    .tabs{display:flex; gap:10px; flex-wrap:wrap; position:sticky; top:0; background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.1)); padding:10px 0; backdrop-filter: blur(6px); z-index:5}
+    .tab.active{outline:3px solid var(--ring)}
     .grid{display:grid; grid-template-columns:repeat(1, minmax(0,1fr)); gap:16px; margin-top:16px}
     @media(min-width:720px){ .grid{grid-template-columns:repeat(2, minmax(0,1fr))} }
     @media(min-width:1040px){ .grid{grid-template-columns:repeat(3, minmax(0,1fr))} }
-
-    .card{background:linear-gradient(180deg, #101722, #0f1621); border:1px solid #1f2a3b; border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:12px; position:relative}
+    .card{backdrop-filter: blur(8px); background:var(--glass); border:1px solid var(--glass-brd); border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:12px; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease}
+    .card:hover{transform: translateY(-2px) scale(1.01); box-shadow:0 18px 35px -18px rgba(0,0,0,0.25)}
     .card h3{margin:0; font-size:16px}
-    .badge{display:inline-block; font-size:12px; color:#a5b4fc; background:#1f243a; border:1px solid #2a3360; padding:2px 8px; border-radius:999px}
+    .badge{position:absolute; top:12px; left:12px; display:inline-block; font-size:12px; color:#fff; background:linear-gradient(180deg, var(--brand1), var(--brand2)); padding:4px 10px; border-radius:999px}
     .muted{color:var(--muted); font-size:13px}
     .row{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
-
-    .btn{display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:8px 10px; border-radius:12px; background:#0f1a2a; border:1px solid #1f2a3b; font-weight:600; font-size:13px}
-    .btn:hover{border-color:#2b3a55}
-    .btn.primary{background:linear-gradient(180deg, #1d2a46, #152036); border-color:#2b3a55}
-
-    /* Details (accordion) */
-    details{border:1px solid #203045; border-radius:12px; padding:10px 12px; background:#0e1724}
-    details[open]{box-shadow:0 0 0 3px rgba(34,211,238,.15)}
+    .thumb{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; border:1px solid var(--glass-brd)}
+    details{border:1px dashed var(--glass-brd); border-radius:12px; padding:10px 12px; background:transparent}
     summary{cursor:pointer; font-weight:700}
-    .k-section{margin:10px 0 0; padding:8px 0 0; border-top:1px dashed #27364d}
-    .k-section h4{margin:0 0 6px; font-size:13px; color:#cbd5e1; text-transform:uppercase; letter-spacing:.6px}
-    .k-section p{margin:0; font-size:13px; color:#c8d3df}
-
-    .empty{padding:18px; border:1px dashed #304057; border-radius:14px; color:#9fb2c7; text-align:center}
-
-    /* Thumbnails */
-    .thumb{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; border:1px solid #1f2a3b; background:#0f1621}
+    .k-section{margin:10px 0 0; padding:8px 0 0; border-top:1px dashed var(--glass-brd)}
+    .k-section h4{margin:0 0 6px; font-size:13px; color:var(--fg); text-transform:uppercase; letter-spacing:.6px}
+    .k-section p{margin:0; font-size:13px; color:var(--muted)}
   </style>
 </head>
 <body>
@@ -57,9 +50,12 @@
     <header>
       <div>
         <div class="title">Projects Directory</div>
-        <div class="sub">Click a category to filter. Each card links to the GitHub repository. Use the accordion to add case-study details (2–5).</div>
+        <div class="sub">Click a category to filter. Each card uses your LinkedIn article banner.</div>
       </div>
-      <a class="home-link" href="/">← Back to Home</a>
+      <div style="display:flex; gap:8px;">
+        <a class="home-link" href="/">← Home</a>
+        <button class="home-link" id="theme">Toggle Theme</button>
+      </div>
     </header>
 
     <nav class="tabs" role="tablist" aria-label="Project categories">
@@ -75,153 +71,73 @@
 
     <template id="card-template">
       <article class="card">
-        <figure>
-          <img class="thumb" alt="Project thumbnail" data-img />
-        </figure>
-        <div class="row">
-          <span class="badge" data-badge></span>
-        </div>
+        <figure><img class="thumb" alt="Project banner" data-img /></figure>
+        <span class="badge" data-badge></span>
         <h3 data-title></h3>
         <p class="muted" data-desc></p>
-        <div class="row">
-          <a class="btn primary" target="_blank" rel="noopener" data-link>🔗 View on GitHub</a>
-        </div>
+        <div class="row"><a class="btn" target="_blank" rel="noopener" data-link>🔗 View on GitHub</a></div>
         <details>
           <summary>Case‑Study Details</summary>
-          <div class="k-section">
-            <h4>2) Current Domain Condition — Market & Competitive Analysis</h4>
-            <p data-market>— Add your summary of the market landscape, major competitors, and trends relevant to this project.</p>
-          </div>
-          <div class="k-section">
-            <h4>3) Tech Specs & Adherence to Best Practices</h4>
-            <p data-tech>— Note versions, architecture, standards (e.g., ServiceNow Zurich family, CMDB CI classes, ACLs), testing, and deployment steps.</p>
-          </div>
-          <div class="k-section">
-            <h4>4) Problem Statement</h4>
-            <p data-problem>— Clearly state the operational pain point or gap this project addresses.</p>
-          </div>
-          <div class="k-section">
-            <h4>5) Hypothesis</h4>
-            <p data-hypothesis>— Your hypothesis on how the solution improves KPIs (MTTR, CSAT, SLA compliance, accuracy, etc.).</p>
-          </div>
+          <div class="k-section"><h4>2) Market & Competitive Analysis</h4><p data-market>Trends, competitor posture, and user needs.</p></div>
+          <div class="k-section"><h4>3) Tech Specs & Best Practices</h4><p data-tech>ServiceNow version, tables, ACLs, testing, pipelines.</p></div>
+          <div class="k-section"><h4>4) Problem Statement</h4><p data-problem>Operational pain or gap addressed.</p></div>
+          <div class="k-section"><h4>5) Hypothesis</h4><p data-hypothesis>Expected KPI impact (MTTR, CSAT, SLA, etc.).</p></div>
         </details>
       </article>
     </template>
   </div>
 
   <script>
-    // ---- 1) Define projects here (easy to maintain) ----
+    // Explicit mapping to LinkedIn banner placeholders (replace SVGs with your JPG/PNG banners)
     const PROJECTS = [
-      // You can set a custom thumbnail per project with an `img` field.
-      // Example: {cat:'ITSM', title:'...', url:'...', img:'/assets/itsm1.png'}
-
       // ITSM
-      {cat:'ITSM', title:'ServiceNow ITSM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1', desc:'Core ITSM workflows with incidents, SLAs, and knowledge integration.'},
-      {cat:'ITSM', title:'ServiceNow ITSM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2', desc:'Advanced routing, automation and reporting for service operations.'},
-      {cat:'ITSM', title:'ServiceNow ITSM Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3', desc:'Problem & change coordination patterns with CAB insights.'},
-      {cat:'ITSM', title:'ServiceNow ITSM Project 4', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project4', desc:'End‑to‑end service catalog and request fulfillment optimization.'},
+      {cat:'ITSM', title:'ServiceNow ITSM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1', img:'/assets/banners/itsm1.svg', desc:'Core ITSM workflows with incidents, SLAs, and knowledge integration.'},
+      {cat:'ITSM', title:'ServiceNow ITSM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2', img:'/assets/banners/itsm2.svg', desc:'Advanced routing, automation and reporting for service operations.'},
+      {cat:'ITSM', title:'ServiceNow ITSM Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3', img:'/assets/banners/itsm3.svg', desc:'Problem & change coordination patterns with CAB insights.'},
+      {cat:'ITSM', title:'ServiceNow ITSM Project 4', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project4', img:'/assets/banners/itsm4.svg', desc:'End‑to‑end service catalog and request fulfillment optimization.'},
 
       // ITOM
-      {cat:'ITOM', title:'ServiceNow ITOM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1', desc:'Discovery, CMDB hygiene, and event correlation groundwork.'},
-      {cat:'ITOM', title:'ServiceNow ITOM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2', desc:'Service mapping and health dashboards for proactive ops.'},
-      {cat:'ITOM', title:'ServiceNow ITOM Project 4', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4', desc:'Federated AIOps (PDI Simulation) with anomaly detection.'},
+      {cat:'ITOM', title:'ServiceNow ITOM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1', img:'/assets/banners/itom1.svg', desc:'Discovery, CMDB hygiene, and event correlation groundwork.'},
+      {cat:'ITOM', title:'ServiceNow ITOM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2', img:'/assets/banners/itom2.svg', desc:'Service mapping and health dashboards for proactive ops.'},
+      {cat:'ITOM', title:'ServiceNow ITOM Project 4', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4', img:'/assets/banners/itom4.svg', desc:'Federated AIOps (PDI Simulation) with anomaly detection.'},
 
       // GRC
-      {cat:'GRC', title:'ServiceNow GRC Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project1', desc:'Policy & compliance management foundations.'},
-      {cat:'GRC', title:'ServiceNow GRC Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project2', desc:'Risk registers, assessments, and issue response.'},
-      {cat:'GRC', title:'ServiceNow GRC Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project3', desc:'Continuous monitoring & reporting automation.'},
+      {cat:'GRC', title:'ServiceNow GRC Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project1', img:'/assets/banners/grc1.svg', desc:'Policy & compliance management foundations.'},
+      {cat:'GRC', title:'ServiceNow GRC Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project2', img:'/assets/banners/grc2.svg', desc:'Risk registers, assessments, and issue response.'},
+      {cat:'GRC', title:'ServiceNow GRC Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project3', img:'/assets/banners/grc3.svg', desc:'Continuous monitoring & reporting automation.'},
 
       // CSM
-      {cat:'CSM', title:'ServiceNow CSM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project1', desc:'Customer service workflows with case management.'},
-      {cat:'CSM', title:'ServiceNow CSM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project2', desc:'Omnichannel and knowledge‑driven deflection.'},
-      {cat:'CSM', title:'ServiceNow CSM Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project3', desc:'Entitlement, SLAs, and customer insights.'},
+      {cat:'CSM', title:'ServiceNow CSM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project1', img:'/assets/banners/csm1.svg', desc:'Customer service workflows with case management.'},
+      {cat:'CSM', title:'ServiceNow CSM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project2', img:'/assets/banners/csm2.svg', desc:'Omnichannel and knowledge‑driven deflection.'},
+      {cat:'CSM', title:'ServiceNow CSM Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project3', img:'/assets/banners/csm3.svg', desc:'Entitlement, SLAs, and customer insights.'},
 
       // HRSD
-      {cat:'HRSD', title:'ServiceNow HRSD Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project1', desc:'HR case and knowledge portal essentials.'},
-      {cat:'HRSD', title:'ServiceNow HRSD Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project2', desc:'Lifecycle events and onboarding flows.'},
-      {cat:'HRSD', title:'ServiceNow HRSD Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project3', desc:'HR service catalog and SLA tracking.'},
+      {cat:'HRSD', title:'ServiceNow HRSD Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project1', img:'/assets/banners/hrsd1.svg', desc:'HR case and knowledge portal essentials.'},
+      {cat:'HRSD', title:'ServiceNow HRSD Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project2', img:'/assets/banners/hrsd2.svg', desc:'Lifecycle events and onboarding flows.'},
+      {cat:'HRSD', title:'ServiceNow HRSD Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project3', img:'/assets/banners/hrsd3.svg', desc:'HR service catalog and SLA tracking.'},
     ];
 
-    // ---- 2) Render helpers ----
     const q = (s, el=document) => el.querySelector(s);
     const qa = (s, el=document) => [...el.querySelectorAll(s)];
-
-    // Resolve a potential README image (first image) or GitHub OpenGraph preview, else SVG fallback
-    async function resolveThumb(p){
-      if(p.img) return p.img; // explicit override
-      const [owner, repo] = p.url.replace('https://github.com/','').split('/');
-      // Try README on common default branches
-      const branches = ['main','master'];
-      for(const br of branches){
-        try{
-          const raw = `https://raw.githubusercontent.com/${owner}/${repo}/${br}/README.md`;
-          const md = await fetch(raw, {cache:'no-store'});
-          if(md.ok){
-            const text = await md.text();
-            const m = text.match(/!\[[^\]]*\]\(([^)]+)\)/); // first image
-            if(m && m[1]){
-              const url = m[1].trim();
-              // Resolve relative paths to raw base
-              const abs = url.startsWith('http') ? url : `https://raw.githubusercontent.com/${owner}/${repo}/${br}/${url.replace(/^\.\//,'')}`;
-              return abs;
-            }
-          }
-        }catch(e){ /* continue */ }
-      }
-      // Fallback to GitHub OpenGraph card
-      try{
-        return `https://opengraph.githubassets.com/1/${owner}/${repo}`;
-      }catch(e){ /* ignore */ }
-      // Last resort: generated SVG
-      return makeThumb(p);
-    }
-
     function render(category='ALL'){
       const grid = q('#grid');
       grid.innerHTML = '';
       const list = category==='ALL' ? PROJECTS : PROJECTS.filter(p=>p.cat===category);
-      if(!list.length){
-        grid.innerHTML = `<div class="empty">No projects in <strong>${category}</strong> yet.</div>`;
-        return;
-      }
       const tpl = q('#card-template');
-      list.forEach(async p=>{
+      if(!list.length){ grid.innerHTML = `<div class="tile">No projects yet.</div>`; return; }
+      list.forEach(p=>{
         const node = tpl.content.cloneNode(true);
         q('[data-badge]', node).textContent = p.cat;
         q('[data-title]', node).textContent = p.title;
         q('[data-desc]', node).textContent = p.desc || '';
         q('[data-link]', node).href = p.url;
-        const imgEl = q('[data-img]', node);
-        imgEl.alt = `${p.title} thumbnail`;
-        // Temporary placeholder while we resolve image
-        imgEl.src = makeThumb(p);
-        setTimeout(async ()=>{ imgEl.src = await resolveThumb(p); }, 0);
-        imgEl.addEventListener('click', ()=> window.open(p.url, '_blank', 'noopener'));
+        const img = q('[data-img]', node);
+        img.src = p.img;
+        img.alt = `${p.title} banner`;
+        img.addEventListener('click', ()=> window.open(p.url, '_blank', 'noopener'));
         grid.appendChild(node);
       });
     }
-
-    // Simple auto-generated SVG thumbnail if no custom image is provided
-    function makeThumb(p){
-      const bg = p.cat==='ITSM' ? '#1e293b' : p.cat==='ITOM' ? '#0f766e' : p.cat==='GRC' ? '#334155' : p.cat==='CSM' ? '#4338ca' : '#0369a1';
-      const text = encodeURIComponent(p.title);
-      const cat = encodeURIComponent(p.cat);
-      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675'>
-        <defs>
-          <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-            <stop offset='0%' stop-color='${bg}'/>
-            <stop offset='100%' stop-color='#0b1220'/>
-          </linearGradient>
-        </defs>
-        <rect width='100%' height='100%' fill='url(#g)'/>
-        <rect x='40' y='40' rx='12' ry='12' width='220' height='56' fill='rgba(255,255,255,0.12)' stroke='rgba(255,255,255,0.18)'/>
-        <text x='60' y='78' font-family='Inter,Segoe UI,Roboto,Arial' font-size='28' fill='white' opacity='0.9'>${cat}</text>
-        <text x='40' y='150' font-family='Inter,Segoe UI,Roboto,Arial' font-size='44' fill='white' opacity='0.95'>${text}</text>
-      </svg>`;
-      return `data:image/svg+xml;utf8,${svg}`;
-    }
-
-    // ---- 3) Tabs + URL param (?cat=ITSM) ----
     function setActive(btn){
       qa('.tab').forEach(b=>{ b.classList.toggle('active', b===btn); b.setAttribute('aria-selected', b===btn ? 'true' : 'false'); });
     }
@@ -235,11 +151,21 @@
         render(cat);
       });
     });
-
     const initial = new URL(window.location).searchParams.get('cat') || 'ALL';
     const initBtn = qa('.tab').find(b=>b.dataset.cat===initial) || q('.tab');
     setActive(initBtn);
     render(initial);
+
+    // Theme toggle + persistence
+    const key='theme-pref';
+    const root=document.documentElement;
+    const saved=localStorage.getItem(key);
+    if(saved){ root.setAttribute('data-theme', saved); }
+    document.getElementById('theme').addEventListener('click', ()=>{
+      const cur=root.getAttribute('data-theme')==='dark'?'light':'dark';
+      root.setAttribute('data-theme', cur);
+      localStorage.setItem(key, cur);
+    });
   </script>
 </body>
 </html>
