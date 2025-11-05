@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Srikanth Madabhushi – Portfolio</title>
-  <meta name="description" content="ServiceNow portfolio across ITSM, ITOM, GRC, CSM, and HRSD with live project links." />
+  <meta name="description" content="ServiceNow + AI portfolio with case-study framework and live project links." />
   <style>
     :root{
       --bg:#f7fafc; --fg:#0b1220; --muted:#475569;
@@ -13,7 +13,7 @@
       --ring:#2563eb; --brand1:#06b6d4; --brand2:#4f46e5;
     }
     [data-theme="dark"]{
-      --bg: #0b0f14; --fg:#e6edf3; --muted:#9fb2c7;
+      --bg:#0b0f14; --fg:#e6edf3; --muted:#9fb2c7;
       --glass: rgba(255,255,255,0.06); --glass-brd: rgba(255,255,255,0.18);
       --btn: rgba(255,255,255,0.08); --btn-brd: rgba(255,255,255,0.25);
       --ring:#60a5fa; --brand1:#22d3ee; --brand2:#4f46e5;
@@ -36,27 +36,19 @@
     .banner img{display:block; width:100%; height:auto; aspect-ratio: 16/9; object-fit:cover}
     .banner .overlay{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:24px}
     .banner .panel{backdrop-filter: blur(12px); background:var(--glass); border:1px solid var(--glass-brd); border-radius:18px; padding:18px 20px; max-width:980px}
-    .banner h1{margin:0; font-size:clamp(26px,3.2vw,40px)}
-    .banner p{margin:8px 0 0; color:var(--muted)}
-
-    .quick{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; margin-top:16px}
-    @media(min-width:860px){ .quick{grid-template-columns:repeat(4, minmax(0,1fr))} }
-    .tile{backdrop-filter: blur(8px); background:var(--glass); border:1px solid var(--glass-brd); border-radius:14px; padding:14px}
-    .tile h3{margin:0 0 6px; font-size:15px}
-    .tile p{margin:0; color:var(--muted); font-size:13px}
+    .banner h1{display:none} /* text baked into banner image */
 
     .section{margin-top:28px}
     h2{font-size:20px; margin:0 0 10px}
 
-    .cards{display:grid; grid-template-columns:repeat(1, minmax(0,1fr)); gap:16px}
-    @media(min-width:980px){ .cards{grid-template-columns:repeat(2, minmax(0,1fr))} }
-    .card{backdrop-filter: blur(8px); background:var(--glass); border:1px solid var(--glass-brd); border-radius:16px; padding:16px; transition:transform .25s ease, box-shadow .25s ease}
-    .card:hover{transform: translateY(-2px) scale(1.01); box-shadow:0 18px 35px -18px rgba(0,0,0,0.25)}
-    .thumb{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; border:1px solid var(--glass-brd)}
-
     .framework{display:grid; grid-template-columns:repeat(1, minmax(0,1fr)); gap:14px}
     @media(min-width:980px){ .framework{grid-template-columns:repeat(4, minmax(0,1fr))} }
+    .card{backdrop-filter: blur(8px); background:var(--glass); border:1px solid var(--glass-brd); border-radius:16px; padding:16px}
     .pill{display:inline-block; padding:4px 10px; border-radius:999px; background:linear-gradient(180deg, var(--brand1), var(--brand2)); color:white; font-size:12px; font-weight:700}
+
+    .cards{display:grid; grid-template-columns:repeat(1, minmax(0,1fr)); gap:16px}
+    @media(min-width:980px){ .cards{grid-template-columns:repeat(2, minmax(0,1fr))} }
+    .thumb{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; border:1px solid var(--glass-brd)}
 
     footer{margin-top:36px; color:var(--muted); font-size:13px}
     .foot{display:flex; gap:10px; flex-wrap:wrap; justify-content:space-between; border-top:1px solid var(--glass-brd); padding-top:14px}
@@ -79,23 +71,16 @@
   </header>
 
   <div class="banner">
-    <img src="/assets/banners/portfolio-banner.svg" alt="Portfolio banner" />
+    <img src="/assets/banners/portfolio-servicenow-ai.svg" alt="Srikanth Madabhushi – ServiceNow × AI Portfolio banner" />
     <div class="overlay">
       <div class="panel">
-        <h1>Real ServiceNow projects, focused on outcomes.</h1>
-        <p>Explore ITSM, ITOM, GRC, CSM, and HRSD case studies. Light theme by default so it never looks too dark.</p>
+        <h1>Banner text baked into image</h1>
       </div>
     </div>
   </div>
 
   <main class="wrap">
-    <section class="quick" aria-label="Highlights">
-      <div class="tile"><h3>Clean & Bright</h3><p>A light theme by default for better contrast and readability.</p></div>
-      <div class="tile"><h3>Banner‑Driven</h3><p>Every project uses a LinkedIn article banner (replaceable JPG/PNG).</p></div>
-      <div class="tile"><h3>Hover Micro‑interactions</h3><p>Subtle card animations; accessible and responsive.</p></div>
-      <div class="tile"><h3>No Frameworks</h3><p>Pure HTML/CSS/JS for speed.</p></div>
-    </section>
-
+    <!-- Case‑Study Framework -->
     <section class="section" aria-label="Case-Study Framework">
       <h2>Case‑Study Framework</h2>
       <div class="framework">
@@ -106,6 +91,7 @@
       </div>
     </section>
 
+    <!-- Featured -->
     <section class="section">
       <h2>Featured</h2>
       <div class="cards">
