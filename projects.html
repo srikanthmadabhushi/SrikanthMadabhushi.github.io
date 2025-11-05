@@ -90,30 +90,30 @@
   <script>
     const PROJECTS = [
       // ITSM
-      {cat:'ITSM', title:'ServiceNow ITSM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1', img:'/assets/itsm1.jpg', desc:'Core ITSM workflows with incidents, SLAs, and knowledge integration.'},
-      {cat:'ITSM', title:'ServiceNow ITSM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2', img:'/assets/itsm2.jpg', desc:'Advanced routing, automation and reporting for service operations.'},
-      {cat:'ITSM', title:'ServiceNow ITSM Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3', img:'/assets/itsm3.jpg', desc:'Problem & change coordination patterns with CAB insights.'},
-      {cat:'ITSM', title:'ServiceNow ITSM Project 4', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project4', img:'/assets/itsm4.jpg', desc:'End‑to‑end service catalog and request fulfillment optimization.'},
+      {cat:'ITSM', title:'ServiceNow ITSM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1', img:'/assets/itsm1.png', desc:'Core ITSM workflows with incidents, SLAs, and knowledge integration.'},
+      {cat:'ITSM', title:'ServiceNow ITSM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2', img:'/assets/itsm2.png', desc:'Advanced routing, automation and reporting for service operations.'},
+      {cat:'ITSM', title:'ServiceNow ITSM Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3', img:'/assets/itsm3.png', desc:'Problem & change coordination patterns with CAB insights.'},
+      {cat:'ITSM', title:'ServiceNow ITSM Project 4', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project4', img:'/assets/itsm4.png', desc:'End‑to‑end service catalog and request fulfillment optimization.'},
 
       // ITOM
-      {cat:'ITOM', title:'ServiceNow ITOM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1', img:'/assets/itom1.jpg', desc:'Discovery, CMDB hygiene, and event correlation groundwork.'},
-      {cat:'ITOM', title:'ServiceNow ITOM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2', img:'/assets/itom2.jpg', desc:'Service mapping and health dashboards for proactive ops.'},
-      {cat:'ITOM', title:'ServiceNow ITOM Project 4', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4', img:'/assets/itom4.jpg', desc:'Federated AIOps (PDI Simulation) with anomaly detection.'},
+      {cat:'ITOM', title:'ServiceNow ITOM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1', img:'/assets/itom1.png', desc:'Discovery, CMDB hygiene, and event correlation groundwork.'},
+      {cat:'ITOM', title:'ServiceNow ITOM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2', img:'/assets/itom2.png', desc:'Service mapping and health dashboards for proactive ops.'},
+      {cat:'ITOM', title:'ServiceNow ITOM Project 4', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4', img:'/assets/itom4.png', desc:'Federated AIOps (PDI Simulation) with anomaly detection.'},
 
       // GRC
-      {cat:'GRC', title:'ServiceNow GRC Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project1', img:'/assets/grc1.jpg', desc:'Policy & compliance management foundations.'},
-      {cat:'GRC', title:'ServiceNow GRC Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project2', img:'/assets/grc2.jpg', desc:'Risk registers, assessments, and issue response.'},
-      {cat:'GRC', title:'ServiceNow GRC Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project3', img:'/assets/grc3.jpg', desc:'Continuous monitoring & reporting automation.'},
+      {cat:'GRC', title:'ServiceNow GRC Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project1', img:'/assets/grc1.png', desc:'Policy & compliance management foundations.'},
+      {cat:'GRC', title:'ServiceNow GRC Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project2', img:'/assets/grc2.png', desc:'Risk registers, assessments, and issue response.'},
+      {cat:'GRC', title:'ServiceNow GRC Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project3', img:'/assets/grc3.png', desc:'Continuous monitoring & reporting automation.'},
 
       // CSM
-      {cat:'CSM', title:'ServiceNow CSM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project1', img:'/assets/csm1.jpg', desc:'Customer service workflows with case management.'},
-      {cat:'CSM', title:'ServiceNow CSM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project2', img:'/assets/csm2.jpg', desc:'Omnichannel and knowledge‑driven deflection.'},
-      {cat:'CSM', title:'ServiceNow CSM Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project3', img:'/assets/csm3.jpg', desc:'Entitlement, SLAs, and customer insights.'},
+      {cat:'CSM', title:'ServiceNow CSM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project1', img:'/assets/csm1.png', desc:'Customer service workflows with case management.'},
+      {cat:'CSM', title:'ServiceNow CSM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project2', img:'/assets/csm2.png', desc:'Omnichannel and knowledge‑driven deflection.'},
+      {cat:'CSM', title:'ServiceNow CSM Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project3', img:'/assets/csm3.png', desc:'Entitlement, SLAs, and customer insights.'},
 
       // HRSD
-      {cat:'HRSD', title:'ServiceNow HRSD Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project1', img:'/assets/hrsd1.jpg', desc:'HR case and knowledge portal essentials.'},
-      {cat:'HRSD', title:'ServiceNow HRSD Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project2', img:'/assets/hrsd2.jpg', desc:'Lifecycle events and onboarding flows.'},
-      {cat:'HRSD', title:'ServiceNow HRSD Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project3', img:'/assets/hrsd3.jpg', desc:'HR service catalog and SLA tracking.'},
+      {cat:'HRSD', title:'ServiceNow HRSD Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project1', img:'/assets/hrsd1.png', desc:'HR case and knowledge portal essentials.'},
+      {cat:'HRSD', title:'ServiceNow HRSD Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project2', img:'/assets/hrsd2.png', desc:'Lifecycle events and onboarding flows.'},
+      {cat:'HRSD', title:'ServiceNow HRSD Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project3', img:'/assets/hrsd3.png', desc:'HR service catalog and SLA tracking.'},
     ];
 
     const q=(s,el=document)=>el.querySelector(s);
