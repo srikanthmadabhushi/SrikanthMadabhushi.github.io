@@ -1,101 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="360" viewBox="0 0 1600 360">
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="408" viewBox="0 0 1900 408">
   <defs>
-    <!-- Brand-inspired gradient: emerald to cyan -->
     <linearGradient id="bggrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b3d2e"/>
-      <stop offset="50%" stop-color="#0f6b4d"/>
+      <stop offset="0%" stop-color="#16a34a"/>
       <stop offset="100%" stop-color="#0ea5e9"/>
     </linearGradient>
-
-    <!-- Soft radial glows -->
-    <radialGradient id="glow1" cx="0.2" cy="0.2" r="0.6">
-      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glow2" cx="0.85" cy="0.3" r="0.5">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Subtle grid pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0f2942" stroke-width="1"/>
-    </pattern>
-
-    <!-- Neon glow filter for headline -->
-    <filter id="neon">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Soft shadow for chips -->
-    <filter id="soft">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.35"/>
-    </filter>
-
-    <!-- Wavy shape -->
     <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.35"/>
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.25"/>
     </linearGradient>
+    <style>
+      .title { font-family: 'Segoe UI', Inter, Arial, sans-serif; font-size: 54px; font-weight: 800; fill: #F8FAFC; }
+      .label { font-family: Inter, Arial, sans-serif; font-size: 18px; fill: #E5F6FF; text-anchor: middle; }
+      .pill { fill: rgba(2,6,23,0.75); stroke: rgba(56,189,248,0.45); }
+      .mesh-line { stroke: rgba(203, 255, 255, 0.25); stroke-width: 1; fill: none; }
+      .mesh-node { fill: rgba(203, 255, 255, 0.35); }
+      .particle { fill: rgba(233, 255, 255, 0.28); }
+      .wordmark { font-family: 'Segoe UI', Inter, Arial, sans-serif; font-weight: 800; letter-spacing: 0.5px; }
+    </style>
   </defs>
 
-  <!-- Background layers -->
-  <rect width="1600" height="360" fill="url(#bggrad)"/>
-  <rect width="1600" height="360" fill="url(#grid)" opacity="0.25"/>
-  <rect width="1600" height="360" fill="url(#glow1)"/>
-  <rect width="1600" height="360" fill="url(#glow2)"/>
+  <!-- Background gradient -->
+  <rect width="1900" height="408" fill="url(#bggrad)"/>
+  <path d="M0,340 C300,370 600,320 900,360 C1200,390 1500,340 1900,370 L1900,408 L0,408 Z" fill="url(#wave)" opacity="0.42"/>
 
-  <!-- Decorative waves -->
-  <path d="M0,260 C250,210 380,310 600,270 C900,210 1100,300 1600,240 L1600,360 L0,360 Z" fill="url(#wave)"/>
-  <path d="M0,300 C300,260 450,330 700,300 C1000,260 1200,330 1600,290 L1600,360 L0,360 Z" fill="url(#wave)" opacity="0.6"/>
+  <!-- Title -->
+  <text x="120" y="110" class="title">ServiceNow + AI</text>
 
-  <!-- Circuit nodes & links (abstract AI motif) -->
-  <g stroke="#9ae6b4" stroke-opacity="0.55">
-    <circle cx="220" cy="120" r="3" fill="#9ae6b4"/>
-    <circle cx="360" cy="170" r="3" fill="#9ae6b4"/>
-    <circle cx="520" cy="110" r="3" fill="#9ae6b4"/>
-    <circle cx="680" cy="150" r="3" fill="#9ae6b4"/>
-    <circle cx="840" cy="90" r="3" fill="#9ae6b4"/>
-    <circle cx="1020" cy="140" r="3" fill="#9ae6b4"/>
-    <circle cx="1180" cy="100" r="3" fill="#9ae6b4"/>
-    <circle cx="1360" cy="160" r="3" fill="#9ae6b4"/>
-    <path d="M220,120 L360,170 L520,110 L680,150 L840,90 L1020,140 L1180,100 L1360,160" fill="none"/>
+  <!-- Subtle AI neural/circuit mesh (behind graph area only) -->
+  <g opacity="0.75">
+    <g transform="translate(420,40)">
+      <circle class="mesh-node" cx="80" cy="60" r="2.5"/>
+      <circle class="mesh-node" cx="160" cy="90" r="2.5"/>
+      <circle class="mesh-node" cx="260" cy="50" r="2.5"/>
+      <circle class="mesh-node" cx="340" cy="110" r="2.5"/>
+      <circle class="mesh-node" cx="420" cy="70" r="2.5"/>
+      <circle class="mesh-node" cx="520" cy="100" r="2.5"/>
+      <circle class="mesh-node" cx="600" cy="60" r="2.5"/>
+      <circle class="mesh-node" cx="700" cy="95" r="2.5"/>
+      <circle class="mesh-node" cx="820" cy="70" r="2.5"/>
+      <path class="mesh-line" d="M80,60 L160,90 L260,50 L340,110 L420,70 L520,100 L600,60 L700,95 L820,70"/>
+      <path class="mesh-line" d="M80,80 C200,140 380,20 520,120 S760,40 820,95"/>
+    </g>
+    <g transform="translate(380,200)">
+      <circle class="mesh-node" cx="60" cy="40" r="2.5"/>
+      <circle class="mesh-node" cx="140" cy="20" r="2.5"/>
+      <circle class="mesh-node" cx="220" cy="60" r="2.5"/>
+      <circle class="mesh-node" cx="320" cy="30" r="2.5"/>
+      <circle class="mesh-node" cx="420" cy="65" r="2.5"/>
+      <circle class="mesh-node" cx="500" cy="35" r="2.5"/>
+      <circle class="mesh-node" cx="600" cy="60" r="2.5"/>
+      <circle class="mesh-node" cx="720" cy="35" r="2.5"/>
+      <path class="mesh-line" d="M60,40 L140,20 L220,60 L320,30 L420,65 L500,35 L600,60 L720,35"/>
+    </g>
+    <g>
+      <circle class="particle" cx="520" cy="80" r="2"/>
+      <circle class="particle" cx="880" cy="70" r="2"/>
+      <circle class="particle" cx="740" cy="130" r="2"/>
+      <circle class="particle" cx="980" cy="120" r="2"/>
+    </g>
   </g>
 
-  <!-- Headline and sub -->
-  <g transform="translate(80, 90)" filter="url(#neon)">
-    <text x="0" y="0" font-family="Inter,Segoe UI,Arial" font-size="44" font-weight="800" fill="#e2e8f0">
-      ServiceNow + AI
-    </text>
-    <text x="0" y="40" font-family="Inter,Segoe UI,Arial" font-size="18" fill="#cbd5e1" opacity="0.95">
-      Automation · Predictive Intelligence · Agentic Workflows
-    </text>
+  <!-- Curved connected line with 6 points -->
+  <path d="M250,200 C400,120 700,280 950,180 C1200,80 1450,220 1700,140" fill="none" stroke="#A7F3D0" stroke-width="3"/>
+  <!-- Points -->
+  <circle cx="250" cy="200" r="8" fill="#ECFEFF" stroke="#16a34a" stroke-width="3"/>
+  <circle cx="550" cy="180" r="8" fill="#ECFEFF" stroke="#16a34a" stroke-width="3"/>
+  <circle cx="850" cy="230" r="8" fill="#ECFEFF" stroke="#16a34a" stroke-width="3"/>
+  <circle cx="1150" cy="160" r="8" fill="#ECFEFF" stroke="#16a34a" stroke-width="3"/>
+  <circle cx="1450" cy="210" r="8" fill="#ECFEFF" stroke="#16a34a" stroke-width="3"/>
+  <circle cx="1700" cy="140" r="8" fill="#ECFEFF" stroke="#16a34a" stroke-width="3"/>
+
+  <!-- Labels below each point -->
+  <g>
+    <rect x="180" y="240" rx="14" ry="14" width="140" height="34" class="pill"/>
+    <text x="250" y="262" class="label">Flow Designer</text>
+    <rect x="460" y="220" rx="14" ry="14" width="180" height="34" class="pill"/>
+    <text x="550" y="242" class="label">Predictive Intelligence</text>
+    <rect x="770" y="270" rx="14" ry="14" width="160" height="34" class="pill"/>
+    <text x="850" y="292" class="label">Agentic Workflows</text>
+    <rect x="1070" y="200" rx="14" ry="14" width="160" height="34" class="pill"/>
+    <text x="1150" y="222" class="label">Generative AI</text>
+    <rect x="1360" y="250" rx="14" ry="14" width="190" height="34" class="pill"/>
+    <text x="1450" y="272" class="label">IntegrationHub/APIs</text>
+    <rect x="1630" y="180" rx="14" ry="14" width="100" height="34" class="pill"/>
+    <text x="1680" y="202" class="label">AIOps</text>
   </g>
 
-  <!-- Tech chips -->
-  <g transform="translate(80, 150)" filter="url(#soft)">
-    <rect x="0" y="0" width="150" height="32" rx="16" fill="#0b2138" stroke="#1f4a6e"/>
-    <text x="75" y="22" text-anchor="middle" font-family="Inter,Arial" font-size="14" fill="#cfe8ff">Flow Designer</text>
-
-    <rect x="166" y="0" width="168" height="32" rx="16" fill="#0b2138" stroke="#1f4a6e"/>
-    <text x="250" y="22" text-anchor="middle" font-family="Inter,Arial" font-size="14" fill="#cfe8ff">Predictive Intelligence</text>
-
-    <rect x="350" y="0" width="140" height="32" rx="16" fill="#0b2138" stroke="#1f4a6e"/>
-    <text x="420" y="22" text-anchor="middle" font-family="Inter,Arial" font-size="14" fill="#cfe8ff">Agentic AI</text>
-
-    <rect x="506" y="0" width="170" height="32" rx="16" fill="#0b2138" stroke="#1f4a6e"/>
-    <text x="591" y="22" text-anchor="middle" font-family="Inter,Arial" font-size="14" fill="#cfe8ff">IntegrationHub / APIs</text>
+  <!-- Subtle cube (right side) -->
+  <g transform="translate(1720, 80)" opacity="0.35">
+    <polygon points="0,40 40,20 80,40 40,60" fill="#0ea5e9"/>
+    <polygon points="40,20 80,40 80,80 40,60" fill="#22c55e" opacity="0.6"/>
+    <polygon points="0,40 40,60 40,100 0,80" fill="#22c55e" opacity="0.4"/>
   </g>
 
-  <!-- Right-side abstract cube -->
-  <g transform="translate(1260, 70)">
-    <polygon points="0,50 60,20 120,50 60,80" fill="#0ea5e9" opacity="0.55"/>
-    <polygon points="60,20 120,50 120,120 60,90" fill="#22c55e" opacity="0.45"/>
-    <polygon points="60,90 120,120 60,150 0,120" fill="#0ea5e9" opacity="0.35"/>
-    <polygon points="0,50 60,20 60,90 0,120" fill="#22c55e" opacity="0.35"/>
+  <!-- Option C logos -->
+  <!-- ServiceNow wordmark (monochrome, top-left, semi-transparent as placeholder text) -->
+  <g transform="translate(120,36)" opacity="0.15">
+    <text class="wordmark" x="0" y="0" font-size="28" fill="#ffffff">servicenow</text>
+  </g>
+
+  <!-- AI icon near the cube (simple brain/circuit outline) -->
+  <g transform="translate(1640, 80)" opacity="0.18">
+    <circle cx="36" cy="36" r="26" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <path d="M36,10 L36,62 M10,36 L62,36" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="36" cy="20" r="3" fill="#ffffff"/>
+    <circle cx="20" cy="36" r="3" fill="#ffffff"/>
+    <circle cx="52" cy="36" r="3" fill="#ffffff"/>
+    <circle cx="36" cy="52" r="3" fill="#ffffff"/>
   </g>
 </svg>
