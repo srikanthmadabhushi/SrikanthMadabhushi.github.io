@@ -2,156 +2,538 @@
   "modules": [
     {
       "name": "ITSM",
-      "parent": {
-        "domain": "ITSM is shifting to AI triage, predictive routing and self-service. Competitors: ServiceNow, BMC Helix, Ivanti, Jira Service Mgmt.",
-        "tech": "Incident/Request/KB, Predictive Intelligence, Flow Designer, UI Policies, Client Scripts, RBAC; ITIL-aligned processes; optional agentic orchestration via IntegrationHub.",
-        "problem": "Manual triage increases MTTR and cost; inconsistent categorization and routing.",
-        "hypothesis": "AI-assisted categorization + automation will cut MTTR 30\u201340% and lift CSAT.",
-        "prototype": "Incident create \u2192 prediction \u2192 assignment \u2192 notify \u2192 SLA tracking; dashboards monitor MTTR and reassignments."
+      "moduleOverview": {
+        "domainMarketCompetitive": [
+          "Domain: Incident, Request, Problem, Change, Knowledge, SLAs.",
+          "Market: Shift from ticketing to AI-first, self-service, LLM copilots.",
+          "Competitive: ServiceNow vs Jira SM, BMC, Freshservice; SN edge via PI, GenAI, Agentic flows and platform breadth."
+        ],
+        "techSpecsBestPractices": [
+          "Core tables: incident, sc_request, problem, change_request, kb_knowledge.",
+          "Flow Designer + Subflows; IntegrationHub spokes; disciplined Update Sets/CICD.",
+          "Security: RBAC, ACLs, Data Policies; naming/versioning; test in sub-prod; metrics dashboards."
+        ],
+        "problem": "High MTTR and inconsistent categorization/assignment cause delays and poor CSAT.",
+        "hypothesis": "PI + Agentic Workflows + GenAI summaries reduce triage/resolution by 30–40% and improve CSAT.",
+        "prototype": [
+          "Auto-categorize/assign incidents via PI; route through subflows.",
+          "GenAI case/incident summaries and KB suggestions.",
+          "Dashboards for SLA breach risk, backlog aging, deflection."
+        ]
       },
       "projects": [
         {
           "title": "ServiceNow_ITSM_Project1",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1",
-          "image_key": "itsm1"
+          "image": "assets/itsm1.png",
+          "summary": "Incident/Request flows with AI-assisted routing & knowledge.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Use self-service intake + virtual agent handoff to reduce emails.",
+              "Compete on speed-to-resolution and transparency via SLAs/dashboards."
+            ],
+            "techSpecsBestPractices": [
+              "Flow: create/update incident; subflows for assignment & notifications.",
+              "Tables: incident, task_sla; KB: kb_knowledge; ACLs for sensitive fields."
+            ],
+            "problem": "Manual triage slows assignment and increases ping-pong.",
+            "hypothesis": "PI-based categorization + auto-assignment cuts triage time significantly.",
+            "prototype": [
+              "Train PI model on historical incidents.",
+              "Add assignment rules & escalation timers.",
+              "Publish SLA/MTTR dashboard."
+            ]
+          }
         },
         {
           "title": "ServiceNow_ITSM_Project2",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2",
-          "image_key": "itsm2"
+          "image": "assets/itsm2.png",
+          "summary": "GenAI summaries + assignment predictions.",
+          "points": {
+            "domainMarketCompetitive": [
+              "LLM-assisted agents: summarize, extract intents, next-best-actions.",
+              "Competitive differentiator: reduce handle time without quality drop."
+            ],
+            "techSpecsBestPractices": [
+              "GenAI action for summarization; store to work notes or KB draft.",
+              "Guardrails: PII masking, prompt templates, human-in-the-loop."
+            ],
+            "problem": "Agents spend time writing updates; knowledge not captured.",
+            "hypothesis": "Auto-summaries improve throughput and knowledge reusability.",
+            "prototype": [
+              "Summarize resolution; propose KB; supervisor approval flow.",
+              "Telemetry: measure deflection & average summary time saved."
+            ]
+          }
         },
         {
           "title": "ServiceNow_ITSM_Project3",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3",
-          "image_key": "itsm3"
+          "image": "assets/itsm3.png",
+          "summary": "Agentic workflows + IntegrationHub orchestration.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Cross-system remediation lowers context switching.",
+              "Agentic orchestration drives proactive operations."
+            ],
+            "techSpecsBestPractices": [
+              "IntegrationHub spokes for CRM/Chat/Email; retries & idempotency.",
+              "Audit: update sets, scoped app, versioned subflows."
+            ],
+            "problem": "Multi-app handoffs create delays.",
+            "hypothesis": "Automated orchestration shortens resolution and reduces errors.",
+            "prototype": [
+              "Decision tables trigger subflows.",
+              "Webhook triggers from monitoring tools.",
+              "Rollback subflow for failed remediations."
+            ]
+          }
         },
         {
           "title": "ServiceNow_ITSM_Project4",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project4",
-          "image_key": "itsm4"
+          "image": "assets/itsm4.png",
+          "summary": "SLAs, reporting & performance analytics dashboards.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Transparency on SLAs and agent performance is a buying criterion.",
+              "Benchmark vs industry with PA widgets."
+            ],
+            "techSpecsBestPractices": [
+              "Task SLA, PA indicators, breakdowns; consistent time zones.",
+              "Backfill jobs, retention; access by role."
+            ],
+            "problem": "Leaders lack near-real-time visibility.",
+            "hypothesis": "Actionable dashboards lift SLA adherence and CSAT.",
+            "prototype": [
+              "Executive dashboard + agent cockpit.",
+              "Drill-downs for breached/at-risk SLAs."
+            ]
+          }
         }
       ]
     },
-    {
-      "name": "HRSD",
-      "parent": {
-        "domain": "HRSD focuses on employee experience, guided decisions and secure handling of sensitive HR data.",
-        "tech": "HR Case Mgmt, Lifecycle Events, Decision Tables, Flow Designer, Encryption/RBAC, Performance Analytics; optional agentic approvals for complex cases.",
-        "problem": "Slow HR routing and policy inconsistency reduce employee satisfaction.",
-        "hypothesis": "Decision tables + automation reduce resolution time ~30%.",
-        "prototype": "Case create \u2192 decision route \u2192 assignment \u2192 comms \u2192 audit trail and PA KPIs."
-      },
-      "projects": [
-        {
-          "title": "ServiceNow_HRSD_Project1",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project1",
-          "image_key": "hrsd1"
-        },
-        {
-          "title": "ServiceNow_HRSD_Project2",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project2",
-          "image_key": "hrsd2"
-        },
-        {
-          "title": "ServiceNow_HRSD_Project3",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project3",
-          "image_key": "hrsd3"
-        },
-        {
-          "title": "ServiceNow_HRSD_Project4",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project4",
-          "image_key": "hrsd4"
-        }
-      ]
-    },
+
     {
       "name": "ITOM",
-      "parent": {
-        "domain": "ITOM centers on CMDB, discovery, service mapping and AIOps for proactive incident prevention.",
-        "tech": "CMDB, Discovery, Service Mapping, Event Mgmt, Health Log Analytics, Runbook Automation; optional agentic remediation via IntegrationHub.",
-        "problem": "Blind spots and alert fatigue slow response and increase risk.",
-        "hypothesis": "Good CMDB + correlation + AIOps lowers noise 40\u201360% and speeds resolution.",
-        "prototype": "Discovery \u2192 CI relations \u2192 event ingest \u2192 correlation \u2192 runbook triggers \u2192 incident linkage."
+      "moduleOverview": {
+        "domainMarketCompetitive": [
+          "Domain: Discovery, CMDB, Event Mgmt, Service Mapping, Health, AIOps.",
+          "Market: Convergence of observability + remediation with AI.",
+          "Competitive: SN ITOM vs Dynatrace/Datadog/Splunk; CMDB context + workflows wins."
+        ],
+        "techSpecsBestPractices": [
+          "Pattern-based discovery, identification & reconciliation; CI class governance.",
+          "Event de-dup, correlation rules; anomaly detection via PI.",
+          "Remediation subflows with approvals and safety checks."
+        ],
+        "problem": "Alert noise and incomplete CMDB slow RCA and increase MTTR.",
+        "hypothesis": "Service maps + correlation + AIOps reduce noise and speed remediation.",
+        "prototype": [
+          "Event ingestion table; correlation → create incident/change.",
+          "Auto-remediation subflows; health dashboards and CMDB KPIs."
+        ]
       },
       "projects": [
         {
           "title": "ServiceNow_ITOM_Project1",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1",
-          "image_key": "itom1"
+          "image": "assets/itom1.png",
+          "summary": "Discovery + CMDB health with automated fixes.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Accurate CMDB is the foundation for AIOps and impact analysis.",
+              "Compete on reliability and speed of change impact."
+            ],
+            "techSpecsBestPractices": [
+              "Identification/Normalization; CI health scores; out-of-box metrics.",
+              "Flow-based fixes; approvals for sensitive classes."
+            ],
+            "problem": "Stale/missing CIs break correlation and impact chains.",
+            "hypothesis": "Automated discovery + health drives better RCA.",
+            "prototype": [
+              "Discovery schedules; reconciliation rules.",
+              "Health KPI widgets; auto-create tasks for gaps."
+            ]
+          }
         },
         {
           "title": "ServiceNow_ITOM_Project2",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2",
-          "image_key": "itom2"
+          "image": "assets/itom2.png",
+          "summary": "Event Management + anomaly detection.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Noise reduction is essential for SRE productivity.",
+              "Differentiator: event → action via platform flows."
+            ],
+            "techSpecsBestPractices": [
+              "Event rules, correlation; PI anomalies; incident linkage.",
+              "Runbooks as subflows; throttling & retries."
+            ],
+            "problem": "Too many alerts, low signal-to-noise.",
+            "hypothesis": "Correlation + anomalies + runbooks cut noise by 40%.",
+            "prototype": [
+              "Correlation examples; anomaly model on metrics.",
+              "Auto-ticket + enrich + close loop."
+            ]
+          }
         },
         {
           "title": "ServiceNow_ITOM_Project4",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4",
-          "image_key": "itom4"
+          "image": "assets/itom4.png",
+          "summary": "Service Mapping visuals + health signals.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Business service views drive prioritization by impact.",
+              "Compete with topology-first observability tools."
+            ],
+            "techSpecsBestPractices": [
+              "Top-down mapping; credentials; patterns; change sync.",
+              "Health aggregation; impact rules → incident priorities."
+            ],
+            "problem": "Teams cannot see blast radius for failures.",
+            "hypothesis": "Maps + health scores improve incident triage.",
+            "prototype": [
+              "Key service maps; CMDB relationships; impact calculators.",
+              "Service owner dashboards."
+            ]
+          }
         },
         {
           "title": "ServiceNow_ITOM_Project5",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project5",
-          "image_key": "itom5"
+          "image": "assets/itom5.png",
+          "summary": "Predictive AIOps + auto-remediation.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Shift from reactive to predictive ops.",
+              "Self-healing differentiates mature ops."
+            ],
+            "techSpecsBestPractices": [
+              "PI models; runbooks; safe-guard rails; change blackout.",
+              "Observability integration; post-remediation validation."
+            ],
+            "problem": "Recurring incidents consume SRE time.",
+            "hypothesis": "Predict + pre-empt recurring failures.",
+            "prototype": [
+              "Predictive signal → subflow action.",
+              "Rollback if validation fails."
+            ]
+          }
         }
       ]
     },
+
+    {
+      "name": "HRSD",
+      "moduleOverview": {
+        "domainMarketCompetitive": [
+          "Domain: HR cases, lifecycle events, employee journeys, KB.",
+          "Market: HR assistants, conversational routing, self-service.",
+          "Competitive: SN HRSD vs Workday Extend/Zendesk; win via flow/PI."
+        ],
+        "techSpecsBestPractices": [
+          "HR tables & security; decision tables; lifecycle event orchestration.",
+          "Categorization via PI; journey accelerators; knowledge governance."
+        ],
+        "problem": "Manual routing & slow turnaround reduce employee satisfaction.",
+        "hypothesis": "PI + orchestration + GenAI replies improve CSAT and productivity.",
+        "prototype": [
+          "Decision table for category-based routing.",
+          "GenAI summaries; article suggestions; metrics for FCR."
+        ]
+      },
+      "projects": [
+        {
+          "title": "ServiceNow_HRSD_Project1",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project1",
+          "image": "assets/hrsd1.png",
+          "summary": "HR case lifecycle + decision tables.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Employee experience: speed + clarity.",
+              "Compete with HR suites via platform workflows."
+            ],
+            "techSpecsBestPractices": [
+              "HR case tables, decision table inputs/outputs.",
+              "Privacy controls; role-based access for HR data."
+            ],
+            "problem": "Unclear routing and bottlenecks.",
+            "hypothesis": "Explicit rules reduce touches & time.",
+            "prototype": [
+              "Decision branches: Leave/Compensation/General.",
+              "Auto-assignment to HR teams; SLA tracking."
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow_HRSD_Project2",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project2",
+          "image": "assets/hrsd2.png",
+          "summary": "Flow Designer routing for categories.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Low-code HR automations accelerate change.",
+              "Compete on time-to-value and governance."
+            ],
+            "techSpecsBestPractices": [
+              "Flow triggers; HR category; subflows; notifications.",
+              "Audit trail; versioning; non-prod testing."
+            ],
+            "problem": "Manual HR case handoffs.",
+            "hypothesis": "Standardized flows cut handling time.",
+            "prototype": [
+              "Trigger → decision → update → notify.",
+              "Dashboard: backlog & SLA compliance."
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow_HRSD_Project3",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project3",
+          "image": "assets/hrsd3.png",
+          "summary": "PI classification + resolution SLAs.",
+          "points": {
+            "domainMarketCompetitive": [
+              "AI boosts routing accuracy and fairness.",
+              "Quality measured by first-time right assignments."
+            ],
+            "techSpecsBestPractices": [
+              "PI model training; outcome tracking; human review.",
+              "SLA definitions for HR categories."
+            ],
+            "problem": "Misrouted HR cases and slow resolution.",
+            "hypothesis": "PI + SLAs increase throughput and CSAT.",
+            "prototype": [
+              "Train on labeled HR cases.",
+              "SLA widget on HR agent workspace."
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow_HRSD_Project4",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project4",
+          "image": "assets/hrsd4.png",
+          "summary": "GenAI summaries & knowledge suggestions.",
+          "points": {
+            "domainMarketCompetitive": [
+              "LLM-assisted HR improves clarity and consistency.",
+              "Reduce repetitive writing for HR agents."
+            ],
+            "techSpecsBestPractices": [
+              "Prompt templates; guardrails; storage policies.",
+              "KB workflow with reviewer approvals."
+            ],
+            "problem": "Agents spend time drafting updates.",
+            "hypothesis": "Auto-summaries improve speed and quality.",
+            "prototype": [
+              "Draft HR response; generate KB article.",
+              "Track adoption & CSAT shift."
+            ]
+          }
+        }
+      ]
+    },
+
     {
       "name": "CSM",
-      "parent": {
-        "domain": "CSM aims for deflection, omnichannel routing and entitlement-aware SLAs.",
-        "tech": "Agent Workspace, AWA, Portal, KB/Search, Entitlements, SLAs; optional agentic assistants for triage and responses.",
-        "problem": "High volume and long wait times reduce CSAT.",
-        "hypothesis": "Deflection + skills routing improves FCR and reduces handle time.",
-        "prototype": "Portal wizard \u2192 case only if needed \u2192 skills-based assignment \u2192 CSAT capture."
+      "moduleOverview": {
+        "domainMarketCompetitive": [
+          "Domain: Case mgmt, omnichannel, entitlements, deflection.",
+          "Market: AI chat, intent detection, proactive service.",
+          "Competitive: SN CSM vs Salesforce/Zendesk; edge via workflow + PI/GenAI."
+        ],
+        "techSpecsBestPractices": [
+          "Case tables, SLAs/entitlements; PI intent; IntegrationHub (CRM/telephony).",
+          "Knowledge tuning; analytics; escalation flows."
+        ],
+        "problem": "High AHT, uneven quality across channels.",
+        "hypothesis": "PI routing + GenAI guidance reduces AHT and raises FCR/CSAT.",
+        "prototype": [
+          "Omnichannel intake → PI intent → Agentic escalations.",
+          "GenAI suggestions; KB links; outcome dashboards."
+        ]
       },
       "projects": [
         {
           "title": "ServiceNow_CSM_Project1",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project1",
-          "image_key": "csm1"
+          "image": "assets/csm1.png",
+          "summary": "Case management + AI-assisted replies.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Respond faster with consistent tone.",
+              "Deflect via self-service and guided flows."
+            ],
+            "techSpecsBestPractices": [
+              "Case table; reply templates; GenAI actions.",
+              "Audit & privacy; feedback loop on suggestions."
+            ],
+            "problem": "Slow responses and inconsistent messaging.",
+            "hypothesis": "GenAI drafts reduce AHT while improving quality.",
+            "prototype": [
+              "Prompted reply drafts; agent edit & send.",
+              "Telemetry: acceptance rate & time saved."
+            ]
+          }
         },
         {
           "title": "ServiceNow_CSM_Project2",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project2",
-          "image_key": "csm2"
+          "image": "assets/csm2.png",
+          "summary": "Omnichannel + IntegrationHub automations.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Unified view removes swivel-chair.",
+              "Workflows across CRM/billing/fulfillment."
+            ],
+            "techSpecsBestPractices": [
+              "Inbound channels; IntegrationHub spokes; retries/idempotency.",
+              "Entitlement checks; SLA adherence."
+            ],
+            "problem": "Channel silos and manual handoffs.",
+            "hypothesis": "Orchestration improves FCR and agent experience.",
+            "prototype": [
+              "Channel → case → subflow action.",
+              "Escalation ladder; notifications."
+            ]
+          }
         },
         {
           "title": "ServiceNow_CSM_Project3",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project3",
-          "image_key": "csm3"
+          "image": "assets/csm3.png",
+          "summary": "Agentic workflows + SLAs.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Proactive case handling reduces churn.",
+              "Differentiate with smart escalations."
+            ],
+            "techSpecsBestPractices": [
+              "Decision tables; timers; knowledge suggestions.",
+              "Role-based views; analytics by segment."
+            ],
+            "problem": "Reactive operations and delayed escalations.",
+            "hypothesis": "Agentic SLAs boost speed and consistency.",
+            "prototype": [
+              "Breach-risk detection → proactive subflow.",
+              "Supervisor visibility & guardrails."
+            ]
+          }
         },
         {
           "title": "ServiceNow_CSM_Project4",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project4",
-          "image_key": "csm4"
+          "image": "assets/csm4.png",
+          "summary": "GenAI auto-summaries, deflection analytics.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Deflection + quality of self-service matters to cost/CSAT.",
+              "LLM guidance scales expertise."
+            ],
+            "techSpecsBestPractices": [
+              "KB tuning; search analytics; summary prompts.",
+              "A/B tests for response patterns."
+            ],
+            "problem": "Support volume growth with limited staff.",
+            "hypothesis": "Summaries + deflection free up agents.",
+            "prototype": [
+              "Auto-summary to case + KB recommendation.",
+              "Deflection dashboard with trend lines."
+            ]
+          }
         }
       ]
     },
+
     {
       "name": "GRC",
-      "parent": {
-        "domain": "GRC unifies risks, controls, policies and evidence\u2014important for AI governance too.",
-        "tech": "Risk Register, Controls, Policies, Assessments, Issues, Attestations, Evidence; optional agentic evidence collection workflows.",
-        "problem": "Manual, siloed compliance and unclear ownership.",
-        "hypothesis": "Centralized evidence and continuous monitoring reduce audit findings.",
-        "prototype": "Risk KRIs \u2192 control tests \u2192 issue workflows \u2192 exportable audit packs."
+      "moduleOverview": {
+        "domainMarketCompetitive": [
+          "Domain: Risk, policy, compliance, audits, vendor risk, issues.",
+          "Market: Continuous control monitoring (CCM) and AI evidence checks.",
+          "Competitive: SN GRC vs Archer/OneTrust; platform advantage via workflow + CMDB context."
+        ],
+        "techSpecsBestPractices": [
+          "Risk register, controls/tests, issues/tasks; SoD; approvals.",
+          "RBAC/ACLs; audit trails; data retention; evidence integrity."
+        ],
+        "problem": "Manual control testing and siloed evidence delay audits.",
+        "hypothesis": "Automated controls + AI evidence matching accelerate audits and reduce risk.",
+        "prototype": [
+          "Scheduled control tests → issues → remediation.",
+          "Vendor risk intake; dashboards for compliance posture."
+        ]
       },
       "projects": [
         {
           "title": "ServiceNow_GRC_Project1",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project1",
-          "image_key": "grc1"
+          "image": "assets/grc1.png",
+          "summary": "Risk register + policy workflow.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Policy-to-control linkage drives enforcement.",
+              "Comparative edge: native workflow + CMDB impact."
+            ],
+            "techSpecsBestPractices": [
+              "Risk statements, controls, policy lifecycle; approvals.",
+              "Audit trail; retention; segregation of duties."
+            ],
+            "problem": "Unclear control ownership and stale risks.",
+            "hypothesis": "Workflow clarity raises closure rates.",
+            "prototype": [
+              "Risk intake → scoring → treatment tasks.",
+              "Policy versioning + attestations."
+            ]
+          }
         },
         {
           "title": "ServiceNow_GRC_Project2",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project2",
-          "image_key": "grc2"
+          "image": "assets/grc2.png",
+          "summary": "Vendor risk + automated controls.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Third-party risk is a top audit focus.",
+              "Automations reduce questionnaire fatigue."
+            ],
+            "techSpecsBestPractices": [
+              "Vendor tiering; control profiles; evidence attachments.",
+              "Exception handling; renewal checks; reminders."
+            ],
+            "problem": "Manual vendor assessments and renewals.",
+            "hypothesis": "Automation accelerates assessments and reduces risk.",
+            "prototype": [
+              "Vendor intake → tier scoring → control checks.",
+              "Exception tasks + dashboard."
+            ]
+          }
         },
         {
           "title": "ServiceNow_GRC_Project3",
           "repo": "https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project3",
-          "image_key": "grc3"
+          "image": "assets/grc3.png",
+          "summary": "Audits + evidence collection workflow.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Evidence integrity and traceability are audit must-haves.",
+              "Workflow-first audits reduce cycle time."
+            ],
+            "techSpecsBestPractices": [
+              "Audit engagement → tasks → evidence; approvals.",
+              "Immutable logs; retention; access control."
+            ],
+            "problem": "Evidence spread across email and drives.",
+            "hypothesis": "Centralized workflow accelerates audits.",
+            "prototype": [
+              "Evidence collection tasks; reviewer gates.",
+              "Audit status dashboard."
+            ]
+          }
         }
       ]
     }
