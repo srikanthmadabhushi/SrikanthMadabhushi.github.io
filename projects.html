@@ -1,163 +1,72 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects | Srikanth Madabhushi</title>
-  <style>
-    :root{
-      --bg:#f7fafc; --fg:#0b1220; --muted:#475569;
-      --glass: rgba(255,255,255,0.65); --glass-brd: rgba(15,23,42,0.12);
-      --btn: rgba(15,23,42,0.06); --btn-brd: rgba(15,23,42,0.18);
-      --ring:#2563eb; --brand1:#06b6d4; --brand2:#4f46e5;
-    }
-    [data-theme="dark"]{
-      --bg: #0b0f14; --fg:#e6edf3; --muted:#9fb2c7;
-      --glass: rgba(255,255,255,0.06); --glass-brd: rgba(255,255,255,0.18);
-      --btn: rgba(255,255,255,0.08); --btn-brd: rgba(255,255,255,0.25);
-      --ring:#60a5fa; --brand1:#22d3ee; --brand2:#4f46e5;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;}
-    a{color:inherit}
-    .container{max-width:1200px; margin:0 auto; padding:24px 18px 60px}
-    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:6px}
-    .title{font-size:clamp(22px,2.5vw,28px); font-weight:800}
-    .home-link,.tab,.btn{display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:9px 12px; border-radius:12px; background:var(--btn); border:1px solid var(--btn-brd); font-weight:600; font-size:14px; transition:transform .25s ease, box-shadow .25s ease}
-    .home-link:hover,.tab:hover,.btn:hover{transform:translateY(-1px); box-shadow:0 10px 25px -10px rgba(0,0,0,0.2)}
-    .sub{color:var(--muted); font-size:14px; margin-top:2px}
-    .tabs{display:flex; gap:10px; flex-wrap:wrap; position:sticky; top:0; background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.1)); padding:8px 0; backdrop-filter: blur(6px); z-index:5}
-    .tab.active{outline:3px solid var(--ring)}
-    .grid{display:grid; grid-template-columns:repeat(1, minmax(0,1fr)); gap:14px; margin-top:14px}
-    @media(min-width:720px){ .grid{grid-template-columns:repeat(2, minmax(0,1fr))} }
-    @media(min-width:1040px){ .grid{grid-template-columns:repeat(3, minmax(0,1fr))} }
-    .card{backdrop-filter: blur(8px); background:var(--glass); border:1px solid var(--glass-brd); border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:12px; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease}
-    .card:hover{transform: translateY(-2px) scale(1.01); box-shadow:0 18px 35px -18px rgba(0,0,0,0.25)}
-    .card h3{margin:0; font-size:16px}
-    .badge{position:absolute; top:12px; left:12px; display:inline-block; font-size:12px; color:#fff; background:linear-gradient(180deg, var(--brand1), var(--brand2)); padding:4px 10px; border-radius:999px}
-    .muted{color:var(--muted); font-size:13px}
-    .row{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
-    .thumb{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; border:1px solid var(--glass-brd)}
-    details{border:1px dashed var(--glass-brd); border-radius:12px; padding:10px 12px; background:transparent}
-    summary{cursor:pointer; font-weight:700}
-    .k-section{margin:10px 0 0; padding:8px 0 0; border-top:1px dashed var(--glass-brd)}
-    .k-section h4{margin:0 0 6px; font-size:13px; color:var(--fg); text-transform:uppercase; letter-spacing:.6px}
-    .k-section p{margin:0; font-size:13px; color:var(--muted)}
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projects — Srikanth Madabhushi</title>
+<link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div>
-        <div class="title">Projects Directory</div>
-        <div class="sub">Click a category to filter. Each card uses your uploaded /assets/*.jpg banner.</div>
-      </div>
-      <div style="display:flex; gap:8px;">
-        <a class="home-link" href="/">← Home</a>
-        <button class="home-link" id="theme">Toggle Theme</button>
-      </div>
-    </header>
-
-    <nav class="tabs" role="tablist" aria-label="Project categories">
-      <button class="tab active" role="tab" aria-selected="true" data-cat="ALL">All</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="ITSM">ITSM</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="ITOM">ITOM</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="GRC">GRC</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="CSM">CSM</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="HRSD">HRSD</button>
-    </nav>
-
-    <section id="grid" class="grid" aria-live="polite"></section>
-
-    <template id="card-template">
-      <article class="card">
-        <figure><img class="thumb" alt="Project banner" data-img /></figure>
-        <span class="badge" data-badge></span>
-        <h3 data-title></h3>
-        <p class="muted" data-desc></p>
-        <div class="row"><a class="btn" target="_blank" rel="noopener" data-link>🔗 View on GitHub</a></div>
-        <details>
-          <summary>Case‑Study Details</summary>
-          <div class="k-section"><h4>2) Market & Competitive Analysis</h4><p data-market>Trends, competitor posture, and user needs.</p></div>
-          <div class="k-section"><h4>3) Tech Specs & Best Practices</h4><p data-tech>ServiceNow version, tables, ACLs, testing, pipelines.</p></div>
-          <div class="k-section"><h4>4) Problem Statement</h4><p data-problem>Operational pain or gap addressed.</p></div>
-          <div class="k-section"><h4>5) Hypothesis</h4><p data-hypothesis>Expected KPI impact (MTTR, CSAT, SLA, etc.).</p></div>
-        </details>
-      </article>
-    </template>
+<nav>
+  <div><strong>Projects</strong></div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="Srikanth_Madabhushi_Resume.pdf" class="btn secondary">Resume</a>
+    <a href="https://www.linkedin.com/in/srikanthmadabhushi" target="_blank" rel="noopener" class="btn">LinkedIn</a>
   </div>
+</nav>
+<section class="container section">
+  <h1>Modules & Projects</h1>
+  <p class="small">Each project lists (1) Domain/Market, (2) Tech Specs & Best Practices, (3) Problem, (4) Hypothesis, and (5) Working Prototype, followed by a link.</p>
+</section>
 
-  <script>
-    const PROJECTS = [
-      // ITSM
-      {cat:'ITSM', title:'ServiceNow ITSM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1', img:'/assets/itsm1.png', desc:'Core ITSM workflows with incidents, SLAs, and knowledge integration.'},
-      {cat:'ITSM', title:'ServiceNow ITSM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2', img:'/assets/itsm2.png', desc:'Advanced routing, automation and reporting for service operations.'},
-      {cat:'ITSM', title:'ServiceNow ITSM Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3', img:'/assets/itsm3.png', desc:'Problem & change coordination patterns with CAB insights.'},
-      {cat:'ITSM', title:'ServiceNow ITSM Project 4', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project4', img:'/assets/itsm4.png', desc:'End‑to‑end service catalog and request fulfillment optimization.'},
+<section id="modules" class="container section"></section>
 
-      // ITOM
-      {cat:'ITOM', title:'ServiceNow ITOM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1', img:'/assets/itom1.png', desc:'Discovery, CMDB hygiene, and event correlation groundwork.'},
-      {cat:'ITOM', title:'ServiceNow ITOM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2', img:'/assets/itom2.png', desc:'Service mapping and health dashboards for proactive ops.'},
-      {cat:'ITOM', title:'ServiceNow ITOM Project 4', url:'https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4', img:'/assets/itom4.png', desc:'Federated AIOps (PDI Simulation) with anomaly detection.'},
-
-      // GRC
-      {cat:'GRC', title:'ServiceNow GRC Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project1', img:'/assets/grc1.png', desc:'Policy & compliance management foundations.'},
-      {cat:'GRC', title:'ServiceNow GRC Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project2', img:'/assets/grc2.png', desc:'Risk registers, assessments, and issue response.'},
-      {cat:'GRC', title:'ServiceNow GRC Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project3', img:'/assets/grc3.png', desc:'Continuous monitoring & reporting automation.'},
-
-      // CSM
-      {cat:'CSM', title:'ServiceNow CSM Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project1', img:'/assets/csm1.png', desc:'Customer service workflows with case management.'},
-      {cat:'CSM', title:'ServiceNow CSM Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project2', img:'/assets/csm2.png', desc:'Omnichannel and knowledge‑driven deflection.'},
-      {cat:'CSM', title:'ServiceNow CSM Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project3', img:'/assets/csm3.png', desc:'Entitlement, SLAs, and customer insights.'},
-
-      // HRSD
-      {cat:'HRSD', title:'ServiceNow HRSD Project 1', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project1', img:'/assets/hrsd1.png', desc:'HR case and knowledge portal essentials.'},
-      {cat:'HRSD', title:'ServiceNow HRSD Project 2', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project2', img:'/assets/hrsd2.png', desc:'Lifecycle events and onboarding flows.'},
-      {cat:'HRSD', title:'ServiceNow HRSD Project 3', url:'https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project3', img:'/assets/hrsd3.png', desc:'HR service catalog and SLA tracking.'},
-    ];
-
-    const q=(s,el=document)=>el.querySelector(s);
-    const qa=(s,el=document)=>[...el.querySelectorAll(s)];
-    function render(category='ALL'){
-      const grid=q('#grid'); grid.innerHTML='';
-      const list=category==='ALL'?PROJECTS:PROJECTS.filter(p=>p.cat===category);
-      const tpl=q('#card-template');
-      if(!list.length){ grid.innerHTML='<div class="tile">No projects yet.</div>'; return; }
-      list.forEach(p=>{
-        const node=tpl.content.cloneNode(true);
-        q('[data-badge]',node).textContent=p.cat;
-        q('[data-title]',node).textContent=p.title;
-        q('[data-desc]',node).textContent=p.desc||'';
-        q('[data-link]',node).href=p.url;
-        const img=q('[data-img]',node);
-        img.src=p.img; img.alt=`${p.title} banner`;
-        img.addEventListener('click',()=> window.open(p.url,'_blank','noopener'));
-        grid.appendChild(node);
+<script>
+async function load() { 
+  const resp = await fetch('projects.json');
+  const data = await resp.json();
+  const wrap = document.getElementById('modules');
+  data.modules.forEach(m => {
+    const h = document.createElement('h2');
+    h.id = m.name;
+    h.textContent = m.name;
+    wrap.appendChild(h);
+    const grid = document.createElement('div');
+    grid.className = 'grid';
+    wrap.appendChild(grid);
+    m.projects.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      const t = document.createElement('h3');
+      t.innerHTML = p.title;
+      const ul = document.createElement('ul');
+      ul.className = 'project-points';
+      const points = [
+        ['Domain & Market', p.domain],
+        ['Tech Specs & Best Practices', p.tech],
+        ['Problem', p.problem],
+        ['Hypothesis', p.hypothesis],
+        ['Working Prototype', p.prototype]
+      ];
+      points.forEach(([k,v]) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${k}:</strong> ${v}`;
+        ul.appendChild(li);
       });
-    }
-    function setActive(btn){
-      qa('.tab').forEach(b=>{ b.classList.toggle('active', b===btn); b.setAttribute('aria-selected', b===btn?'true':'false'); });
-    }
-    qa('.tab').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        const cat=btn.dataset.cat;
-        const url=new URL(window.location);
-        if(cat==='ALL'){ url.searchParams.delete('cat'); } else { url.searchParams.set('cat',cat); }
-        history.replaceState(null,'',url);
-        setActive(btn); render(cat);
-      });
+      const link = document.createElement('p');
+      link.innerHTML = `<a href="${p.repo}" target="_blank" rel="noopener" class="btn secondary">View Repository</a>`;
+      card.appendChild(t);
+      card.appendChild(ul);
+      card.appendChild(link);
+      grid.appendChild(card);
     });
-    const initial=new URL(window.location).searchParams.get('cat')||'ALL';
-    const initBtn=qa('.tab').find(b=>b.dataset.cat===initial)||q('.tab');
-    setActive(initBtn); render(initial);
+  });
+}
+load();
+</script>
 
-    const key='theme-pref', root=document.documentElement;
-    const saved=localStorage.getItem(key);
-    if(saved){ root.setAttribute('data-theme', saved); }
-    document.getElementById('theme').addEventListener('click', ()=>{
-      const cur=root.getAttribute('data-theme')==='dark'?'light':'dark';
-      root.setAttribute('data-theme', cur); localStorage.setItem(key, cur);
-    });
-  </script>
+<footer class="container footer small">Back to <a href="index.html">Home</a></footer>
 </body>
 </html>

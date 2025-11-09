@@ -1,47 +1,200 @@
-[
-  {
-    "module": "ITSM",
-    "title": "Agentic AI Auto-Resolution",
-    "summary": "Self-healing incident flow using Predictive Intelligence + Agentic AI to detect, diagnose, and remediate incidents.",
-    "ai_focus": "Predictive Intelligence, Agentic AI",
-    "integrations": "Jira, Snowflake, Slack/Teams",
-    "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1",
-    "image": "https://images.unsplash.com/photo-1542751110-97427bbecf20"
-  },
-  {
-    "module": "ITOM",
-    "title": "Federated AIOps",
-    "summary": "Multi-region anomaly detection and shared-learning orchestration for self-healing systems.",
-    "ai_focus": "Federated Learning, AIOps",
-    "integrations": "Jira, Snowflake, Slack/Teams",
-    "repo": "",
-    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
-  },
-  {
-    "module": "CSM",
-    "title": "Predictive Customer Experience",
-    "summary": "Sentiment-based case routing and proactive support.",
-    "ai_focus": "Sentiment Modeling",
-    "integrations": "Jira, Slack/Teams",
-    "repo": "",
-    "image": "https://images.unsplash.com/photo-1544717305-996b815c338c"
-  },
-  {
-    "module": "HRSD",
-    "title": "AI Employee Care Bot",
-    "summary": "Virtual Agent with GenAI responses for HR queries.",
-    "ai_focus": "Conversational AI",
-    "integrations": "Teams, Snowflake",
-    "repo": "",
-    "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296"
-  },
-  {
-    "module": "GRC",
-    "title": "AI Risk Intelligence",
-    "summary": "Automated control tests and AI-generated compliance summaries.",
-    "ai_focus": "GenAI Summarization",
-    "integrations": "Confluence, Jira",
-    "repo": "",
-    "image": "https://images.unsplash.com/photo-1556745757-8d76bdb6984b"
-  }
-]
+{
+  "modules": [
+    {
+      "name": "ITSM",
+      "projects": [
+        {
+          "title": "ServiceNow_ITSM_Project1",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1",
+          "domain": "ITSM market shifts to AI triage, predictive routing; competition: ServiceNow, BMC, Ivanti, Jira SM.",
+          "tech": "Zurich \u00b7 Incident + Predictive Intelligence + Flow Designer \u00b7 UI Policies \u00b7 Client Scripts \u00b7 KB links.",
+          "problem": "Manual, inconsistent triage increases MTTR and cost.",
+          "hypothesis": "Automated categorization & routing will reduce MTTR 30\u201340% and improve CSAT.",
+          "prototype": "Flow triggers on Incident create \u2192 Decision \u2192 Assign group \u2192 Notify \u2192 Update state; validated on sample tickets."
+        },
+        {
+          "title": "ServiceNow_ITSM_Project2",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2",
+          "domain": "Demand for self-service + GenAI virtual agents; emphasis on deflection and accurate knowledge.",
+          "tech": "Virtual Agent + Catalog + KB + Flow Designer; intent models; RBAC; analytics dashboards.",
+          "problem": "High call volume and backlog due to repetitive requests.",
+          "hypothesis": "VA + deflection will cut live-agent contacts by 25\u201340%.",
+          "prototype": "VA topics route to catalog items; auto-fulfillment flows; CSAT survey captured in VA end states."
+        },
+        {
+          "title": "ServiceNow_ITSM_Project3",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3",
+          "domain": "SRE/DevOps alignment with change risk scoring; need safer, faster releases.",
+          "tech": "Change Management \u00b7 Risk calc policies \u00b7 CI/CD webhooks \u00b7 Approvals \u00b7 CAB workbench.",
+          "problem": "Change failures causing incidents and downtime.",
+          "hypothesis": "Risk-based approvals reduce change-induced incidents by 20%.",
+          "prototype": "Auto risk score from CI impact/priority; dynamic approvals; post-implementation review workflow."
+        },
+        {
+          "title": "ServiceNow_ITSM_Project4",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project4",
+          "domain": "Problem management + root-cause knowledge to curb repeat incidents.",
+          "tech": "Problem Mgmt \u00b7 Known Error DB \u00b7 CMDB relationships \u00b7 Task SLAs \u00b7 Comms plans.",
+          "problem": "Recurring incidents due to lack of root-cause tracking.",
+          "hypothesis": "Structured problem process reduces repeat incidents 15\u201325%.",
+          "prototype": "Problem from major incident; RCAs linked to CIs; KE articles published; measure recurrences."
+        }
+      ]
+    },
+    {
+      "name": "HRSD",
+      "projects": [
+        {
+          "title": "ServiceNow_HRSD_Project1",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project1",
+          "domain": "HR case automation; sensitive data handling; guided decisions.",
+          "tech": "HR Case Mgmt \u00b7 Lifecycle Events \u00b7 Decision table + Flow Designer \u00b7 Encryption/RBAC.",
+          "problem": "Slow HR routing and policy inconsistency.",
+          "hypothesis": "Decision tables assign to the right HR team, cutting resolution by 30%.",
+          "prototype": "On case create \u2192 Decision: category \u2192 Update assignment \u2192 Notify; audit trail enabled."
+        },
+        {
+          "title": "ServiceNow_HRSD_Project2",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project2",
+          "domain": "Employee experience portals; knowledge-driven self-service.",
+          "tech": "Employee Center \u00b7 HR Catalog \u00b7 KB search; accessibility and localization.",
+          "problem": "Employees confused by scattered HR resources.",
+          "hypothesis": "Curated EC + KB reduces HR case intake 20\u201330%.",
+          "prototype": "EC cards \u2192 HR catalog flows; CSAT widget; search telemetry dashboard."
+        },
+        {
+          "title": "ServiceNow_HRSD_Project3",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project3",
+          "domain": "Compliance-heavy HR processes need transparency and auditability.",
+          "tech": "Document Mgmt \u00b7 e-Sign \u00b7 Records retention \u00b7 Data masking.",
+          "problem": "Audit gaps across HR processes.",
+          "hypothesis": "Standardized artifacts + retention reduce audit findings.",
+          "prototype": "Templates with approval flows; retention schedules; exportable evidence set."
+        },
+        {
+          "title": "ServiceNow_HRSD_Project4",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project4",
+          "domain": "Analytics to improve HR services and workforce satisfaction.",
+          "tech": "PA (Performance Analytics) \u00b7 HR KPIs \u00b7 Segmentation by location/role.",
+          "problem": "No visibility into HR SLAs and bottlenecks.",
+          "hypothesis": "Actionable KPIs improve SLA attainment by 10\u201315%.",
+          "prototype": "Scorecards and breakdowns; trend widgets; improvement initiatives tracked."
+        }
+      ]
+    },
+    {
+      "name": "ITOM",
+      "projects": [
+        {
+          "title": "ServiceNow_ITOM_Project1",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1",
+          "domain": "Need unified visibility of infra & apps; CMDB is foundational.",
+          "tech": "CMDB \u00b7 Discovery \u00b7 Service Mapping \u00b7 Health KPIs.",
+          "problem": "Fragmented asset data and blind spots.",
+          "hypothesis": "Accurate CMDB improves incident correlation and ownership.",
+          "prototype": "Discovery schedules; patterns tuned; CI relationships visualized; health dashboard."
+        },
+        {
+          "title": "ServiceNow_ITOM_Project2",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2",
+          "domain": "Event Mgmt consolidation; noise reduction; actionable alerts.",
+          "tech": "Event Mgmt \u00b7 Alert Correlation \u00b7 Thresholds \u00b7 Integrations.",
+          "problem": "Alert fatigue and slow triage.",
+          "hypothesis": "Correlation + de-dup reduces alert noise 40\u201360%.",
+          "prototype": "Ingestion \u2192 dedup rules \u2192 assignment \u2192 incident creation via policies."
+        },
+        {
+          "title": "ServiceNow_ITOM_Project4",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4",
+          "domain": "Cloud resource sprawl; need cost and performance insights.",
+          "tech": "Cloud Discovery \u00b7 Tagging \u00b7 Cost reports\u00b7 Automation policies.",
+          "problem": "Uncontrolled cloud growth; budget risk.",
+          "hypothesis": "Tagging + cleanup policies reduce idle spend 10\u201320%.",
+          "prototype": "Inventory by tag; idle detectors; auto-stop nonprod out-of-hours."
+        },
+        {
+          "title": "ServiceNow_ITOM_Project5",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project5",
+          "domain": "AIOps to detect anomalies and prevent incidents.",
+          "tech": "Health Log Analytics \u00b7 Anomaly detection \u00b7 Runbook automation.",
+          "problem": "Reactive operations causing outages.",
+          "hypothesis": "AIOps enables proactive fixes; fewer P1 incidents.",
+          "prototype": "Log patterns \u2192 anomalies \u2192 trigger runbooks \u2192 verify metrics dip."
+        }
+      ]
+    },
+    {
+      "name": "CSM",
+      "projects": [
+        {
+          "title": "ServiceNow_CSM_Project1",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project1",
+          "domain": "Customer service deflection via portals and AI search.",
+          "tech": "CSM Cases \u00b7 Portal \u00b7 KB \u00b7 Search tuning \u00b7 SLAs.",
+          "problem": "High ticket volume; long waits.",
+          "hypothesis": "Deflection + guided flows reduce cases 20\u201330%.",
+          "prototype": "Portal wizard \u2192 case creation only when needed; CSAT tracking."
+        },
+        {
+          "title": "ServiceNow_CSM_Project2",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project2",
+          "domain": "Omnichannel engagement and case routing.",
+          "tech": "Advanced Work Assignment \u00b7 Channels \u00b7 Agent workspace.",
+          "problem": "Mismatched skills to cases; idle time.",
+          "hypothesis": "Skill-based routing boosts FCR and lowers handle time.",
+          "prototype": "Awa queue + skills; assignment rules; live metrics."
+        },
+        {
+          "title": "ServiceNow_CSM_Project3",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project3",
+          "domain": "Entitlement management to respect SLAs/contracts.",
+          "tech": "Entitlements \u00b7 Contracts \u00b7 Product models.",
+          "problem": "SLA breaches due to wrong entitlements.",
+          "hypothesis": "Automated entitlements raise compliance and CSAT.",
+          "prototype": "Contract lookup on account; SLA attach; breach alerts."
+        },
+        {
+          "title": "ServiceNow_CSM_Project4",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project4",
+          "domain": "Proactive support via telemetry and outreach.",
+          "tech": "Events \u2192 CSM cases; campaigns; knowledge suggestions.",
+          "problem": "Issues discovered only after customer complaints.",
+          "hypothesis": "Proactive outreach reduces escalations.",
+          "prototype": "Event triggers \u2192 bulk comms \u2192 cases pre-filled with diagnostics."
+        }
+      ]
+    },
+    {
+      "name": "GRC",
+      "projects": [
+        {
+          "title": "ServiceNow_GRC_Project1",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project1",
+          "domain": "Integrated risk management as AI adoption grows.",
+          "tech": "Policies \u00b7 Risks \u00b7 Controls \u00b7 Issues \u00b7 Assessments.",
+          "problem": "Siloed risk tracking and unclear ownership.",
+          "hypothesis": "Unified GRC lowers risk exposure and audit findings.",
+          "prototype": "Risk register with KRIs; control tests; issue remediation workflow."
+        },
+        {
+          "title": "ServiceNow_GRC_Project2",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project2",
+          "domain": "Regulatory alignment incl. data privacy and AI governance.",
+          "tech": "Policy exceptions \u00b7 Attestations \u00b7 Evidence mgmt.",
+          "problem": "Manual, error-prone compliance reporting.",
+          "hypothesis": "Evidence automation shortens audits and increases accuracy.",
+          "prototype": "Periodic attestations; evidence library; exportable audit pack."
+        },
+        {
+          "title": "ServiceNow_GRC_Project3",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project3",
+          "domain": "Third-party/vendor risk intensifies in complex supply chains.",
+          "tech": "TPRM \u00b7 Questionnaires \u00b7 Findings \u00b7 Inherent/residual scoring.",
+          "problem": "Opaque vendor risks impacting delivery and security.",
+          "hypothesis": "Structured TPRM reduces incidents from vendor failures.",
+          "prototype": "Tiering vendors; auto questionnaires; remediation tracking."
+        }
+      ]
+    }
+  ]
+}
