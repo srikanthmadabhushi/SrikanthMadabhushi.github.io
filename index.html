@@ -1,59 +1,203 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Srikanth Madabhushi — ServiceNow + AI Portfolio</title>
-<link rel="stylesheet" href="styles.css"/>
+  <meta charset="utf-8" />
+  <title>Srikanth | ServiceNow + AI Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="assets/banner.svg" as="image" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<nav>
-  <div class="brand">Srikanth Madabhushi</div>
-  <div class="links">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="blog.html">Blog</a>
-    <a href="Srikanth_Madabhushi_Resume.pdf" class="btn secondary">Resume (PDF)</a>
-    <a href="https://www.linkedin.com/in/srikanthmadabhushi" target="_blank" rel="noopener" class="btn">LinkedIn</a>
-  </div>
-</nav>
+  <!-- Top bar -->
+  <header class="site container">
+    <a class="brand" href="#">Srikanth</a>
+    <nav class="nav">
+      <a href="#itsm">ITSM</a>
+      <a href="#itom">ITOM</a>
+      <a href="#hrsd">HRSD</a>
+      <a href="#csm">CSM</a>
+      <a href="#grc">GRC</a>
+      <a href="#about">About</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section class="banner">
-  <img src="assets/banner.svg" alt="ServiceNow + AI banner"/>
-</section>
+  <!-- Banner (responsive by CSS) -->
+  <section class="hero">
+    <img src="assets/banner.svg" alt="ServiceNow + AI banner" />
+  </section>
 
-<section class="container section">
-  <h1>ServiceNow + AI</h1>
-  <p class="small">Automation · Predictive Intelligence · Agentic AI Workflows · Generative AI, Agentic AI.</p>
-  <div class="grid">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>COO-minded technologist pursuing an MS in AI. I combine <strong>ServiceNow</strong> with <strong>AI</strong> (GenAI + Agentic workflows) to drive measurable outcomes in operations, governance, and UX.</p>
-      <ul class="small">
-        <li>Focus: ITSM · ITOM · CSM · HRSD · GRC</li>
-        <li>Interests: AIOps, automation, responsible AI, evidence-driven decisions</li>
-      </ul>
+  <!-- About -->
+  <section id="about" class="container section">
+    <h1>ServiceNow + AI Portfolio</h1>
+    <p>
+      I build practical ServiceNow solutions using automation, IntegrationHub/APIs, Predictive Intelligence, Agentic Workflows,
+      Generative AI, Agentic AI, and AIOps. This page showcases hands-on projects across ITSM, ITOM, HRSD, CSM, and GRC.
+    </p>
+    <div class="links">
+      <a class="btn" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn secondary" href="assets/Srikanth_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
     </div>
-    <div class="card" style="text-align:center">
-      <img src="assets/profile.jpg" alt="Your profile photo" style="width:200px;height:200px;border-radius:16px;border:1px solid #1f2a44;object-fit:cover" onerror="this.src='assets/profile-placeholder.svg'"/>
-      <p class="small">Place your photo as <code>assets/profile.jpg</code>.</p>
+  </section>
+
+  <!-- ITSM -->
+  <section id="itsm" class="container section">
+    <h2>ITSM</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="assets/itsm1.png" alt="ITSM Project 1" loading="lazy">
+        <h3>ServiceNow_ITSM_Project1</h3>
+        <p>Incident/Request flows with AI-assisted routing & knowledge.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/itsm2.png" alt="ITSM Project 2" loading="lazy">
+        <h3>ServiceNow_ITSM_Project2</h3>
+        <p>GenAI summaries + assignment predictions.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/itsm3.png" alt="ITSM Project 3" loading="lazy">
+        <h3>ServiceNow_ITSM_Project3</h3>
+        <p>Agentic workflows + IntegrationHub orchestration.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/itsm4.png" alt="ITSM Project 4" loading="lazy">
+        <h3>ServiceNow_ITSM_Project4</h3>
+        <p>End-to-end SLA design, reporting, dashboards.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project4" target="_blank">View Repo</a>
+      </article>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="container section">
-  <h2>Explore Modules</h2>
-  <div class="grid">
-    <a class="card" href="projects.html#ITSM"><h3>ITSM</h3><p>AI triage, routing, and knowledge</p></a>
-    <a class="card" href="projects.html#ITOM"><h3>ITOM</h3><p>CMDB, Discovery, AIOps</p></a>
-    <a class="card" href="projects.html#HRSD"><h3>HRSD</h3><p>HR lifecycle and guided decisions</p></a>
-    <a class="card" href="projects.html#CSM"><h3>CSM</h3><p>Deflection, SLAs, omnichannel</p></a>
-    <a class="card" href="projects.html#GRC"><h3>GRC</h3><p>Policies, risks, controls</p></a>
-  </div>
-</section>
+  <!-- ITOM -->
+  <section id="itom" class="container section">
+    <h2>ITOM</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="assets/itom1.png" alt="ITOM Project 1" loading="lazy">
+        <h3>ServiceNow_ITOM_Project1</h3>
+        <p>Discovery + CMDB health with automated fixes.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/itom2.png" alt="ITOM Project 2" loading="lazy">
+        <h3>ServiceNow_ITOM_Project2</h3>
+        <p>Event Management + anomaly detection.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/itom4.png" alt="ITOM Project 4" loading="lazy">
+        <h3>ServiceNow_ITOM_Project4</h3>
+        <p>Service Mapping visuals + health signals.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/itom5.png" alt="ITOM Project 5" loading="lazy">
+        <h3>ServiceNow_ITOM_Project5</h3>
+        <p>Predictive AIOps + auto-remediation.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project5" target="_blank">View Repo</a>
+      </article>
+    </div>
+  </section>
 
-<footer class="container footer small">
-  © 2025 Srikanth Madabhushi · GitHub Pages
-</footer>
+  <!-- HRSD -->
+  <section id="hrsd" class="container section">
+    <h2>HRSD</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="assets/hrsd1.png" alt="HRSD Project 1" loading="lazy">
+        <h3>HRSD_Project1</h3>
+        <p>HR case lifecycle + decision tables.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project1" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/hrsd2.png" alt="HRSD Project 2" loading="lazy">
+        <h3>HRSD_Project2</h3>
+        <p>Flow Designer routing for categories.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project2" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/hrsd3.png" alt="HRSD Project 3" loading="lazy">
+        <h3>HRSD_Project3</h3>
+        <p>PI classification + resolution SLAs.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project3" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/hrsd4.png" alt="HRSD Project 4" loading="lazy">
+        <h3>HRSD_Project4</h3>
+        <p>GenAI case summaries & knowledge.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project4" target="_blank">View Repo</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CSM -->
+  <section id="csm" class="container section">
+    <h2>CSM</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="assets/csm1.png" alt="CSM Project 1" loading="lazy">
+        <h3>CSM_Project1</h3>
+        <p>Case management + AI-assisted replies.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project1" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/csm2.png" alt="CSM Project 2" loading="lazy">
+        <h3>CSM_Project2</h3>
+        <p>Omnichannel + IntegrationHub automations.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project2" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/csm3.png" alt="CSM Project 3" loading="lazy">
+        <h3>CSM_Project3</h3>
+        <p>Agentic workflows + SLAs.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project3" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/csm4.png" alt="CSM Project 4" loading="lazy">
+        <h3>CSM_Project4</h3>
+        <p>GenAI auto-summaries, deflection analytics.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project4" target="_blank">View Repo</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- GRC -->
+  <section id="grc" class="container section">
+    <h2>GRC</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="assets/grc1.png" alt="GRC Project 1" loading="lazy">
+        <h3>GRC_Project1</h3>
+        <p>Risk register + policy workflow.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project1" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/grc2.png" alt="GRC Project 2" loading="lazy">
+        <h3>GRC_Project2</h3>
+        <p>Vendor risk + automated controls.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project2" target="_blank">View Repo</a>
+      </article>
+      <article class="card">
+        <img src="assets/grc3.png" alt="GRC Project 3" loading="lazy">
+        <h3>GRC_Project3</h3>
+        <p>Audits + evidence collection workflow.</p>
+        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project3" target="_blank">View Repo</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Blog / Contact -->
+  <section id="blog" class="container section">
+    <h2>Blog</h2>
+    <p>Coming soon: daily LinkedIn articles reposted here.</p>
+  </section>
+
+  <footer id="contact" class="container footer">
+    <p>© Srikanth Madabhushi · ServiceNow + AI Portfolio</p>
+  </footer>
 </body>
 </html>
