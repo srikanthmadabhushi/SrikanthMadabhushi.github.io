@@ -3,10 +3,10 @@
     {
       "name": "ITSM",
       "parent": {
-        "domain": "ITSM is shifting to AI triage, predictive routing and self\u2011service. Competitors: ServiceNow, BMC Helix, Ivanti, Jira Service Mgmt.",
-        "tech": "Incident/Request/KB, Predictive Intelligence, Flow Designer, UI Policies, Client Scripts, RBAC; ITIL\u2011aligned processes.",
+        "domain": "ITSM is shifting to AI triage, predictive routing and self-service. Competitors: ServiceNow, BMC Helix, Ivanti, Jira Service Mgmt.",
+        "tech": "Incident/Request/KB, Predictive Intelligence, Flow Designer, UI Policies, Client Scripts, RBAC; ITIL-aligned processes; optional agentic orchestration via IntegrationHub.",
         "problem": "Manual triage increases MTTR and cost; inconsistent categorization and routing.",
-        "hypothesis": "AI\u2011assisted categorization + automation will cut MTTR 30\u201340% and lift CSAT.",
+        "hypothesis": "AI-assisted categorization + automation will cut MTTR 30\u201340% and lift CSAT.",
         "prototype": "Incident create \u2192 prediction \u2192 assignment \u2192 notify \u2192 SLA tracking; dashboards monitor MTTR and reassignments."
       },
       "projects": [
@@ -36,7 +36,7 @@
       "name": "HRSD",
       "parent": {
         "domain": "HRSD focuses on employee experience, guided decisions and secure handling of sensitive HR data.",
-        "tech": "HR Case Mgmt, Lifecycle Events, Decision Tables, Flow Designer, Encryption/RBAC, PA analytics.",
+        "tech": "HR Case Mgmt, Lifecycle Events, Decision Tables, Flow Designer, Encryption/RBAC, Performance Analytics; optional agentic approvals for complex cases.",
         "problem": "Slow HR routing and policy inconsistency reduce employee satisfaction.",
         "hypothesis": "Decision tables + automation reduce resolution time ~30%.",
         "prototype": "Case create \u2192 decision route \u2192 assignment \u2192 comms \u2192 audit trail and PA KPIs."
@@ -68,7 +68,7 @@
       "name": "ITOM",
       "parent": {
         "domain": "ITOM centers on CMDB, discovery, service mapping and AIOps for proactive incident prevention.",
-        "tech": "CMDB, Discovery, Service Mapping, Event Mgmt, Health Log Analytics, Runbook Automation.",
+        "tech": "CMDB, Discovery, Service Mapping, Event Mgmt, Health Log Analytics, Runbook Automation; optional agentic remediation via IntegrationHub.",
         "problem": "Blind spots and alert fatigue slow response and increase risk.",
         "hypothesis": "Good CMDB + correlation + AIOps lowers noise 40\u201360% and speeds resolution.",
         "prototype": "Discovery \u2192 CI relations \u2192 event ingest \u2192 correlation \u2192 runbook triggers \u2192 incident linkage."
@@ -99,11 +99,11 @@
     {
       "name": "CSM",
       "parent": {
-        "domain": "CSM aims for deflection, omnichannel routing and entitlement\u2011aware SLAs.",
-        "tech": "Agent Workspace, AWA, Portal, KB/Search, Entitlements, SLAs.",
+        "domain": "CSM aims for deflection, omnichannel routing and entitlement-aware SLAs.",
+        "tech": "Agent Workspace, AWA, Portal, KB/Search, Entitlements, SLAs; optional agentic assistants for triage and responses.",
         "problem": "High volume and long wait times reduce CSAT.",
         "hypothesis": "Deflection + skills routing improves FCR and reduces handle time.",
-        "prototype": "Portal wizard \u2192 case only if needed \u2192 skills\u2011based assignment \u2192 CSAT capture."
+        "prototype": "Portal wizard \u2192 case only if needed \u2192 skills-based assignment \u2192 CSAT capture."
       },
       "projects": [
         {
@@ -132,7 +132,7 @@
       "name": "GRC",
       "parent": {
         "domain": "GRC unifies risks, controls, policies and evidence\u2014important for AI governance too.",
-        "tech": "Risk Register, Controls, Policies, Assessments, Issues, Attestations, Evidence.",
+        "tech": "Risk Register, Controls, Policies, Assessments, Issues, Attestations, Evidence; optional agentic evidence collection workflows.",
         "problem": "Manual, siloed compliance and unclear ownership.",
         "hypothesis": "Centralized evidence and continuous monitoring reduce audit findings.",
         "prototype": "Risk KRIs \u2192 control tests \u2192 issue workflows \u2192 exportable audit packs."
@@ -154,18 +154,6 @@
           "image_key": "grc3"
         }
       ]
-    },
-    {
-      "name": "AGENTIC",
-      "display_name": "Agentic AI",
-      "parent": {
-        "domain": "Agentic AI uses autonomous agents with tool\u2011use to execute multi\u2011step tasks (e.g., analyze incidents, call APIs, update records).",
-        "tech": "LLM planning + tools (REST APIs, Scripted Actions), evaluators, guardrails, audit logging; human\u2011in\u2011the\u2011loop for high\u2011risk actions.",
-        "problem": "Manual cross\u2011system coordination slows operations and introduces errors.",
-        "hypothesis": "Agentic workflows will speed resolution and reduce handoffs in ITSM/ITOM/CSM scenarios.",
-        "prototype": "Agent plans steps \u2192 queries CMDB/KB \u2192 proposes actions \u2192 runs flows via IntegrationHub \u2192 captures evidence and metrics."
-      },
-      "projects": []
     }
   ]
 }

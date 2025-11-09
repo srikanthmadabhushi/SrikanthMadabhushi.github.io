@@ -19,20 +19,16 @@
 
 <section class="container section">
   <h1>Modules & Projects</h1>
-  <p class="small">For each module, you’ll see the parent overview (domain/market, tech specs & best practices, problem, hypothesis, prototype), followed by the projects.</p>
+  <p class="small">For each module, you’ll see the parent overview (domain/market, tech specs & best practices, problem, hypothesis, prototype), followed by the projects with images.</p>
 </section>
 
 <section id="modules" class="container section"></section>
 
 <script>
 function tryImage(key){
-  const exts = ['.png','.jpg','.jpeg','.svg','.webp'];
-  for (let i=0;i<exts.length;i++){
-    const path = 'assets/' + key + exts[i];
-    // We will return the first attempt and rely on onerror swap below.
-    return path;
-  }
-  return '';
+  const order = ['.png','.jpg','.jpeg','.svg','.webp'];
+  // First attempt will be .png; onerror handler below will try others.
+  return 'assets/' + key + order[0];
 }
 
 async function load(){
@@ -44,7 +40,7 @@ async function load(){
     section.className = 'module';
     const title = document.createElement('h2');
     title.id = m.name;
-    title.textContent = m.display_name ? m.display_name : m.name;
+    title.textContent = m.name;
     section.appendChild(title);
 
     if(m.parent){
@@ -70,6 +66,7 @@ async function load(){
     if(m.projects && m.projects.length){
       const grid = document.createElement('div');
       grid.className = 'projects';
+      section.appendChild(grid);
       m.projects.forEach(p => {
         const card = document.createElement('div');
         card.className = 'card project-card';
@@ -79,12 +76,10 @@ async function load(){
         img.src = tryImage(p.image_key);
         img.onerror = function(){
           const order = ['png','jpg','jpeg','svg','webp'];
-          let i = 0;
+          let i = 1;
           const next = () => {
             if(i>=order.length) return;
-            const trySrc = 'assets/' + p.image_key + '.' + order[i++];
-            if(this.src.endsWith(trySrc)) { next(); return; }
-            this.src = trySrc;
+            this.src = 'assets/' + p.image_key + '.' + order[i++];
           };
           next();
         };
@@ -98,7 +93,6 @@ async function load(){
         card.appendChild(link);
         grid.appendChild(card);
       });
-      section.appendChild(grid);
     }
 
     wrap.appendChild(section);
