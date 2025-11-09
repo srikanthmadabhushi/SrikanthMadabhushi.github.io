@@ -1,9 +1,101 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="360" viewBox="0 0 1600 360">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#111827"/>
+    <!-- Brand-inspired gradient: emerald to cyan -->
+    <linearGradient id="bggrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b3d2e"/>
+      <stop offset="50%" stop-color="#0f6b4d"/>
       <stop offset="100%" stop-color="#0ea5e9"/>
     </linearGradient>
+
+    <!-- Soft radial glows -->
+    <radialGradient id="glow1" cx="0.2" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.85" cy="0.3" r="0.5">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0f2942" stroke-width="1"/>
+    </pattern>
+
+    <!-- Neon glow filter for headline -->
+    <filter id="neon">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft shadow for chips -->
+    <filter id="soft">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Wavy shape -->
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.35"/>
+    </linearGradient>
   </defs>
-  <rect width="1600" height="360" fill="url(#g)"/>
+
+  <!-- Background layers -->
+  <rect width="1600" height="360" fill="url(#bggrad)"/>
+  <rect width="1600" height="360" fill="url(#grid)" opacity="0.25"/>
+  <rect width="1600" height="360" fill="url(#glow1)"/>
+  <rect width="1600" height="360" fill="url(#glow2)"/>
+
+  <!-- Decorative waves -->
+  <path d="M0,260 C250,210 380,310 600,270 C900,210 1100,300 1600,240 L1600,360 L0,360 Z" fill="url(#wave)"/>
+  <path d="M0,300 C300,260 450,330 700,300 C1000,260 1200,330 1600,290 L1600,360 L0,360 Z" fill="url(#wave)" opacity="0.6"/>
+
+  <!-- Circuit nodes & links (abstract AI motif) -->
+  <g stroke="#9ae6b4" stroke-opacity="0.55">
+    <circle cx="220" cy="120" r="3" fill="#9ae6b4"/>
+    <circle cx="360" cy="170" r="3" fill="#9ae6b4"/>
+    <circle cx="520" cy="110" r="3" fill="#9ae6b4"/>
+    <circle cx="680" cy="150" r="3" fill="#9ae6b4"/>
+    <circle cx="840" cy="90" r="3" fill="#9ae6b4"/>
+    <circle cx="1020" cy="140" r="3" fill="#9ae6b4"/>
+    <circle cx="1180" cy="100" r="3" fill="#9ae6b4"/>
+    <circle cx="1360" cy="160" r="3" fill="#9ae6b4"/>
+    <path d="M220,120 L360,170 L520,110 L680,150 L840,90 L1020,140 L1180,100 L1360,160" fill="none"/>
+  </g>
+
+  <!-- Headline and sub -->
+  <g transform="translate(80, 90)" filter="url(#neon)">
+    <text x="0" y="0" font-family="Inter,Segoe UI,Arial" font-size="44" font-weight="800" fill="#e2e8f0">
+      ServiceNow + AI
+    </text>
+    <text x="0" y="40" font-family="Inter,Segoe UI,Arial" font-size="18" fill="#cbd5e1" opacity="0.95">
+      Automation · Predictive Intelligence · Agentic Workflows
+    </text>
+  </g>
+
+  <!-- Tech chips -->
+  <g transform="translate(80, 150)" filter="url(#soft)">
+    <rect x="0" y="0" width="150" height="32" rx="16" fill="#0b2138" stroke="#1f4a6e"/>
+    <text x="75" y="22" text-anchor="middle" font-family="Inter,Arial" font-size="14" fill="#cfe8ff">Flow Designer</text>
+
+    <rect x="166" y="0" width="168" height="32" rx="16" fill="#0b2138" stroke="#1f4a6e"/>
+    <text x="250" y="22" text-anchor="middle" font-family="Inter,Arial" font-size="14" fill="#cfe8ff">Predictive Intelligence</text>
+
+    <rect x="350" y="0" width="140" height="32" rx="16" fill="#0b2138" stroke="#1f4a6e"/>
+    <text x="420" y="22" text-anchor="middle" font-family="Inter,Arial" font-size="14" fill="#cfe8ff">Agentic AI</text>
+
+    <rect x="506" y="0" width="170" height="32" rx="16" fill="#0b2138" stroke="#1f4a6e"/>
+    <text x="591" y="22" text-anchor="middle" font-family="Inter,Arial" font-size="14" fill="#cfe8ff">IntegrationHub / APIs</text>
+  </g>
+
+  <!-- Right-side abstract cube -->
+  <g transform="translate(1260, 70)">
+    <polygon points="0,50 60,20 120,50 60,80" fill="#0ea5e9" opacity="0.55"/>
+    <polygon points="60,20 120,50 120,120 60,90" fill="#22c55e" opacity="0.45"/>
+    <polygon points="60,90 120,120 60,150 0,120" fill="#0ea5e9" opacity="0.35"/>
+    <polygon points="0,50 60,20 60,90 0,120" fill="#22c55e" opacity="0.35"/>
+  </g>
 </svg>
