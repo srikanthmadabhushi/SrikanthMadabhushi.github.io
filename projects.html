@@ -8,7 +8,7 @@
 </head>
 <body>
 <nav>
-  <div><strong>Projects</strong></div>
+  <div class="brand">Projects</div>
   <div class="links">
     <a href="index.html">Home</a>
     <a href="blog.html">Blog</a>
@@ -16,52 +16,92 @@
     <a href="https://www.linkedin.com/in/srikanthmadabhushi" target="_blank" rel="noopener" class="btn">LinkedIn</a>
   </div>
 </nav>
+
 <section class="container section">
   <h1>Modules & Projects</h1>
-  <p class="small">Each project lists (1) Domain/Market, (2) Tech Specs & Best Practices, (3) Problem, (4) Hypothesis, and (5) Working Prototype, followed by a link.</p>
+  <p class="small">For each module, you’ll see the parent overview (domain/market, tech specs & best practices, problem, hypothesis, prototype), followed by the projects.</p>
 </section>
 
 <section id="modules" class="container section"></section>
 
 <script>
-async function load() { 
+function tryImage(key){
+  const exts = ['.png','.jpg','.jpeg','.svg','.webp'];
+  for (let i=0;i<exts.length;i++){
+    const path = 'assets/' + key + exts[i];
+    // We will return the first attempt and rely on onerror swap below.
+    return path;
+  }
+  return '';
+}
+
+async function load(){
   const resp = await fetch('projects.json');
   const data = await resp.json();
   const wrap = document.getElementById('modules');
   data.modules.forEach(m => {
-    const h = document.createElement('h2');
-    h.id = m.name;
-    h.textContent = m.name;
-    wrap.appendChild(h);
-    const grid = document.createElement('div');
-    grid.className = 'grid';
-    wrap.appendChild(grid);
-    m.projects.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      const t = document.createElement('h3');
-      t.innerHTML = p.title;
+    const section = document.createElement('div');
+    section.className = 'module';
+    const title = document.createElement('h2');
+    title.id = m.name;
+    title.textContent = m.display_name ? m.display_name : m.name;
+    section.appendChild(title);
+
+    if(m.parent){
+      const parent = document.createElement('div');
+      parent.className = 'card parent';
       const ul = document.createElement('ul');
-      ul.className = 'project-points';
       const points = [
-        ['Domain & Market', p.domain],
-        ['Tech Specs & Best Practices', p.tech],
-        ['Problem', p.problem],
-        ['Hypothesis', p.hypothesis],
-        ['Working Prototype', p.prototype]
+        ['Domain & Market', m.parent.domain],
+        ['Tech Specs & Best Practices', m.parent.tech],
+        ['Problem', m.parent.problem],
+        ['Hypothesis', m.parent.hypothesis],
+        ['Working Prototype', m.parent.prototype]
       ];
       points.forEach(([k,v]) => {
         const li = document.createElement('li');
-        li.innerHTML = `<strong>${k}:</strong> ${v}`;
+        li.innerHTML = '<strong>'+k+':</strong> ' + v;
         ul.appendChild(li);
       });
-      const link = document.createElement('p');
-      link.innerHTML = `<a href="${p.repo}" target="_blank" rel="noopener" class="btn secondary">View Repository</a>`;
-      card.appendChild(t);
-      card.appendChild(ul);
-      card.appendChild(link);
-      grid.appendChild(card);
-    });
+      parent.appendChild(ul);
+      section.appendChild(parent);
+    }
+
+    if(m.projects && m.projects.length){
+      const grid = document.createElement('div');
+      grid.className = 'projects';
+      m.projects.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'card project-card';
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.alt = p.title + ' image';
+        img.src = tryImage(p.image_key);
+        img.onerror = function(){
+          const order = ['png','jpg','jpeg','svg','webp'];
+          let i = 0;
+          const next = () => {
+            if(i>=order.length) return;
+            const trySrc = 'assets/' + p.image_key + '.' + order[i++];
+            if(this.src.endsWith(trySrc)) { next(); return; }
+            this.src = trySrc;
+          };
+          next();
+        };
+        const h4 = document.createElement('h4');
+        h4.textContent = p.title;
+        const link = document.createElement('div');
+        link.className = 'links';
+        link.innerHTML = `<a href="${p.repo}" target="_blank" rel="noopener" class="btn secondary">View Repository</a>`;
+        card.appendChild(img);
+        card.appendChild(h4);
+        card.appendChild(link);
+        grid.appendChild(card);
+      });
+      section.appendChild(grid);
+    }
+
+    wrap.appendChild(section);
   });
 }
 load();
