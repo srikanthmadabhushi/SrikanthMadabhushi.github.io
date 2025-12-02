@@ -14,7 +14,7 @@
           "Security: RBAC, ACLs, Data Policies; naming/versioning; test in sub-prod; metrics dashboards."
         ],
         "problem": "High MTTR and inconsistent categorization/assignment cause delays and poor CSAT.",
-        "hypothesis": "PI + Agentic Workflows + GenAI summaries reduce triage/resolution by 30–40% and improve CSAT.",
+        "hypothesis": "PI + Agentic Workflows + GenAI summaries reduce triage/resolution by 30\u201340% and improve CSAT.",
         "prototype": [
           "Auto-categorize/assign incidents via PI; route through subflows.",
           "GenAI case/incident summaries and KB suggestions.",
@@ -111,10 +111,153 @@
               "Drill-downs for breached/at-risk SLAs."
             ]
           }
+        },
+        {
+          "title": "ServiceNow ITSM Project 4",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project4",
+          "image": "assets/itsm4.png",
+          "summary": "Advanced ITSM automation project.",
+          "points": {
+            "domainMarketCompetitive": [
+              "AI-driven workflow acceleration",
+              "Competitive automation benchmark"
+            ],
+            "techSpecsBestPractices": [
+              "Flow Designer",
+              "IntegrationHub",
+              "Scoped App Governance"
+            ],
+            "problem": "Manual operations reduce efficiency.",
+            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "prototype": [
+              "Build subflows",
+              "Add triggers",
+              "Validate KPIs"
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow ITSM Project 5",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project5",
+          "image": "assets/itsm5.png",
+          "summary": "Advanced ITSM automation project.",
+          "points": {
+            "domainMarketCompetitive": [
+              "AI-driven workflow acceleration",
+              "Competitive automation benchmark"
+            ],
+            "techSpecsBestPractices": [
+              "Flow Designer",
+              "IntegrationHub",
+              "Scoped App Governance"
+            ],
+            "problem": "Manual operations reduce efficiency.",
+            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "prototype": [
+              "Build subflows",
+              "Add triggers",
+              "Validate KPIs"
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow ITSM Project 6",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project6",
+          "image": "assets/itsm6.png",
+          "summary": "Advanced ITSM automation project.",
+          "points": {
+            "domainMarketCompetitive": [
+              "AI-driven workflow acceleration",
+              "Competitive automation benchmark"
+            ],
+            "techSpecsBestPractices": [
+              "Flow Designer",
+              "IntegrationHub",
+              "Scoped App Governance"
+            ],
+            "problem": "Manual operations reduce efficiency.",
+            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "prototype": [
+              "Build subflows",
+              "Add triggers",
+              "Validate KPIs"
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow ITSM Project 7",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project7",
+          "image": "assets/itsm7.png",
+          "summary": "Advanced ITSM automation project.",
+          "points": {
+            "domainMarketCompetitive": [
+              "AI-driven workflow acceleration",
+              "Competitive automation benchmark"
+            ],
+            "techSpecsBestPractices": [
+              "Flow Designer",
+              "IntegrationHub",
+              "Scoped App Governance"
+            ],
+            "problem": "Manual operations reduce efficiency.",
+            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "prototype": [
+              "Build subflows",
+              "Add triggers",
+              "Validate KPIs"
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow ITSM Project 8",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project8",
+          "image": "assets/itsm8.png",
+          "summary": "Advanced ITSM automation project.",
+          "points": {
+            "domainMarketCompetitive": [
+              "AI-driven workflow acceleration",
+              "Competitive automation benchmark"
+            ],
+            "techSpecsBestPractices": [
+              "Flow Designer",
+              "IntegrationHub",
+              "Scoped App Governance"
+            ],
+            "problem": "Manual operations reduce efficiency.",
+            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "prototype": [
+              "Build subflows",
+              "Add triggers",
+              "Validate KPIs"
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow ITSM Project 9",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project9",
+          "image": "assets/itsm9.png",
+          "summary": "Advanced ITSM automation project.",
+          "points": {
+            "domainMarketCompetitive": [
+              "AI-driven workflow acceleration",
+              "Competitive automation benchmark"
+            ],
+            "techSpecsBestPractices": [
+              "Flow Designer",
+              "IntegrationHub",
+              "Scoped App Governance"
+            ],
+            "problem": "Manual operations reduce efficiency.",
+            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "prototype": [
+              "Build subflows",
+              "Add triggers",
+              "Validate KPIs"
+            ]
+          }
         }
       ]
     },
-
     {
       "name": "ITOM",
       "moduleOverview": {
@@ -131,7 +274,7 @@
         "problem": "Alert noise and incomplete CMDB slow RCA and increase MTTR.",
         "hypothesis": "Service maps + correlation + AIOps reduce noise and speed remediation.",
         "prototype": [
-          "Event ingestion table; correlation → create incident/change.",
+          "Event ingestion table; correlation \u2192 create incident/change.",
           "Auto-remediation subflows; health dashboards and CMDB KPIs."
         ]
       },
@@ -166,7 +309,7 @@
           "points": {
             "domainMarketCompetitive": [
               "Noise reduction is essential for SRE productivity.",
-              "Differentiator: event → action via platform flows."
+              "Differentiator: event \u2192 action via platform flows."
             ],
             "techSpecsBestPractices": [
               "Event rules, correlation; PI anomalies; incident linkage.",
@@ -192,7 +335,7 @@
             ],
             "techSpecsBestPractices": [
               "Top-down mapping; credentials; patterns; change sync.",
-              "Health aggregation; impact rules → incident priorities."
+              "Health aggregation; impact rules \u2192 incident priorities."
             ],
             "problem": "Teams cannot see blast radius for failures.",
             "hypothesis": "Maps + health scores improve incident triage.",
@@ -219,14 +362,61 @@
             "problem": "Recurring incidents consume SRE time.",
             "hypothesis": "Predict + pre-empt recurring failures.",
             "prototype": [
-              "Predictive signal → subflow action.",
+              "Predictive signal \u2192 subflow action.",
               "Rollback if validation fails."
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow ITOM Project 7",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project7",
+          "image": "assets/itom7.png",
+          "summary": "ITOM automation and AIOps project.",
+          "points": {
+            "domainMarketCompetitive": [
+              "AI-driven workflow acceleration",
+              "Competitive automation benchmark"
+            ],
+            "techSpecsBestPractices": [
+              "Flow Designer",
+              "IntegrationHub",
+              "Scoped App Governance"
+            ],
+            "problem": "Manual operations reduce efficiency.",
+            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "prototype": [
+              "Build subflows",
+              "Add triggers",
+              "Validate KPIs"
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow ITOM Project 8",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project8",
+          "image": "assets/itom8.png",
+          "summary": "ITOM automation and AIOps project.",
+          "points": {
+            "domainMarketCompetitive": [
+              "AI-driven workflow acceleration",
+              "Competitive automation benchmark"
+            ],
+            "techSpecsBestPractices": [
+              "Flow Designer",
+              "IntegrationHub",
+              "Scoped App Governance"
+            ],
+            "problem": "Manual operations reduce efficiency.",
+            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "prototype": [
+              "Build subflows",
+              "Add triggers",
+              "Validate KPIs"
             ]
           }
         }
       ]
     },
-
     {
       "name": "HRSD",
       "moduleOverview": {
@@ -286,7 +476,7 @@
             "problem": "Manual HR case handoffs.",
             "hypothesis": "Standardized flows cut handling time.",
             "prototype": [
-              "Trigger → decision → update → notify.",
+              "Trigger \u2192 decision \u2192 update \u2192 notify.",
               "Dashboard: backlog & SLA compliance."
             ]
           }
@@ -337,7 +527,6 @@
         }
       ]
     },
-
     {
       "name": "CSM",
       "moduleOverview": {
@@ -353,7 +542,7 @@
         "problem": "High AHT, uneven quality across channels.",
         "hypothesis": "PI routing + GenAI guidance reduces AHT and raises FCR/CSAT.",
         "prototype": [
-          "Omnichannel intake → PI intent → Agentic escalations.",
+          "Omnichannel intake \u2192 PI intent \u2192 Agentic escalations.",
           "GenAI suggestions; KB links; outcome dashboards."
         ]
       },
@@ -397,7 +586,7 @@
             "problem": "Channel silos and manual handoffs.",
             "hypothesis": "Orchestration improves FCR and agent experience.",
             "prototype": [
-              "Channel → case → subflow action.",
+              "Channel \u2192 case \u2192 subflow action.",
               "Escalation ladder; notifications."
             ]
           }
@@ -419,7 +608,7 @@
             "problem": "Reactive operations and delayed escalations.",
             "hypothesis": "Agentic SLAs boost speed and consistency.",
             "prototype": [
-              "Breach-risk detection → proactive subflow.",
+              "Breach-risk detection \u2192 proactive subflow.",
               "Supervisor visibility & guardrails."
             ]
           }
@@ -448,7 +637,6 @@
         }
       ]
     },
-
     {
       "name": "GRC",
       "moduleOverview": {
@@ -464,7 +652,7 @@
         "problem": "Manual control testing and siloed evidence delay audits.",
         "hypothesis": "Automated controls + AI evidence matching accelerate audits and reduce risk.",
         "prototype": [
-          "Scheduled control tests → issues → remediation.",
+          "Scheduled control tests \u2192 issues \u2192 remediation.",
           "Vendor risk intake; dashboards for compliance posture."
         ]
       },
@@ -486,7 +674,7 @@
             "problem": "Unclear control ownership and stale risks.",
             "hypothesis": "Workflow clarity raises closure rates.",
             "prototype": [
-              "Risk intake → scoring → treatment tasks.",
+              "Risk intake \u2192 scoring \u2192 treatment tasks.",
               "Policy versioning + attestations."
             ]
           }
@@ -508,7 +696,7 @@
             "problem": "Manual vendor assessments and renewals.",
             "hypothesis": "Automation accelerates assessments and reduces risk.",
             "prototype": [
-              "Vendor intake → tier scoring → control checks.",
+              "Vendor intake \u2192 tier scoring \u2192 control checks.",
               "Exception tasks + dashboard."
             ]
           }
@@ -524,7 +712,7 @@
               "Workflow-first audits reduce cycle time."
             ],
             "techSpecsBestPractices": [
-              "Audit engagement → tasks → evidence; approvals.",
+              "Audit engagement \u2192 tasks \u2192 evidence; approvals.",
               "Immutable logs; retention; access control."
             ],
             "problem": "Evidence spread across email and drives.",
