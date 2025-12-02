@@ -14,7 +14,7 @@
           "Security: RBAC, ACLs, Data Policies; naming/versioning; test in sub-prod; metrics dashboards."
         ],
         "problem": "High MTTR and inconsistent categorization/assignment cause delays and poor CSAT.",
-        "hypothesis": "PI + Agentic Workflows + GenAI summaries reduce triage/resolution by 30\u201340% and improve CSAT.",
+        "hypothesis": "PI + Agentic Workflows + GenAI summaries reduce triage/resolution by 30–40% and improve CSAT.",
         "prototype": [
           "Auto-categorize/assign incidents via PI; route through subflows.",
           "GenAI case/incident summaries and KB suggestions.",
@@ -111,9 +111,32 @@
               "Drill-downs for breached/at-risk SLAs."
             ]
           }
-        }
+        },
+         {
+          "title": "ServiceNow_ITSM_Project5",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project5",
+          "image": "assets/itsm5.png",
+          "summary": "AI-Enhanced Incident Notification Flow",
+          "points": {
+            "domainMarketCompetitive": [
+              "LLM-assisted agents: summarize, extract intents, next-best-actions.",
+              "Competitive differentiator: reduce handle time without quality drop."
+            ],
+            "techSpecsBestPractices": [
+              "GenAI action for summarization; store to work notes or KB draft.",
+              "Guardrails: PII masking, prompt templates, human-in-the-loop."
+            ],
+            "problem": "Agents spend time writing updates; knowledge not captured.",
+            "hypothesis": "Auto-summaries improve throughput and knowledge reusability.",
+            "prototype": [
+              "Summarize resolution; propose KB; supervisor approval flow.",
+              "Telemetry: measure deflection & average summary time saved."
+            ]
+          }
+        },
       ]
     },
+
     {
       "name": "ITOM",
       "moduleOverview": {
@@ -130,7 +153,7 @@
         "problem": "Alert noise and incomplete CMDB slow RCA and increase MTTR.",
         "hypothesis": "Service maps + correlation + AIOps reduce noise and speed remediation.",
         "prototype": [
-          "Event ingestion table; correlation \u2192 create incident/change.",
+          "Event ingestion table; correlation → create incident/change.",
           "Auto-remediation subflows; health dashboards and CMDB KPIs."
         ]
       },
@@ -165,7 +188,7 @@
           "points": {
             "domainMarketCompetitive": [
               "Noise reduction is essential for SRE productivity.",
-              "Differentiator: event \u2192 action via platform flows."
+              "Differentiator: event → action via platform flows."
             ],
             "techSpecsBestPractices": [
               "Event rules, correlation; PI anomalies; incident linkage.",
@@ -191,7 +214,7 @@
             ],
             "techSpecsBestPractices": [
               "Top-down mapping; credentials; patterns; change sync.",
-              "Health aggregation; impact rules \u2192 incident priorities."
+              "Health aggregation; impact rules → incident priorities."
             ],
             "problem": "Teams cannot see blast radius for failures.",
             "hypothesis": "Maps + health scores improve incident triage.",
@@ -218,13 +241,14 @@
             "problem": "Recurring incidents consume SRE time.",
             "hypothesis": "Predict + pre-empt recurring failures.",
             "prototype": [
-              "Predictive signal \u2192 subflow action.",
+              "Predictive signal → subflow action.",
               "Rollback if validation fails."
             ]
           }
         }
       ]
     },
+
     {
       "name": "HRSD",
       "moduleOverview": {
@@ -284,7 +308,7 @@
             "problem": "Manual HR case handoffs.",
             "hypothesis": "Standardized flows cut handling time.",
             "prototype": [
-              "Trigger \u2192 decision \u2192 update \u2192 notify.",
+              "Trigger → decision → update → notify.",
               "Dashboard: backlog & SLA compliance."
             ]
           }
@@ -335,6 +359,7 @@
         }
       ]
     },
+
     {
       "name": "CSM",
       "moduleOverview": {
@@ -350,7 +375,7 @@
         "problem": "High AHT, uneven quality across channels.",
         "hypothesis": "PI routing + GenAI guidance reduces AHT and raises FCR/CSAT.",
         "prototype": [
-          "Omnichannel intake \u2192 PI intent \u2192 Agentic escalations.",
+          "Omnichannel intake → PI intent → Agentic escalations.",
           "GenAI suggestions; KB links; outcome dashboards."
         ]
       },
@@ -394,7 +419,7 @@
             "problem": "Channel silos and manual handoffs.",
             "hypothesis": "Orchestration improves FCR and agent experience.",
             "prototype": [
-              "Channel \u2192 case \u2192 subflow action.",
+              "Channel → case → subflow action.",
               "Escalation ladder; notifications."
             ]
           }
@@ -416,7 +441,7 @@
             "problem": "Reactive operations and delayed escalations.",
             "hypothesis": "Agentic SLAs boost speed and consistency.",
             "prototype": [
-              "Breach-risk detection \u2192 proactive subflow.",
+              "Breach-risk detection → proactive subflow.",
               "Supervisor visibility & guardrails."
             ]
           }
@@ -445,6 +470,7 @@
         }
       ]
     },
+
     {
       "name": "GRC",
       "moduleOverview": {
@@ -460,7 +486,7 @@
         "problem": "Manual control testing and siloed evidence delay audits.",
         "hypothesis": "Automated controls + AI evidence matching accelerate audits and reduce risk.",
         "prototype": [
-          "Scheduled control tests \u2192 issues \u2192 remediation.",
+          "Scheduled control tests → issues → remediation.",
           "Vendor risk intake; dashboards for compliance posture."
         ]
       },
@@ -482,7 +508,7 @@
             "problem": "Unclear control ownership and stale risks.",
             "hypothesis": "Workflow clarity raises closure rates.",
             "prototype": [
-              "Risk intake \u2192 scoring \u2192 treatment tasks.",
+              "Risk intake → scoring → treatment tasks.",
               "Policy versioning + attestations."
             ]
           }
@@ -504,7 +530,7 @@
             "problem": "Manual vendor assessments and renewals.",
             "hypothesis": "Automation accelerates assessments and reduces risk.",
             "prototype": [
-              "Vendor intake \u2192 tier scoring \u2192 control checks.",
+              "Vendor intake → tier scoring → control checks.",
               "Exception tasks + dashboard."
             ]
           }
@@ -520,7 +546,7 @@
               "Workflow-first audits reduce cycle time."
             ],
             "techSpecsBestPractices": [
-              "Audit engagement \u2192 tasks \u2192 evidence; approvals.",
+              "Audit engagement → tasks → evidence; approvals.",
               "Immutable logs; retention; access control."
             ],
             "problem": "Evidence spread across email and drives.",
