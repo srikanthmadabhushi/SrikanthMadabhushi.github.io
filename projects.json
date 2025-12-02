@@ -111,29 +111,7 @@
               "Drill-downs for breached/at-risk SLAs."
             ]
           }
-        },
-         {
-          "title": "ServiceNow_ITSM_Project5",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project5",
-          "image": "assets/itsm5.png",
-          "summary": "AI-Enhanced Incident Notification Flow",
-          "points": {
-            "domainMarketCompetitive": [
-              "LLM-assisted agents: summarize, extract intents, next-best-actions.",
-              "Competitive differentiator: reduce handle time without quality drop."
-            ],
-            "techSpecsBestPractices": [
-              "GenAI action for summarization; store to work notes or KB draft.",
-              "Guardrails: PII masking, prompt templates, human-in-the-loop."
-            ],
-            "problem": "Agents spend time writing updates; knowledge not captured.",
-            "hypothesis": "Auto-summaries improve throughput and knowledge reusability.",
-            "prototype": [
-              "Summarize resolution; propose KB; supervisor approval flow.",
-              "Telemetry: measure deflection & average summary time saved."
-            ]
-          }
-        },
+        }
       ]
     },
 
