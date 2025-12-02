@@ -1,0 +1,23 @@
+
+/* Enhancements: Hover glow, smooth transitions, card animations */
+.project-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 12px;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0, 128, 0, 0.35);
+}
+
+nav ul li a {
+  transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #00A86B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
