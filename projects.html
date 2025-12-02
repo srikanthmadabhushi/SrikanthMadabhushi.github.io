@@ -1,68 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Projects</title>
-<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects – Srikanth Madabhushi</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="site sticky">
-  <div class="container bar">
-    <a class="brand" href="index.html">Srikanth Madabhushi</a>
+
+<header>
+  <div class="container">
+    <div class="logo">Srikanth Madabhushi</div>
+
     <details class="menu">
-      <summary aria-label="Toggle menu"><span></span><span></span><span></span></summary>
+      <summary aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </summary>
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="index.html#future">Future 2025–2030</a>
         <a href="blog.html">Blog</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="#contact">Contact</a>
       </nav>
     </details>
+
   </div>
 </header>
 
 <section class="container section">
-<h1>Projects</h1>
-<div id="projects-root"></div>
+  <h1>Projects</h1>
+  <div id="projects-root"></div>
 </section>
 
+<footer>
+  <p>© 2025 Srikanth Madabhushi</p>
+</footer>
+
 <script>
-async function render(){
-  const root=document.getElementById('projects-root');
-  const res=await fetch('projects_final.json');
+async function renderProjects(){
+  const root=document.getElementById("projects-root");
+  const res=await fetch("projects.json?v=3001");
   const data=await res.json();
+  root.innerHTML="";
+
   data.modules.forEach(mod=>{
-    const sec=document.createElement('section');
-    sec.innerHTML=`<h2>${mod.name}</h2>`;
-    const grid=document.createElement('div');
-    grid.className='grid';
+    const sec=document.createElement("section");
+    sec.className="module-block";
+
+    const h=document.createElement("h2");
+    h.textContent=mod.name;
+    sec.appendChild(h);
+
+    const o=document.createElement("details");
+    o.open=true;
+    o.innerHTML=`<summary>Module Overview (5-Point)</summary>`;
+    const g=document.createElement("div");
+    g.className="overview-grid";
+
+    function card(t,c){return `<article class='overview-card'><h3>${t}</h3>${c}</article>`;}
+
+    g.innerHTML += card("1) Domain / Market / Competitive", `<ul>${mod.moduleOverview.domainMarketCompetitive.map(i=>`<li>${i}</li>`).join("")}</ul>`);
+    g.innerHTML += card("2) Tech Specs & Best Practices", `<ul>${mod.moduleOverview.techSpecsBestPractices.map(i=>`<li>${i}</li>`).join("")}</ul>`);
+    g.innerHTML += card("3) Problem Statement", `<p>${mod.moduleOverview.problem}</p>`);
+    g.innerHTML += card("4) Hypothesis", `<p>${mod.moduleOverview.hypothesis}</p>`);
+    g.innerHTML += card("5) Working Prototype", `<ul>${mod.moduleOverview.prototype.map(i=>`<li>${i}</li>`).join("")}</ul>`);
+
+    o.appendChild(g);
+    sec.appendChild(o);
+
+    const grid=document.createElement("div");
+    grid.className="grid";
+
     mod.projects.forEach(p=>{
-      const card=document.createElement('article');
-      card.className='card';
-      card.innerHTML=`
+      const repo=p.repo||p.link;
+
+      const c=document.createElement("article");
+      c.className="card";
+      c.innerHTML=`
         <img src="${p.image}">
         <h4>${p.title}</h4>
         <p>${p.summary||""}</p>
-        <a class="btn" href="${p.repo}" target="_blank">View Repo</a>
+        <a class="btn" href="${repo}" target="_blank">View Repo</a>
       `;
-      const d=document.createElement('details');
-      d.innerHTML=`<summary>Details (5‑Point)</summary>
-      <div class='proj-points'>
-        <div><strong>1) Domain / Market</strong><ul>${p.points.domainMarketPositioning.map(i=>`<li>${i}</li>`).join('')}</ul></div>
-        <div><strong>2) Technical Architecture</strong><ul>${p.points.technicalArchitecture.map(i=>`<li>${i}</li>`).join('')}</ul></div>
-        <div><strong>3) Problem</strong><p>${p.points.problem}</p></div>
-        <div><strong>4) Hypothesis</strong><p>${p.points.hypothesis}</p></div>
-        <div><strong>5) Prototype</strong><ul>${p.points.prototype.map(i=>`<li>${i}</li>`).join('')}</ul></div>
-      </div>`;
-      card.appendChild(d);
-      grid.appendChild(card);
+
+      const d=document.createElement("details");
+      d.className="project-details";
+      d.innerHTML=`<summary>Details (5-Point)</summary>`;
+
+      const pg=document.createElement("div");
+      pg.className="points-grid";
+
+      pg.innerHTML=`
+        <article><h4>1) Domain/Market/Competitive</h4><ul>${p.points.domainMarketCompetitive.map(i=>`<li>${i}</li>`).join("")}</ul></article>
+        <article><h4>2) Tech Specs & Best Practices</h4><ul>${p.points.techSpecsBestPractices.map(i=>`<li>${i}</li>`).join("")}</ul></article>
+        <article><h4>3) Problem</h4><p>${p.points.problem}</p></article>
+        <article><h4>4) Hypothesis</h4><p>${p.points.hypothesis}</p></article>
+        <article><h4>5) Working Prototype</h4><ul>${p.points.prototype.map(i=>`<li>${i}</li>`).join("")}</ul></article>
+      `;
+
+      d.appendChild(pg);
+      c.appendChild(d);
+      grid.appendChild(c);
     });
+
     sec.appendChild(grid);
     root.appendChild(sec);
   });
 }
-render();
+
+renderProjects();
 </script>
+
 </body>
 </html>

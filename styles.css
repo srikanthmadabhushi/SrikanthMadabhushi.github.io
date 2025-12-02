@@ -104,3 +104,41 @@ p{font-size:clamp(14px, 2.4vw, 16px);line-height:1.6;color:var(--muted);margin:6
   .avatar{width:80px;height:80px}
 }
 
+/* Hamburger Menu */
+.menu {
+  position: relative;
+  display: inline-block;
+}
+.menu summary {
+  list-style: none;
+  cursor: pointer;
+  width: 36px;
+}
+.menu summary::-webkit-details-marker { display:none; }
+.menu summary span {
+  display:block;
+  height:3px;
+  background:#333;
+  margin:6px 0;
+  border-radius:2px;
+}
+.nav {
+  display:none;
+  position:absolute;
+  top:40px;
+  right:0;
+  background:white;
+  border:1px solid #ddd;
+  padding:10px 0;
+  width:200px;
+  border-radius:8px;
+  z-index:999;
+}
+.menu[open] .nav { display:block; }
+.nav a {
+  display:block;
+  padding:10px 15px;
+  text-decoration:none;
+  color:#333;
+}
+.nav a:hover { background:#f2f2f2; }

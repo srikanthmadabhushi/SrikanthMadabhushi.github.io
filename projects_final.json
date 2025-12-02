@@ -5,69 +5,76 @@
       "projects": [
         {
           "title": "ServiceNow_ITSM_Project1",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project1",
           "image": "assets/itsm1.png",
-          "summary": "Incident/Request flows with AI-assisted routing & knowledge.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
-            "domainMarketCompetitive": [
-              "Use self-service intake + virtual agent handoff to reduce emails.",
-              "Compete on speed-to-resolution and transparency via SLAs/dashboards."
+            "domainMarketPositioning": [
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
-            "techSpecsBestPractices": [
-              "Flow: create/update incident; subflows for assignment & notifications.",
-              "Tables: incident, task_sla; KB: kb_knowledge; ACLs for sensitive fields."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Manual triage slows assignment and increases ping-pong.",
-            "hypothesis": "PI-based categorization + auto-assignment cuts triage time significantly.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Train PI model on historical incidents.",
-              "Add assignment rules & escalation timers.",
-              "Publish SLA/MTTR dashboard."
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
         {
           "title": "ServiceNow_ITSM_Project2",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project2",
           "image": "assets/itsm2.png",
-          "summary": "GenAI summaries + assignment predictions.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
-            "domainMarketCompetitive": [
-              "LLM-assisted agents: summarize, extract intents, next-best-actions.",
-              "Competitive differentiator: reduce handle time without quality drop."
+            "domainMarketPositioning": [
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
-            "techSpecsBestPractices": [
-              "GenAI action for summarization; store to work notes or KB draft.",
-              "Guardrails: PII masking, prompt templates, human-in-the-loop."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Agents spend time writing updates; knowledge not captured.",
-            "hypothesis": "Auto-summaries improve throughput and knowledge reusability.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Summarize resolution; propose KB; supervisor approval flow.",
-              "Telemetry: measure deflection & average summary time saved."
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
         {
           "title": "ServiceNow_ITSM_Project3",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project3",
           "image": "assets/itsm3.png",
-          "summary": "Agentic workflows + IntegrationHub orchestration.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
-            "domainMarketCompetitive": [
-              "Cross-system remediation lowers context switching.",
-              "Agentic orchestration drives proactive operations."
+            "domainMarketPositioning": [
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
-            "techSpecsBestPractices": [
-              "IntegrationHub spokes for CRM/Chat/Email; retries & idempotency.",
-              "Audit: update sets, scoped app, versioned subflows."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Multi-app handoffs create delays.",
-            "hypothesis": "Automated orchestration shortens resolution and reduces errors.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Decision tables trigger subflows.",
-              "Webhook triggers from monitoring tools.",
-              "Rollback subflow for failed remediations."
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
@@ -75,24 +82,24 @@
           "title": "ServiceNow_ITSM_Project4",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project4",
           "image": "assets/itsm4.png",
-          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
             "domainMarketPositioning": [
-              "Modern enterprise workflow automation",
-              "AI\u2011augmented service operations",
-              "Competitive differentiation via AI\u2011first workflows"
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
             "technicalArchitecture": [
               "Flow Designer + Subflows",
-              "IntegrationHub actions & REST APIs",
-              "Predictive Intelligence + GenAI Actions"
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
-            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Trigger-based automated workflow",
-              "AI classification and routing",
-              "Auto-remediation or guided resolution"
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
@@ -100,24 +107,24 @@
           "title": "ServiceNow_ITSM_Project5",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project5",
           "image": "assets/itsm5.png",
-          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
             "domainMarketPositioning": [
-              "Modern enterprise workflow automation",
-              "AI\u2011augmented service operations",
-              "Competitive differentiation via AI\u2011first workflows"
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
             "technicalArchitecture": [
               "Flow Designer + Subflows",
-              "IntegrationHub actions & REST APIs",
-              "Predictive Intelligence + GenAI Actions"
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
-            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Trigger-based automated workflow",
-              "AI classification and routing",
-              "Auto-remediation or guided resolution"
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
@@ -125,24 +132,24 @@
           "title": "ServiceNow_ITSM_Project6",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project6",
           "image": "assets/itsm6.png",
-          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
             "domainMarketPositioning": [
-              "Modern enterprise workflow automation",
-              "AI\u2011augmented service operations",
-              "Competitive differentiation via AI\u2011first workflows"
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
             "technicalArchitecture": [
               "Flow Designer + Subflows",
-              "IntegrationHub actions & REST APIs",
-              "Predictive Intelligence + GenAI Actions"
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
-            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Trigger-based automated workflow",
-              "AI classification and routing",
-              "Auto-remediation or guided resolution"
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
@@ -150,24 +157,24 @@
           "title": "ServiceNow_ITSM_Project7",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project7",
           "image": "assets/itsm7.png",
-          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
             "domainMarketPositioning": [
-              "Modern enterprise workflow automation",
-              "AI\u2011augmented service operations",
-              "Competitive differentiation via AI\u2011first workflows"
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
             "technicalArchitecture": [
               "Flow Designer + Subflows",
-              "IntegrationHub actions & REST APIs",
-              "Predictive Intelligence + GenAI Actions"
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
-            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Trigger-based automated workflow",
-              "AI classification and routing",
-              "Auto-remediation or guided resolution"
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
@@ -175,24 +182,24 @@
           "title": "ServiceNow_ITSM_Project8",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project8",
           "image": "assets/itsm8.png",
-          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
             "domainMarketPositioning": [
-              "Modern enterprise workflow automation",
-              "AI\u2011augmented service operations",
-              "Competitive differentiation via AI\u2011first workflows"
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
             "technicalArchitecture": [
               "Flow Designer + Subflows",
-              "IntegrationHub actions & REST APIs",
-              "Predictive Intelligence + GenAI Actions"
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
-            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Trigger-based automated workflow",
-              "AI classification and routing",
-              "Auto-remediation or guided resolution"
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
@@ -200,24 +207,24 @@
           "title": "ServiceNow_ITSM_Project9",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project9",
           "image": "assets/itsm9.png",
-          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
             "domainMarketPositioning": [
-              "Modern enterprise workflow automation",
-              "AI\u2011augmented service operations",
-              "Competitive differentiation via AI\u2011first workflows"
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
             "technicalArchitecture": [
               "Flow Designer + Subflows",
-              "IntegrationHub actions & REST APIs",
-              "Predictive Intelligence + GenAI Actions"
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
-            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Trigger-based automated workflow",
-              "AI classification and routing",
-              "Auto-remediation or guided resolution"
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         }
@@ -228,89 +235,101 @@
       "projects": [
         {
           "title": "ServiceNow_ITOM_Project1",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project1",
           "image": "assets/itom1.png",
-          "summary": "Discovery + CMDB health with automated fixes.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
-            "domainMarketCompetitive": [
-              "Accurate CMDB is the foundation for AIOps and impact analysis.",
-              "Compete on reliability and speed of change impact."
+            "domainMarketPositioning": [
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
-            "techSpecsBestPractices": [
-              "Identification/Normalization; CI health scores; out-of-box metrics.",
-              "Flow-based fixes; approvals for sensitive classes."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Stale/missing CIs break correlation and impact chains.",
-            "hypothesis": "Automated discovery + health drives better RCA.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Discovery schedules; reconciliation rules.",
-              "Health KPI widgets; auto-create tasks for gaps."
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
         {
           "title": "ServiceNow_ITOM_Project2",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project2",
           "image": "assets/itom2.png",
-          "summary": "Event Management + anomaly detection.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
-            "domainMarketCompetitive": [
-              "Noise reduction is essential for SRE productivity.",
-              "Differentiator: event \u2192 action via platform flows."
+            "domainMarketPositioning": [
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
-            "techSpecsBestPractices": [
-              "Event rules, correlation; PI anomalies; incident linkage.",
-              "Runbooks as subflows; throttling & retries."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Too many alerts, low signal-to-noise.",
-            "hypothesis": "Correlation + anomalies + runbooks cut noise by 40%.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Correlation examples; anomaly model on metrics.",
-              "Auto-ticket + enrich + close loop."
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
         {
           "title": "ServiceNow_ITOM_Project4",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project4",
           "image": "assets/itom4.png",
-          "summary": "Service Mapping visuals + health signals.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
-            "domainMarketCompetitive": [
-              "Business service views drive prioritization by impact.",
-              "Compete with topology-first observability tools."
+            "domainMarketPositioning": [
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
-            "techSpecsBestPractices": [
-              "Top-down mapping; credentials; patterns; change sync.",
-              "Health aggregation; impact rules \u2192 incident priorities."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Teams cannot see blast radius for failures.",
-            "hypothesis": "Maps + health scores improve incident triage.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Key service maps; CMDB relationships; impact calculators.",
-              "Service owner dashboards."
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
         {
           "title": "ServiceNow_ITOM_Project5",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project5",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project5",
           "image": "assets/itom5.png",
-          "summary": "Predictive AIOps + auto-remediation.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
-            "domainMarketCompetitive": [
-              "Shift from reactive to predictive ops.",
-              "Self-healing differentiates mature ops."
+            "domainMarketPositioning": [
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
-            "techSpecsBestPractices": [
-              "PI models; runbooks; safe-guard rails; change blackout.",
-              "Observability integration; post-remediation validation."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Recurring incidents consume SRE time.",
-            "hypothesis": "Predict + pre-empt recurring failures.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Predictive signal \u2192 subflow action.",
-              "Rollback if validation fails."
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
@@ -318,24 +337,24 @@
           "title": "ServiceNow_ITOM_Project7",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project7",
           "image": "assets/itom7.png",
-          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
             "domainMarketPositioning": [
-              "Modern enterprise workflow automation",
-              "AI\u2011augmented service operations",
-              "Competitive differentiation via AI\u2011first workflows"
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
             "technicalArchitecture": [
               "Flow Designer + Subflows",
-              "IntegrationHub actions & REST APIs",
-              "Predictive Intelligence + GenAI Actions"
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
-            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Trigger-based automated workflow",
-              "AI classification and routing",
-              "Auto-remediation or guided resolution"
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         },
@@ -343,24 +362,24 @@
           "title": "ServiceNow_ITOM_Project8",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project8",
           "image": "assets/itom8.png",
-          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
+          "summary": "AI\u2011driven professional ServiceNow implementation.",
           "points": {
             "domainMarketPositioning": [
-              "Modern enterprise workflow automation",
-              "AI\u2011augmented service operations",
-              "Competitive differentiation via AI\u2011first workflows"
+              "Enterprise workflow automation",
+              "AI\u2011augmented service delivery",
+              "Competitive differentiation with GenAI & AIOps"
             ],
             "technicalArchitecture": [
               "Flow Designer + Subflows",
-              "IntegrationHub actions & REST APIs",
-              "Predictive Intelligence + GenAI Actions"
+              "IntegrationHub + REST",
+              "PI + GenAI + Decision Logic"
             ],
-            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
-            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
+            "problem": "Manual processes slow service operations.",
+            "hypothesis": "Automation + AI reduces MTTR and improves CSAT.",
             "prototype": [
-              "Trigger-based automated workflow",
-              "AI classification and routing",
-              "Auto-remediation or guided resolution"
+              "Trigger \u2192 Flow \u2192 AI classification",
+              "Automated routing/remediation",
+              "Dashboards & analytics"
             ]
           }
         }
