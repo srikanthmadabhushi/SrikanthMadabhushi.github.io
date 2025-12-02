@@ -1,1 +1,42 @@
-<html>projects</html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Projects</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="enhancements.css">
+</head>
+<body>
+<nav>
+  <ul style="display:flex; gap:20px; list-style:none;">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">My Projects</a></li>
+    <li><a href="future.html">Future Vision 2025–2030</a></li>
+    <li><a href="blog.html">Blogs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<hr/>
+
+<h1>My Projects</h1>
+<div id="projects-container"></div>
+<script>
+// Load JSON dynamically
+fetch('projects.json')
+  .then(r => r.json())
+  .then(data => {
+      const container = document.getElementById('projects-container');
+      data.modules.forEach(module => {
+          const section = document.createElement('section');
+          section.innerHTML = `<h2>${module.title}</h2>`;
+          module.projects.forEach(p => {
+              const card = document.createElement('div');
+              card.innerHTML = `<strong>${p.title}</strong><br><a href="${p.link}" target="_blank">Open</a><hr/>`;
+              section.appendChild(card);
+          });
+          container.appendChild(section);
+      });
+  });
+</script>
+</body>
+</html>
