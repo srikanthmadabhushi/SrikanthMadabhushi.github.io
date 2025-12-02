@@ -111,26 +111,6 @@
               "Drill-downs for breached/at-risk SLAs."
             ]
           }
-        },
-        {
-          "title": "ServiceNow ITSM Project 5",
-          "link": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project5"
-        },
-        {
-          "title": "ServiceNow ITSM Project 6",
-          "link": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project6"
-        },
-        {
-          "title": "ServiceNow ITSM Project 7",
-          "link": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project7"
-        },
-        {
-          "title": "ServiceNow ITSM Project 8",
-          "link": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project8"
-        },
-        {
-          "title": "ServiceNow ITSM Project 9",
-          "link": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project9"
         }
       ]
     },
@@ -242,18 +222,6 @@
               "Rollback if validation fails."
             ]
           }
-        },
-        {
-          "title": "ServiceNow ITOM Project 6",
-          "link": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project6"
-        },
-        {
-          "title": "ServiceNow ITOM Project 7",
-          "link": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project7"
-        },
-        {
-          "title": "ServiceNow ITOM Project 8",
-          "link": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project8"
         }
       ]
     },
