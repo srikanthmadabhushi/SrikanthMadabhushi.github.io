@@ -1,181 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Srikanth Madabhushi| ServiceNow + AI Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preload" href="assets/banner.svg" as="image" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srikanth Madabhushi Portfolio</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Sticky Header -->
-  <header class="site sticky">
-    <div class="container bar">
-      <a class="brand" href="#">Srikanth Madabhushi</a>
-      <details class="menu">
-        <summary aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </summary>
-        <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#blog">Blog</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </details>
-    </div>
-  </header>
 
-  <!-- Top Banner -->
-  <section class="hero container">
-    <img src="assets/banner.svg" alt="ServiceNow + AI banner" />
-  </section>
+<header>
+  <div class="container">
+    <div class="logo">Srikanth Madabhushi</div>
 
-  <!-- About -->
-  <section id="about" class="container section">
+    <details class="menu">
+      <summary aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </summary>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#future">Future 2025–2030</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </details>
+
+  </div>
+</header>
+
+<section class="hero">
+  <img src="assets/banner.svg" class="hero-banner">
+</section>
+
+<section id="about" class="container about-section">
+  <div class="about-img">
+    <img src="assets/profile.png" alt="Profile">
+  </div>
+  <div class="about-text">
     <h1>About Me</h1>
-    <div class="about-wrap">
-      <img class="avatar" src="assets/profile.png"/>
-      <div>
-        <p>
-          I build practical ServiceNow solutions across ITSM, ITOM, HRSD, CSM, and GRC—integrating
-          Flow Designer, IntegrationHub/APIs, Predictive Intelligence, Agentic Workflows, Generative AI,
-          Agentic AI, and AIOps to reduce MTTR, improve CSAT, and drive measurable outcomes.
-        </p>
-        <div class="links">
-          <a class="btn" href="https://www.linkedin.com/in/srikanth-madabhushi-prince2%C2%AE-csm%C2%AE-00309218" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn secondary" href="Srikanth_Madabhushi_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <p>I build practical ServiceNow solutions across ITSM, ITOM, HRSD, CSM, and GRC—integrating
+       Flow Designer, IntegrationHub/APIs, Predictive Intelligence, Agentic Workflows, Generative AI,
+       Agentic AI, and AIOps.</p>
+  </div>
+</section>
 
-  <!-- Projects (All modules live here) -->
-  <section id="projects" class="container section">
-    <h2>Projects</h2>
-    <!-- Module panels & cards will be rendered here from projects.json -->
-    <div id="projects-root" class="stack"></div>
-  </section>
+<!-- Future Section -->
+<section id="future" class="container section">
+  <h2>Future Vision 2025–2030</h2>
+  <div class="grid">
+    <article class="card">
+      <img src="assets/Autonomous-Enterprise-Brain-AEB.png">
+      <h4>Autonomous Enterprise Brain (AEB)</h4>
+      <a class="btn" href="https://github.com/srikanthmadabhushi/Autonomous-Enterprise-Brain-AEB" target="_blank">View Repo</a>
+    </article>
 
-  <!-- Blog / Contact -->
-  <section id="blog" class="container section">
-    <h2>Blog</h2>
-    <p>Coming soon: daily LinkedIn articles reposted here.</p>
-  </section>
+    <article class="card">
+      <img src="assets/ServiceNow-AI-Agent-Stack banner.png">
+      <h4>ServiceNow AI Agent Stack</h4>
+      <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow-AI-Agent-Stack" target="_blank">View Repo</a>
+    </article>
+  </div>
+</section>
 
-  
-  <!-- Future Vision -->
-  <section id="future" class="container section">
-    <h2>Future Vision 2025–2030</h2>
-    <div class="grid">
-      <article class="card">
-        <img src="assets/Autonomous-Enterprise-Brain-AEB.png" alt="AEB">
-        <h4>Autonomous Enterprise Brain (AEB)</h4>
-        <a class="btn" href="https://github.com/srikanthmadabhushi/Autonomous-Enterprise-Brain-AEB" target="_blank">View Repo</a>
-      </article>
-      <article class="card">
-        <img src="assets/ServiceNow-AI-Agent-Stack banner.png" alt="AI Agent Stack">
-        <h4>ServiceNow AI Agent Stack</h4>
-        <a class="btn" href="https://github.com/srikanthmadabhushi/ServiceNow-AI-Agent-Stack" target="_blank">View Repo</a>
-      </article>
-    </div>
-  </section>
+<footer id="contact">
+  <p>© 2025 Srikanth Madabhushi</p>
+</footer>
 
-
-  <footer id="contact" class="container footer">
-    <p>© Srikanth Madabhushi · ServiceNow + AI Portfolio</p>
-  </footer>
-
-  <!-- Render data from projects.json -->
-  <script>
-    async function renderProjects() {
-      const root = document.getElementById('projects-root');
-      try {
-        const res = await fetch('projects.json');
-        const data = await res.json();
-
-        data.modules.forEach(mod => {
-          // Module wrapper
-          const section = document.createElement('section');
-          section.className = 'module';
-
-          // Module header
-          const h3 = document.createElement('h3');
-          h3.textContent = mod.name;
-          section.appendChild(h3);
-
-          // Module intro (5-point overview)
-          const intro = document.createElement('details');
-          intro.className = 'intro';
-          intro.open = false;
-          const sum = document.createElement('summary');
-          sum.textContent = 'Module Overview (5-point)';
-          intro.appendChild(sum);
-
-          const grid = document.createElement('div');
-          grid.className = 'intro-grid';
-
-          const card = (title, bodyHtml) => {
-            const el = document.createElement('article');
-            el.className = 'intro-card';
-            el.innerHTML = `<h4>${title}</h4>${bodyHtml}`;
-            return el;
-          };
-
-          grid.appendChild(card('1) Domain, Market & Competitive', `<ul>${mod.moduleOverview.domainMarketCompetitive.map(i=>`<li>${i}</li>`).join('')}</ul>`));
-          grid.appendChild(card('2) Tech Specs & Best Practices', `<ul>${mod.moduleOverview.techSpecsBestPractices.map(i=>`<li>${i}</li>`).join('')}</ul>`));
-          grid.appendChild(card('3) Problem Statement', `<p>${mod.moduleOverview.problem}</p>`));
-          grid.appendChild(card('4) Hypothesis', `<p>${mod.moduleOverview.hypothesis}</p>`));
-          grid.appendChild(card('5) Working Prototype', `<ul>${mod.moduleOverview.prototype.map(i=>`<li>${i}</li>`).join('')}</ul>`));
-
-          intro.appendChild(grid);
-          section.appendChild(intro);
-
-          // Projects grid
-          const gridWrap = document.createElement('div');
-          gridWrap.className = 'grid';
-
-          mod.projects.forEach(p => {
-            const article = document.createElement('article');
-            article.className = 'card';
-            article.innerHTML = `
-              <img src="${p.image}" alt="${p.title}" loading="lazy">
-              <h4>${p.title}</h4>
-              <p>${p.summary}</p>
-              <a class="btn" href="${p.repo}" target="_blank" rel="noreferrer">View Repo</a>
-            `;
-
-            // Per-project 5-point details
-            const d = document.createElement('details');
-            d.className = 'proj';
-            const s = document.createElement('summary');
-            s.textContent = 'Details (5-point)';
-            d.appendChild(s);
-
-            const list = document.createElement('div');
-            list.className = 'proj-points';
-            list.innerHTML = `
-              <div><strong>1) Domain/Market/Competitive</strong><ul>${p.points.domainMarketCompetitive.map(i=>`<li>${i}</li>`).join('')}</ul></div>
-              <div><strong>2) Tech Specs & Best Practices</strong><ul>${p.points.techSpecsBestPractices.map(i=>`<li>${i}</li>`).join('')}</ul></div>
-              <div><strong>3) Problem</strong><p>${p.points.problem}</p></div>
-              <div><strong>4) Hypothesis</strong><p>${p.points.hypothesis}</p></div>
-              <div><strong>5) Working Prototype</strong><ul>${p.points.prototype.map(i=>`<li>${i}</li>`).join('')}</ul></div>
-            `;
-            d.appendChild(list);
-            article.appendChild(d);
-
-            gridWrap.appendChild(article);
-          });
-
-          section.appendChild(gridWrap);
-          root.appendChild(section);
-        });
-      } catch (e) {
-        root.innerHTML = '<p class="error">Unable to load projects.json. Ensure it is at the site root.</p>';
-        console.error(e);
-      }
-    }
-    renderProjects();
-  </script>
 </body>
 </html>

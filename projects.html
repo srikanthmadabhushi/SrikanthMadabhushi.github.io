@@ -1,106 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projects — Srikanth Madabhushi</title>
-<link rel="stylesheet" href="styles.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects – Srikanth Madabhushi</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<nav>
-  <div class="brand">Projects</div>
-  <div class="links">
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="Srikanth_Madabhushi_Resume.pdf" class="btn secondary">Resume</a>
-    <a href="https://www.linkedin.com/in/srikanthmadabhushi" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+
+<header>
+  <div class="container">
+    <div class="logo">Srikanth Madabhushi</div>
+
+    <details class="menu">
+      <summary aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </summary>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#future">Future 2025–2030</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </details>
+
   </div>
-</nav>
+</header>
 
 <section class="container section">
-  <h1>Modules & Projects</h1>
-  <p class="small">For each module, you’ll see the parent overview (domain/market, tech specs & best practices, problem, hypothesis, prototype), followed by the projects with images.</p>
+  <h1>Projects</h1>
+  <div id="projects-root"></div>
 </section>
 
-<section id="modules" class="container section"></section>
+<footer>
+  <p>© 2025 Srikanth Madabhushi</p>
+</footer>
 
 <script>
-function tryImage(key){
-  const order = ['.png','.jpg','.jpeg','.svg','.webp'];
-  // First attempt will be .png; onerror handler below will try others.
-  return 'assets/' + key + order[0];
-}
+async function renderProjects(){
+  const root=document.getElementById("projects-root");
+  const res=await fetch("projects.json?v=3001");
+  const data=await res.json();
+  root.innerHTML="";
 
-async function load(){
-  const resp = await fetch('projects.json');
-  const data = await resp.json();
-  const wrap = document.getElementById('modules');
-  data.modules.forEach(m => {
-    const section = document.createElement('div');
-    section.className = 'module';
-    const title = document.createElement('h2');
-    title.id = m.name;
-    title.textContent = m.name;
-    section.appendChild(title);
+  data.modules.forEach(mod=>{
+    const sec=document.createElement("section");
+    sec.className="module-block";
 
-    if(m.parent){
-      const parent = document.createElement('div');
-      parent.className = 'card parent';
-      const ul = document.createElement('ul');
-      const points = [
-        ['Domain & Market', m.parent.domain],
-        ['Tech Specs & Best Practices', m.parent.tech],
-        ['Problem', m.parent.problem],
-        ['Hypothesis', m.parent.hypothesis],
-        ['Working Prototype', m.parent.prototype]
-      ];
-      points.forEach(([k,v]) => {
-        const li = document.createElement('li');
-        li.innerHTML = '<strong>'+k+':</strong> ' + v;
-        ul.appendChild(li);
-      });
-      parent.appendChild(ul);
-      section.appendChild(parent);
-    }
+    const h=document.createElement("h2");
+    h.textContent=mod.name;
+    sec.appendChild(h);
 
-    if(m.projects && m.projects.length){
-      const grid = document.createElement('div');
-      grid.className = 'projects';
-      section.appendChild(grid);
-      m.projects.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'card project-card';
-        const img = document.createElement('img');
-        img.loading = 'lazy';
-        img.alt = p.title + ' image';
-        img.src = tryImage(p.image_key);
-        img.onerror = function(){
-          const order = ['png','jpg','jpeg','svg','webp'];
-          let i = 1;
-          const next = () => {
-            if(i>=order.length) return;
-            this.src = 'assets/' + p.image_key + '.' + order[i++];
-          };
-          next();
-        };
-        const h4 = document.createElement('h4');
-        h4.textContent = p.title;
-        const link = document.createElement('div');
-        link.className = 'links';
-        link.innerHTML = `<a href="${p.repo}" target="_blank" rel="noopener" class="btn secondary">View Repository</a>`;
-        card.appendChild(img);
-        card.appendChild(h4);
-        card.appendChild(link);
-        grid.appendChild(card);
-      });
-    }
+    const o=document.createElement("details");
+    o.open=true;
+    o.innerHTML=`<summary>Module Overview (5-Point)</summary>`;
+    const g=document.createElement("div");
+    g.className="overview-grid";
 
-    wrap.appendChild(section);
+    function card(t,c){return `<article class='overview-card'><h3>${t}</h3>${c}</article>`;}
+
+    g.innerHTML += card("1) Domain / Market / Competitive", `<ul>${mod.moduleOverview.domainMarketCompetitive.map(i=>`<li>${i}</li>`).join("")}</ul>`);
+    g.innerHTML += card("2) Tech Specs & Best Practices", `<ul>${mod.moduleOverview.techSpecsBestPractices.map(i=>`<li>${i}</li>`).join("")}</ul>`);
+    g.innerHTML += card("3) Problem Statement", `<p>${mod.moduleOverview.problem}</p>`);
+    g.innerHTML += card("4) Hypothesis", `<p>${mod.moduleOverview.hypothesis}</p>`);
+    g.innerHTML += card("5) Working Prototype", `<ul>${mod.moduleOverview.prototype.map(i=>`<li>${i}</li>`).join("")}</ul>`);
+
+    o.appendChild(g);
+    sec.appendChild(o);
+
+    const grid=document.createElement("div");
+    grid.className="grid";
+
+    mod.projects.forEach(p=>{
+      const repo=p.repo||p.link;
+
+      const c=document.createElement("article");
+      c.className="card";
+      c.innerHTML=`
+        <img src="${p.image}">
+        <h4>${p.title}</h4>
+        <p>${p.summary||""}</p>
+        <a class="btn" href="${repo}" target="_blank">View Repo</a>
+      `;
+
+      const d=document.createElement("details");
+      d.className="project-details";
+      d.innerHTML=`<summary>Details (5-Point)</summary>`;
+
+      const pg=document.createElement("div");
+      pg.className="points-grid";
+
+      pg.innerHTML=`
+        <article><h4>1) Domain/Market/Competitive</h4><ul>${p.points.domainMarketCompetitive.map(i=>`<li>${i}</li>`).join("")}</ul></article>
+        <article><h4>2) Tech Specs & Best Practices</h4><ul>${p.points.techSpecsBestPractices.map(i=>`<li>${i}</li>`).join("")}</ul></article>
+        <article><h4>3) Problem</h4><p>${p.points.problem}</p></article>
+        <article><h4>4) Hypothesis</h4><p>${p.points.hypothesis}</p></article>
+        <article><h4>5) Working Prototype</h4><ul>${p.points.prototype.map(i=>`<li>${i}</li>`).join("")}</ul></article>
+      `;
+
+      d.appendChild(pg);
+      c.appendChild(d);
+      grid.appendChild(c);
+    });
+
+    sec.appendChild(grid);
+    root.appendChild(sec);
   });
 }
-load();
+
+renderProjects();
 </script>
 
-<footer class="container footer small">Back to <a href="index.html">Home</a></footer>
 </body>
 </html>
