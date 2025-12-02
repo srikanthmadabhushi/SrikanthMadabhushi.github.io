@@ -227,6 +227,94 @@
       "name": "ITOM",
       "projects": [
         {
+          "title": "ServiceNow_ITOM_Project1",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1",
+          "image": "assets/itom1.png",
+          "summary": "Discovery + CMDB health with automated fixes.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Accurate CMDB is the foundation for AIOps and impact analysis.",
+              "Compete on reliability and speed of change impact."
+            ],
+            "techSpecsBestPractices": [
+              "Identification/Normalization; CI health scores; out-of-box metrics.",
+              "Flow-based fixes; approvals for sensitive classes."
+            ],
+            "problem": "Stale/missing CIs break correlation and impact chains.",
+            "hypothesis": "Automated discovery + health drives better RCA.",
+            "prototype": [
+              "Discovery schedules; reconciliation rules.",
+              "Health KPI widgets; auto-create tasks for gaps."
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow_ITOM_Project2",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2",
+          "image": "assets/itom2.png",
+          "summary": "Event Management + anomaly detection.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Noise reduction is essential for SRE productivity.",
+              "Differentiator: event \u2192 action via platform flows."
+            ],
+            "techSpecsBestPractices": [
+              "Event rules, correlation; PI anomalies; incident linkage.",
+              "Runbooks as subflows; throttling & retries."
+            ],
+            "problem": "Too many alerts, low signal-to-noise.",
+            "hypothesis": "Correlation + anomalies + runbooks cut noise by 40%.",
+            "prototype": [
+              "Correlation examples; anomaly model on metrics.",
+              "Auto-ticket + enrich + close loop."
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow_ITOM_Project4",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4",
+          "image": "assets/itom4.png",
+          "summary": "Service Mapping visuals + health signals.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Business service views drive prioritization by impact.",
+              "Compete with topology-first observability tools."
+            ],
+            "techSpecsBestPractices": [
+              "Top-down mapping; credentials; patterns; change sync.",
+              "Health aggregation; impact rules \u2192 incident priorities."
+            ],
+            "problem": "Teams cannot see blast radius for failures.",
+            "hypothesis": "Maps + health scores improve incident triage.",
+            "prototype": [
+              "Key service maps; CMDB relationships; impact calculators.",
+              "Service owner dashboards."
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow_ITOM_Project5",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project5",
+          "image": "assets/itom5.png",
+          "summary": "Predictive AIOps + auto-remediation.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Shift from reactive to predictive ops.",
+              "Self-healing differentiates mature ops."
+            ],
+            "techSpecsBestPractices": [
+              "PI models; runbooks; safe-guard rails; change blackout.",
+              "Observability integration; post-remediation validation."
+            ],
+            "problem": "Recurring incidents consume SRE time.",
+            "hypothesis": "Predict + pre-empt recurring failures.",
+            "prototype": [
+              "Predictive signal \u2192 subflow action.",
+              "Rollback if validation fails."
+            ]
+          }
+        },
+        {
           "title": "ServiceNow_ITOM_Project7",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project7",
           "image": "assets/itom7.png",
