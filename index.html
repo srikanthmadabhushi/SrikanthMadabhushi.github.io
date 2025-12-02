@@ -72,7 +72,7 @@
     async function renderProjects() {
       const root = document.getElementById('projects-root');
       try {
-        const res = await fetch('projects.json?v=5');
+        const res = await fetch('projects.json?v=1001');
         const data = await res.json();
 
         data.modules.forEach(mod => {
