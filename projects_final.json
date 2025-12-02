@@ -4,6 +4,74 @@
       "name": "ITSM",
       "projects": [
         {
+          "title": "ServiceNow_ITSM_Project1",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1",
+          "image": "assets/itsm1.png",
+          "summary": "Incident/Request flows with AI-assisted routing & knowledge.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Use self-service intake + virtual agent handoff to reduce emails.",
+              "Compete on speed-to-resolution and transparency via SLAs/dashboards."
+            ],
+            "techSpecsBestPractices": [
+              "Flow: create/update incident; subflows for assignment & notifications.",
+              "Tables: incident, task_sla; KB: kb_knowledge; ACLs for sensitive fields."
+            ],
+            "problem": "Manual triage slows assignment and increases ping-pong.",
+            "hypothesis": "PI-based categorization + auto-assignment cuts triage time significantly.",
+            "prototype": [
+              "Train PI model on historical incidents.",
+              "Add assignment rules & escalation timers.",
+              "Publish SLA/MTTR dashboard."
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow_ITSM_Project2",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2",
+          "image": "assets/itsm2.png",
+          "summary": "GenAI summaries + assignment predictions.",
+          "points": {
+            "domainMarketCompetitive": [
+              "LLM-assisted agents: summarize, extract intents, next-best-actions.",
+              "Competitive differentiator: reduce handle time without quality drop."
+            ],
+            "techSpecsBestPractices": [
+              "GenAI action for summarization; store to work notes or KB draft.",
+              "Guardrails: PII masking, prompt templates, human-in-the-loop."
+            ],
+            "problem": "Agents spend time writing updates; knowledge not captured.",
+            "hypothesis": "Auto-summaries improve throughput and knowledge reusability.",
+            "prototype": [
+              "Summarize resolution; propose KB; supervisor approval flow.",
+              "Telemetry: measure deflection & average summary time saved."
+            ]
+          }
+        },
+        {
+          "title": "ServiceNow_ITSM_Project3",
+          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3",
+          "image": "assets/itsm3.png",
+          "summary": "Agentic workflows + IntegrationHub orchestration.",
+          "points": {
+            "domainMarketCompetitive": [
+              "Cross-system remediation lowers context switching.",
+              "Agentic orchestration drives proactive operations."
+            ],
+            "techSpecsBestPractices": [
+              "IntegrationHub spokes for CRM/Chat/Email; retries & idempotency.",
+              "Audit: update sets, scoped app, versioned subflows."
+            ],
+            "problem": "Multi-app handoffs create delays.",
+            "hypothesis": "Automated orchestration shortens resolution and reduces errors.",
+            "prototype": [
+              "Decision tables trigger subflows.",
+              "Webhook triggers from monitoring tools.",
+              "Rollback subflow for failed remediations."
+            ]
+          }
+        },
+        {
           "title": "ServiceNow_ITSM_Project4",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project4",
           "image": "assets/itsm4.png",
