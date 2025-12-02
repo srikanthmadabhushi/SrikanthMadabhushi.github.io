@@ -1,100 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Srikanth Madabhushi Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Srikanth Madabhushi - Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer>
-    async function loadProjects() {
-      try {
-        const res = await fetch('projects.json');
-        if (!res.ok) {
-          throw new Error("Failed to fetch projects.json");
-        }
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">Srikanth Madabhushi</div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+      </div>
+    </header>
 
-        const data = await res.json();
+    <!-- HERO SECTION — UNTOUCHED -->
+    <section class="hero">
+      <img src="assets/banner.svg" alt="Banner" class="hero-banner" />
+    </section>
 
-        const container = document.getElementById("projects-section");
-        container.innerHTML = "";
+    <!-- ABOUT SECTION — UNTOUCHED -->
+    <section id="about" class="container about-section">
+      <div class="about-img">
+        <img src="assets/profile.png" alt="Profile" />
+      </div>
+      <div class="about-text">
+        <h1>About Me</h1>
+        <p>
+          I build practical ServiceNow solutions across ITSM, ITOM, HRSD, CSM, and GRC—integrating
+          Flow Designer, IntegrationHub/APIs, Predictive Intelligence, Agentic Workflows, Generative
+          AI, Agentic AI, and AIOps to reduce MTTR, improve CSAT, and drive measurable outcomes.
+        </p>
+        <a class="btn" href="Srikanth_Madabhushi_Resume.pdf" target="_blank">Download Resume</a>
+      </div>
+    </section>
 
-        data.modules.forEach((module) => {
-          const section = document.createElement("div");
-          section.className = "module-section";
+    <!-- PROJECTS SECTION — FIXED -->
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <div id="projects-section" class="projects-list">
+        <p>Loading projects...</p>
+      </div>
+    </section>
 
-          const title = document.createElement("h3");
-          title.textContent = module.title;
-          section.appendChild(title);
+    <footer>
+      <p>© 2025 Srikanth Madabhushi · ServiceNow + AI Portfolio</p>
+    </footer>
 
-          const list = document.createElement("ul");
+    <!-- UPDATED SCRIPT — ONLY FIXED PART -->
+    <script>
+      async function loadProjects() {
+        try {
+          const res = await fetch("projects.json?v=2005");
+          if (!res.ok) throw new Error("Failed to fetch projects.json");
+          const data = await res.json();
 
-          const limit = module.limit || module.projects.length;
+          const container = document.getElementById("projects-section");
+          container.innerHTML = "";
 
-          module.projects.slice(0, limit).forEach((project) => {
-            const item = document.createElement("li");
-            item.innerHTML = `<a href="${project.link}" target="_blank">${project.title}</a>`;
-            list.appendChild(item);
+          data.modules.forEach((module) => {
+            const section = document.createElement("div");
+            section.className = "module-section";
+
+            const title = document.createElement("h3");
+            title.textContent = module.name;
+            section.appendChild(title);
+
+            const list = document.createElement("ul");
+
+            module.projects.forEach((project) => {
+              const item = document.createElement("li");
+              const href = project.repo || project.link;
+
+              item.innerHTML = `<a href="${href}" target="_blank">${project.title}</a>`;
+
+              list.appendChild(item);
+            });
+
+            section.appendChild(list);
+            container.appendChild(section);
           });
-
-          section.appendChild(list);
-          container.appendChild(section);
-        });
-      } catch (err) {
-        document.getElementById("projects-section").innerHTML =
-          `<p class="error">Unable to load projects.json. Ensure it is at the site root.</p>`;
+        } catch (error) {
+          document.getElementById("projects-section").innerHTML =
+            '<p class="error">Unable to load projects.json. Ensure it is at the site root.</p>';
+        }
       }
-    }
 
-    window.onload = loadProjects;
-  </script>
-</head>
-
-<body>
-
-  <nav class="nav">
-    <div class="brand">Srikanth Madabhushi</div>
-    <details class="menu">
-      <summary>☰</summary>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </details>
-  </nav>
-
-  <header class="hero">
-    <img src="assets/profile.jpeg" alt="Profile Picture" class="profile-image" />
-    <h1>Hello, I'm <span>Srikanth Madabhushi</span></h1>
-    <p>AI Automation & ServiceNow Workflow Specialist</p>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Experienced in ServiceNow, AI workflow automation, enterprise solutions, and building
-      innovative projects combining ITSM, ITOM, HRSD, and Generative AI.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div id="projects-section">
-      <p>Loading projects...</p>
-    </div>
-  </section>
-
-  <section id="blog">
-    <h2>Blog</h2>
-    <p>
-      <a href="blog.html">View Full Blog</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Srikanth Madabhushi. All rights reserved.</p>
-  </footer>
-
-</body>
-
+      window.onload = loadProjects;
+    </script>
+  </body>
 </html>
