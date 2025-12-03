@@ -146,3 +146,19 @@ p{font-size:clamp(14px, 2.4vw, 16px);line-height:1.6;color:var(--muted);margin:6
 .top-nav{position:absolute;right:20px;top:20px;}
 .top-nav a{color:#6BBF59;margin-left:20px;text-decoration:none;font-weight:600;}
 .top-nav a:hover{text-decoration:underline;}
+
+
+.top-nav {
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  display: flex;
+  gap: 25px;
+}
+.top-nav a {
+  color: #6BBF59;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.top-nav a:hover { text-decoration: underline; }

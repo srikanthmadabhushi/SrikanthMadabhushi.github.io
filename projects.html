@@ -1,4 +1,12 @@
-<html><body>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Projects</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
 <nav class="top-nav">
   <a href="index.html">Home</a>
   <a href="projects.html">Projects</a>
@@ -6,4 +14,51 @@
   <a href="blog.html">Blog</a>
   <a href="contact.html">Contact</a>
 </nav>
-<h1>Projects</h1></body></html>
+
+<section class="container section">
+<h1>Projects</h1>
+<div id="projects-root" class="stack"></div>
+</section>
+
+<script>
+async function renderProjects(){
+  const root=document.getElementById('projects-root');
+  try {
+    const res=await fetch('projects.json');
+    const data=await res.json();
+
+    data.modules.forEach(mod => {
+      const section=document.createElement('section');
+      section.className='module';
+
+      const h3=document.createElement('h3');
+      h3.textContent=mod.name;
+      section.appendChild(h3);
+
+      const gridWrap=document.createElement('div');
+      gridWrap.className='grid';
+
+      mod.projects.forEach(p => {
+        const article=document.createElement('article');
+        article.className='card';
+        article.innerHTML=`
+          <img src="${p.image}" alt="${p.title}">
+          <h4>${p.title}</h4>
+          <p>${p.summary}</p>
+          <a class="btn" href="${p.repo||p.link}" target="_blank">View Repo</a>
+        `;
+        gridWrap.appendChild(article);
+      });
+
+      section.appendChild(gridWrap);
+      root.appendChild(section);
+    });
+  } catch(e){
+    root.innerHTML='<p class="error">Error loading projects.json</p>';
+  }
+}
+renderProjects();
+</script>
+
+</body>
+</html>

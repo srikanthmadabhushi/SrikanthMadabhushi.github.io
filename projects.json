@@ -2,257 +2,154 @@
   "modules": [
     {
       "name": "ITSM",
-      "moduleOverview": {
-        "domainMarketCompetitive": [
-          "Domain: Incident, Request, Problem, Change, Knowledge, SLAs.",
-          "Market: Shift from ticketing to AI-first, self-service, LLM copilots.",
-          "Competitive: ServiceNow vs Jira SM, BMC, Freshservice; SN edge via PI, GenAI, Agentic flows and platform breadth."
-        ],
-        "techSpecsBestPractices": [
-          "Core tables: incident, sc_request, problem, change_request, kb_knowledge.",
-          "Flow Designer + Subflows; IntegrationHub spokes; disciplined Update Sets/CICD.",
-          "Security: RBAC, ACLs, Data Policies; naming/versioning; test in sub-prod; metrics dashboards."
-        ],
-        "problem": "High MTTR and inconsistent categorization/assignment cause delays and poor CSAT.",
-        "hypothesis": "PI + Agentic Workflows + GenAI summaries reduce triage/resolution by 30\u201340% and improve CSAT.",
-        "prototype": [
-          "Auto-categorize/assign incidents via PI; route through subflows.",
-          "GenAI case/incident summaries and KB suggestions.",
-          "Dashboards for SLA breach risk, backlog aging, deflection."
-        ]
-      },
       "projects": [
         {
-          "title": "ServiceNow_ITSM_Project1",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project1",
-          "image": "assets/itsm1.png",
-          "summary": "Incident/Request flows with AI-assisted routing & knowledge.",
-          "points": {
-            "domainMarketCompetitive": [
-              "Use self-service intake + virtual agent handoff to reduce emails.",
-              "Compete on speed-to-resolution and transparency via SLAs/dashboards."
-            ],
-            "techSpecsBestPractices": [
-              "Flow: create/update incident; subflows for assignment & notifications.",
-              "Tables: incident, task_sla; KB: kb_knowledge; ACLs for sensitive fields."
-            ],
-            "problem": "Manual triage slows assignment and increases ping-pong.",
-            "hypothesis": "PI-based categorization + auto-assignment cuts triage time significantly.",
-            "prototype": [
-              "Train PI model on historical incidents.",
-              "Add assignment rules & escalation timers.",
-              "Publish SLA/MTTR dashboard."
-            ]
-          }
-        },
-        {
-          "title": "ServiceNow_ITSM_Project2",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project2",
-          "image": "assets/itsm2.png",
-          "summary": "GenAI summaries + assignment predictions.",
-          "points": {
-            "domainMarketCompetitive": [
-              "LLM-assisted agents: summarize, extract intents, next-best-actions.",
-              "Competitive differentiator: reduce handle time without quality drop."
-            ],
-            "techSpecsBestPractices": [
-              "GenAI action for summarization; store to work notes or KB draft.",
-              "Guardrails: PII masking, prompt templates, human-in-the-loop."
-            ],
-            "problem": "Agents spend time writing updates; knowledge not captured.",
-            "hypothesis": "Auto-summaries improve throughput and knowledge reusability.",
-            "prototype": [
-              "Summarize resolution; propose KB; supervisor approval flow.",
-              "Telemetry: measure deflection & average summary time saved."
-            ]
-          }
-        },
-        {
-          "title": "ServiceNow_ITSM_Project3",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project3",
-          "image": "assets/itsm3.png",
-          "summary": "Agentic workflows + IntegrationHub orchestration.",
-          "points": {
-            "domainMarketCompetitive": [
-              "Cross-system remediation lowers context switching.",
-              "Agentic orchestration drives proactive operations."
-            ],
-            "techSpecsBestPractices": [
-              "IntegrationHub spokes for CRM/Chat/Email; retries & idempotency.",
-              "Audit: update sets, scoped app, versioned subflows."
-            ],
-            "problem": "Multi-app handoffs create delays.",
-            "hypothesis": "Automated orchestration shortens resolution and reduces errors.",
-            "prototype": [
-              "Decision tables trigger subflows.",
-              "Webhook triggers from monitoring tools.",
-              "Rollback subflow for failed remediations."
-            ]
-          }
-        },
-        {
           "title": "ServiceNow_ITSM_Project4",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITSM_Project4",
-          "image": "assets/itsm4.png",
-          "summary": "SLAs, reporting & performance analytics dashboards.",
-          "points": {
-            "domainMarketCompetitive": [
-              "Transparency on SLAs and agent performance is a buying criterion.",
-              "Benchmark vs industry with PA widgets."
-            ],
-            "techSpecsBestPractices": [
-              "Task SLA, PA indicators, breakdowns; consistent time zones.",
-              "Backfill jobs, retention; access by role."
-            ],
-            "problem": "Leaders lack near-real-time visibility.",
-            "hypothesis": "Actionable dashboards lift SLA adherence and CSAT.",
-            "prototype": [
-              "Executive dashboard + agent cockpit.",
-              "Drill-downs for breached/at-risk SLAs."
-            ]
-          }
-        },
-        {
-          "title": "ServiceNow ITSM Project 4",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project4",
           "image": "assets/itsm4.png",
-          "summary": "Advanced ITSM automation project.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "AI-driven workflow acceleration",
-              "Competitive automation benchmark"
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Flow Designer",
-              "IntegrationHub",
-              "Scoped App Governance"
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Manual operations reduce efficiency.",
-            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Build subflows",
-              "Add triggers",
-              "Validate KPIs"
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
-          "title": "ServiceNow ITSM Project 5",
+          "title": "ServiceNow_ITSM_Project5",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project5",
           "image": "assets/itsm5.png",
-          "summary": "Advanced ITSM automation project.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "AI-driven workflow acceleration",
-              "Competitive automation benchmark"
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Flow Designer",
-              "IntegrationHub",
-              "Scoped App Governance"
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Manual operations reduce efficiency.",
-            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Build subflows",
-              "Add triggers",
-              "Validate KPIs"
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
-          "title": "ServiceNow ITSM Project 6",
+          "title": "ServiceNow_ITSM_Project6",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project6",
           "image": "assets/itsm6.png",
-          "summary": "Advanced ITSM automation project.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "AI-driven workflow acceleration",
-              "Competitive automation benchmark"
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Flow Designer",
-              "IntegrationHub",
-              "Scoped App Governance"
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Manual operations reduce efficiency.",
-            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Build subflows",
-              "Add triggers",
-              "Validate KPIs"
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
-          "title": "ServiceNow ITSM Project 7",
+          "title": "ServiceNow_ITSM_Project7",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project7",
           "image": "assets/itsm7.png",
-          "summary": "Advanced ITSM automation project.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "AI-driven workflow acceleration",
-              "Competitive automation benchmark"
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Flow Designer",
-              "IntegrationHub",
-              "Scoped App Governance"
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Manual operations reduce efficiency.",
-            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Build subflows",
-              "Add triggers",
-              "Validate KPIs"
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
-          "title": "ServiceNow ITSM Project 8",
+          "title": "ServiceNow_ITSM_Project8",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project8",
           "image": "assets/itsm8.png",
-          "summary": "Advanced ITSM automation project.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "AI-driven workflow acceleration",
-              "Competitive automation benchmark"
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Flow Designer",
-              "IntegrationHub",
-              "Scoped App Governance"
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Manual operations reduce efficiency.",
-            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Build subflows",
-              "Add triggers",
-              "Validate KPIs"
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
-          "title": "ServiceNow ITSM Project 9",
+          "title": "ServiceNow_ITSM_Project9",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITSM_Project9",
           "image": "assets/itsm9.png",
-          "summary": "Advanced ITSM automation project.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "AI-driven workflow acceleration",
-              "Competitive automation benchmark"
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Flow Designer",
-              "IntegrationHub",
-              "Scoped App Governance"
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Manual operations reduce efficiency.",
-            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Build subflows",
-              "Add triggers",
-              "Validate KPIs"
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         }
@@ -260,158 +157,54 @@
     },
     {
       "name": "ITOM",
-      "moduleOverview": {
-        "domainMarketCompetitive": [
-          "Domain: Discovery, CMDB, Event Mgmt, Service Mapping, Health, AIOps.",
-          "Market: Convergence of observability + remediation with AI.",
-          "Competitive: SN ITOM vs Dynatrace/Datadog/Splunk; CMDB context + workflows wins."
-        ],
-        "techSpecsBestPractices": [
-          "Pattern-based discovery, identification & reconciliation; CI class governance.",
-          "Event de-dup, correlation rules; anomaly detection via PI.",
-          "Remediation subflows with approvals and safety checks."
-        ],
-        "problem": "Alert noise and incomplete CMDB slow RCA and increase MTTR.",
-        "hypothesis": "Service maps + correlation + AIOps reduce noise and speed remediation.",
-        "prototype": [
-          "Event ingestion table; correlation \u2192 create incident/change.",
-          "Auto-remediation subflows; health dashboards and CMDB KPIs."
-        ]
-      },
       "projects": [
         {
-          "title": "ServiceNow_ITOM_Project1",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project1",
-          "image": "assets/itom1.png",
-          "summary": "Discovery + CMDB health with automated fixes.",
-          "points": {
-            "domainMarketCompetitive": [
-              "Accurate CMDB is the foundation for AIOps and impact analysis.",
-              "Compete on reliability and speed of change impact."
-            ],
-            "techSpecsBestPractices": [
-              "Identification/Normalization; CI health scores; out-of-box metrics.",
-              "Flow-based fixes; approvals for sensitive classes."
-            ],
-            "problem": "Stale/missing CIs break correlation and impact chains.",
-            "hypothesis": "Automated discovery + health drives better RCA.",
-            "prototype": [
-              "Discovery schedules; reconciliation rules.",
-              "Health KPI widgets; auto-create tasks for gaps."
-            ]
-          }
-        },
-        {
-          "title": "ServiceNow_ITOM_Project2",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project2",
-          "image": "assets/itom2.png",
-          "summary": "Event Management + anomaly detection.",
-          "points": {
-            "domainMarketCompetitive": [
-              "Noise reduction is essential for SRE productivity.",
-              "Differentiator: event \u2192 action via platform flows."
-            ],
-            "techSpecsBestPractices": [
-              "Event rules, correlation; PI anomalies; incident linkage.",
-              "Runbooks as subflows; throttling & retries."
-            ],
-            "problem": "Too many alerts, low signal-to-noise.",
-            "hypothesis": "Correlation + anomalies + runbooks cut noise by 40%.",
-            "prototype": [
-              "Correlation examples; anomaly model on metrics.",
-              "Auto-ticket + enrich + close loop."
-            ]
-          }
-        },
-        {
-          "title": "ServiceNow_ITOM_Project4",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project4",
-          "image": "assets/itom4.png",
-          "summary": "Service Mapping visuals + health signals.",
-          "points": {
-            "domainMarketCompetitive": [
-              "Business service views drive prioritization by impact.",
-              "Compete with topology-first observability tools."
-            ],
-            "techSpecsBestPractices": [
-              "Top-down mapping; credentials; patterns; change sync.",
-              "Health aggregation; impact rules \u2192 incident priorities."
-            ],
-            "problem": "Teams cannot see blast radius for failures.",
-            "hypothesis": "Maps + health scores improve incident triage.",
-            "prototype": [
-              "Key service maps; CMDB relationships; impact calculators.",
-              "Service owner dashboards."
-            ]
-          }
-        },
-        {
-          "title": "ServiceNow_ITOM_Project5",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_ITOM_Project5",
-          "image": "assets/itom5.png",
-          "summary": "Predictive AIOps + auto-remediation.",
-          "points": {
-            "domainMarketCompetitive": [
-              "Shift from reactive to predictive ops.",
-              "Self-healing differentiates mature ops."
-            ],
-            "techSpecsBestPractices": [
-              "PI models; runbooks; safe-guard rails; change blackout.",
-              "Observability integration; post-remediation validation."
-            ],
-            "problem": "Recurring incidents consume SRE time.",
-            "hypothesis": "Predict + pre-empt recurring failures.",
-            "prototype": [
-              "Predictive signal \u2192 subflow action.",
-              "Rollback if validation fails."
-            ]
-          }
-        },
-        {
-          "title": "ServiceNow ITOM Project 7",
+          "title": "ServiceNow_ITOM_Project7",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project7",
           "image": "assets/itom7.png",
-          "summary": "ITOM automation and AIOps project.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "AI-driven workflow acceleration",
-              "Competitive automation benchmark"
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Flow Designer",
-              "IntegrationHub",
-              "Scoped App Governance"
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Manual operations reduce efficiency.",
-            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Build subflows",
-              "Add triggers",
-              "Validate KPIs"
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
-          "title": "ServiceNow ITOM Project 8",
+          "title": "ServiceNow_ITOM_Project8",
           "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_ITOM_Project8",
           "image": "assets/itom8.png",
-          "summary": "ITOM automation and AIOps project.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "AI-driven workflow acceleration",
-              "Competitive automation benchmark"
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Flow Designer",
-              "IntegrationHub",
-              "Scoped App Governance"
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Manual operations reduce efficiency.",
-            "hypothesis": "Automating flows improves MTTR and CSAT.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Build subflows",
-              "Add triggers",
-              "Validate KPIs"
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         }
@@ -419,109 +212,104 @@
     },
     {
       "name": "HRSD",
-      "moduleOverview": {
-        "domainMarketCompetitive": [
-          "Domain: HR cases, lifecycle events, employee journeys, KB.",
-          "Market: HR assistants, conversational routing, self-service.",
-          "Competitive: SN HRSD vs Workday Extend/Zendesk; win via flow/PI."
-        ],
-        "techSpecsBestPractices": [
-          "HR tables & security; decision tables; lifecycle event orchestration.",
-          "Categorization via PI; journey accelerators; knowledge governance."
-        ],
-        "problem": "Manual routing & slow turnaround reduce employee satisfaction.",
-        "hypothesis": "PI + orchestration + GenAI replies improve CSAT and productivity.",
-        "prototype": [
-          "Decision table for category-based routing.",
-          "GenAI summaries; article suggestions; metrics for FCR."
-        ]
-      },
       "projects": [
         {
           "title": "ServiceNow_HRSD_Project1",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project1",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_HRSD_Project1",
           "image": "assets/hrsd1.png",
-          "summary": "HR case lifecycle + decision tables.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "Employee experience: speed + clarity.",
-              "Compete with HR suites via platform workflows."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "HR case tables, decision table inputs/outputs.",
-              "Privacy controls; role-based access for HR data."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Unclear routing and bottlenecks.",
-            "hypothesis": "Explicit rules reduce touches & time.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Decision branches: Leave/Compensation/General.",
-              "Auto-assignment to HR teams; SLA tracking."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
           "title": "ServiceNow_HRSD_Project2",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project2",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_HRSD_Project2",
           "image": "assets/hrsd2.png",
-          "summary": "Flow Designer routing for categories.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "Low-code HR automations accelerate change.",
-              "Compete on time-to-value and governance."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Flow triggers; HR category; subflows; notifications.",
-              "Audit trail; versioning; non-prod testing."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Manual HR case handoffs.",
-            "hypothesis": "Standardized flows cut handling time.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Trigger \u2192 decision \u2192 update \u2192 notify.",
-              "Dashboard: backlog & SLA compliance."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
           "title": "ServiceNow_HRSD_Project3",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project3",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_HRSD_Project3",
           "image": "assets/hrsd3.png",
-          "summary": "PI classification + resolution SLAs.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "AI boosts routing accuracy and fairness.",
-              "Quality measured by first-time right assignments."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "PI model training; outcome tracking; human review.",
-              "SLA definitions for HR categories."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Misrouted HR cases and slow resolution.",
-            "hypothesis": "PI + SLAs increase throughput and CSAT.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Train on labeled HR cases.",
-              "SLA widget on HR agent workspace."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
           "title": "ServiceNow_HRSD_Project4",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_HRSD_Project4",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_HRSD_Project4",
           "image": "assets/hrsd4.png",
-          "summary": "GenAI summaries & knowledge suggestions.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "LLM-assisted HR improves clarity and consistency.",
-              "Reduce repetitive writing for HR agents."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Prompt templates; guardrails; storage policies.",
-              "KB workflow with reviewer approvals."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Agents spend time drafting updates.",
-            "hypothesis": "Auto-summaries improve speed and quality.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Draft HR response; generate KB article.",
-              "Track adoption & CSAT shift."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         }
@@ -529,109 +317,104 @@
     },
     {
       "name": "CSM",
-      "moduleOverview": {
-        "domainMarketCompetitive": [
-          "Domain: Case mgmt, omnichannel, entitlements, deflection.",
-          "Market: AI chat, intent detection, proactive service.",
-          "Competitive: SN CSM vs Salesforce/Zendesk; edge via workflow + PI/GenAI."
-        ],
-        "techSpecsBestPractices": [
-          "Case tables, SLAs/entitlements; PI intent; IntegrationHub (CRM/telephony).",
-          "Knowledge tuning; analytics; escalation flows."
-        ],
-        "problem": "High AHT, uneven quality across channels.",
-        "hypothesis": "PI routing + GenAI guidance reduces AHT and raises FCR/CSAT.",
-        "prototype": [
-          "Omnichannel intake \u2192 PI intent \u2192 Agentic escalations.",
-          "GenAI suggestions; KB links; outcome dashboards."
-        ]
-      },
       "projects": [
         {
           "title": "ServiceNow_CSM_Project1",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project1",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_CSM_Project1",
           "image": "assets/csm1.png",
-          "summary": "Case management + AI-assisted replies.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "Respond faster with consistent tone.",
-              "Deflect via self-service and guided flows."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Case table; reply templates; GenAI actions.",
-              "Audit & privacy; feedback loop on suggestions."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Slow responses and inconsistent messaging.",
-            "hypothesis": "GenAI drafts reduce AHT while improving quality.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Prompted reply drafts; agent edit & send.",
-              "Telemetry: acceptance rate & time saved."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
           "title": "ServiceNow_CSM_Project2",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project2",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_CSM_Project2",
           "image": "assets/csm2.png",
-          "summary": "Omnichannel + IntegrationHub automations.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "Unified view removes swivel-chair.",
-              "Workflows across CRM/billing/fulfillment."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Inbound channels; IntegrationHub spokes; retries/idempotency.",
-              "Entitlement checks; SLA adherence."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Channel silos and manual handoffs.",
-            "hypothesis": "Orchestration improves FCR and agent experience.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Channel \u2192 case \u2192 subflow action.",
-              "Escalation ladder; notifications."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
           "title": "ServiceNow_CSM_Project3",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project3",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_CSM_Project3",
           "image": "assets/csm3.png",
-          "summary": "Agentic workflows + SLAs.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "Proactive case handling reduces churn.",
-              "Differentiate with smart escalations."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Decision tables; timers; knowledge suggestions.",
-              "Role-based views; analytics by segment."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Reactive operations and delayed escalations.",
-            "hypothesis": "Agentic SLAs boost speed and consistency.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Breach-risk detection \u2192 proactive subflow.",
-              "Supervisor visibility & guardrails."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
           "title": "ServiceNow_CSM_Project4",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_CSM_Project4",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_CSM_Project4",
           "image": "assets/csm4.png",
-          "summary": "GenAI auto-summaries, deflection analytics.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "Deflection + quality of self-service matters to cost/CSAT.",
-              "LLM guidance scales expertise."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "KB tuning; search analytics; summary prompts.",
-              "A/B tests for response patterns."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Support volume growth with limited staff.",
-            "hypothesis": "Summaries + deflection free up agents.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Auto-summary to case + KB recommendation.",
-              "Deflection dashboard with trend lines."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         }
@@ -639,87 +422,79 @@
     },
     {
       "name": "GRC",
-      "moduleOverview": {
-        "domainMarketCompetitive": [
-          "Domain: Risk, policy, compliance, audits, vendor risk, issues.",
-          "Market: Continuous control monitoring (CCM) and AI evidence checks.",
-          "Competitive: SN GRC vs Archer/OneTrust; platform advantage via workflow + CMDB context."
-        ],
-        "techSpecsBestPractices": [
-          "Risk register, controls/tests, issues/tasks; SoD; approvals.",
-          "RBAC/ACLs; audit trails; data retention; evidence integrity."
-        ],
-        "problem": "Manual control testing and siloed evidence delay audits.",
-        "hypothesis": "Automated controls + AI evidence matching accelerate audits and reduce risk.",
-        "prototype": [
-          "Scheduled control tests \u2192 issues \u2192 remediation.",
-          "Vendor risk intake; dashboards for compliance posture."
-        ]
-      },
       "projects": [
         {
           "title": "ServiceNow_GRC_Project1",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project1",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_GRC_Project1",
           "image": "assets/grc1.png",
-          "summary": "Risk register + policy workflow.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "Policy-to-control linkage drives enforcement.",
-              "Comparative edge: native workflow + CMDB impact."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Risk statements, controls, policy lifecycle; approvals.",
-              "Audit trail; retention; segregation of duties."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Unclear control ownership and stale risks.",
-            "hypothesis": "Workflow clarity raises closure rates.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Risk intake \u2192 scoring \u2192 treatment tasks.",
-              "Policy versioning + attestations."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
           "title": "ServiceNow_GRC_Project2",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project2",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_GRC_Project2",
           "image": "assets/grc2.png",
-          "summary": "Vendor risk + automated controls.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "Third-party risk is a top audit focus.",
-              "Automations reduce questionnaire fatigue."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Vendor tiering; control profiles; evidence attachments.",
-              "Exception handling; renewal checks; reminders."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Manual vendor assessments and renewals.",
-            "hypothesis": "Automation accelerates assessments and reduces risk.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Vendor intake \u2192 tier scoring \u2192 control checks.",
-              "Exception tasks + dashboard."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         },
         {
           "title": "ServiceNow_GRC_Project3",
-          "repo": "https://github.com/srikanthmadabhushi/ServiceNow_GRC_Project3",
+          "repo": "https://github.com/SrikanthMadabhushi/ServiceNow_GRC_Project3",
           "image": "assets/grc3.png",
-          "summary": "Audits + evidence collection workflow.",
+          "summary": "Professional ServiceNow project implementation with AI, automation and best\u2011practice architecture.",
           "points": {
-            "domainMarketCompetitive": [
-              "Evidence integrity and traceability are audit must-haves.",
-              "Workflow-first audits reduce cycle time."
+            "domainMarketPositioning": [
+              "Modern enterprise workflow automation",
+              "AI\u2011augmented service operations",
+              "Competitive differentiation via AI\u2011first workflows"
             ],
-            "techSpecsBestPractices": [
-              "Audit engagement \u2192 tasks \u2192 evidence; approvals.",
-              "Immutable logs; retention; access control."
+            "technicalArchitecture": [
+              "Flow Designer + Subflows",
+              "IntegrationHub actions & REST APIs",
+              "Predictive Intelligence + GenAI Actions"
             ],
-            "problem": "Evidence spread across email and drives.",
-            "hypothesis": "Centralized workflow accelerates audits.",
+            "problem": "Manual processes reduce service quality, increase MTTR and create operational gaps.",
+            "hypothesis": "AI + automation + decision logic reduce complexity and improve service outcomes.",
             "prototype": [
-              "Evidence collection tasks; reviewer gates.",
-              "Audit status dashboard."
+              "Trigger-based automated workflow",
+              "AI classification and routing",
+              "Auto-remediation or guided resolution"
             ]
           }
         }
