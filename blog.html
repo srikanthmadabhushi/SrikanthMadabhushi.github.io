@@ -1,29 +1,62 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Blog</title>
+<head><meta charset="utf-8"><title>Blog</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+.tag {display:inline-block;padding:2px 6px;border-radius:6px;font-size:12px;background:#1e88e5;color:white;margin-right:6px;}
+.blog-section {margin-bottom:40px;}
+.blog-card {margin-bottom:20px; list-style:none;}
+.blog-card a {text-decoration:none;color:#007acc;font-weight:600;}
+.icon {margin-left:4px;}
+.blog-desc {margin-left:4px;color:#444;font-size:14px;}
+ul {padding-left:0;}
+</style>
 </head>
 <body>
 
-<nav class="top-nav">
-  <a href="index.html">Home</a>
-  <a href="projects.html">Projects</a>
-  <a href="future.html">Future 2025–2030</a>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html">Contact</a>
+<nav class='top-nav'>
+  <a href='index.html'>Home</a>
+  <a href='projects.html'>Projects</a>
+  <a href='future.html'>Future 2025–2030</a>
+  <a href='blog.html'>Blog</a>
+  <a href='contact.html'>Contact</a>
 </nav>
 
 <section class="container section">
 <h1>Blog</h1>
 
-<ul class="blog-list">
-  <li><a target="_blank" href="https://entechonline.com/ai-in-education-for-the-next-generation-inspiring-students-to-build-the-future/">AI for the Next Generation</a></li>
-  <li><a target="_blank" href="https://siliconvalleysjournal.com/2025/11/12/from-predictive-aiops-to-generative-itsm-powering-the-silicon-valley-model-of-intelligent-enterprise/">Predictive AIOps → Generative ITSM</a></li>
-  <li><a target="_blank" href="https://siliconvalleysjournal.com/2025/11/19/autonomous-workflow-intelligence-a-unified-multi-domain-orchestration-model-for-modern-digital-enterprises/">Autonomous Workflow Intelligence</a></li>
-  <li><a target="_blank" href="https://siliconvalleysjournal.com/2025/12/10/a-multi-layer-open-source-ai-agent-architecture-for-enterprise-workflow-automation/">AI Agent Architecture for Enterprise Workflow Automation</a></li>
-  
+<h2>Featured Publications</h2>
+
+<ul>
+
+<li class="blog-card">
+  <span class="tag">SVJ</span>
+  <a target="_blank" href="https://siliconvalleysjournal.com/2025/12/10/a-multi-layer-open-source-ai-agent-architecture-for-enterprise-workflow-automation/">
+    AI Agent Architecture for Enterprise Workflow Automation<span class="icon">↗</span></a>
+  <p class="blog-desc">A Silicon Valley Journal publication on AI agent orchestration models driving enterprise workflow automation.</p>
+</li>
+
+<li class="blog-card">
+  <span class="tag">SVJ</span>
+  <a target="_blank" href="https://siliconvalleysjournal.com/2025/11/19/autonomous-workflow-intelligence-a-unified-multi-domain-orchestration-model-for-modern-digital-enterprises/">
+    Autonomous Workflow Intelligence<span class="icon">↗</span></a>
+  <p class="blog-desc">A detailed exploration of multi-domain orchestration and intelligent workflow design.</p>
+</li>
+
+<li class="blog-card">
+  <span class="tag">SVJ</span>
+  <a target="_blank" href="https://siliconvalleysjournal.com/2025/11/12/from-predictive-aiops-to-generative-itsm-powering-the-silicon-valley-model-of-intelligent-enterprise/">
+    Predictive AIOps → Generative ITSM<span class="icon">↗</span></a>
+  <p class="blog-desc">A strategic view of how organizations evolve from predictive operations to generative service automation.</p>
+</li>
+
+<li class="blog-card">
+  <span class="tag">ENTECH</span>
+  <a target="_blank" href="https://entechonline.com/ai-in-education-for-the-next-generation-inspiring-students-to-build-the-future/">
+    AI for the Next Generation<span class="icon">↗</span></a>
+  <p class="blog-desc">An ENTECH Magazine feature on empowering future generations through AI readiness and innovation.</p>
+</li>
+
 </ul>
 
 </section>
